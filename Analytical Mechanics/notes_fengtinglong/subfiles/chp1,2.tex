@@ -1,0 +1,167 @@
+\chapter{从矢量力学到分析力学}
+
+\section{自由度与广义坐标}
+先考虑一个由$N$个质点组成的力学体系,若关于这个体系有$k$个约束,则该体系的自由度为$3N-k$.
+由于约束的存在,原有直角坐标系下描述该体系的坐标$x_i$不再相互独立,为此引入广义坐标$q_j(j=1,2,\cdots 3N-k)$,即该自由度下能描述的该体系的最少个数的相互独立坐标.
+显然,我们可以用广义坐标$q_j$和时间$t$描述原有坐标$x_i$,即
+\begin{displaymath}
+	x_i(q_1,q_2,\cdots q_{3N-k},t)\eqno(1.1)
+\end{displaymath}
+则
+\begin{displaymath}
+	\dot{x}_i=\dfrac{\partial x_i}{\partial q_j}\dot{q}_j+\dfrac{\partial x_i}{\partial t}\text{(已使用爱因斯坦求和指标,后同)}\eqno(1.2)
+\end{displaymath}
+
+\section{虚功原理和D'Alembert原理}
+对于一个处于力学平衡状态的体系,考虑其进行一个与所有约束条件自洽的微小位移$\delta x_i$,称之为虚位移.
+对于每个质点,其所受外力$F_i=0$,故
+\begin{displaymath}
+	F_i\delta x_i=0\eqno(1.3)
+\end{displaymath}
+由于$F_i$可表示为驱动力$F_i^a$与约束力$F_i^c$的合力,且一般情况下$F_i^c\delta x_i=0$(如曲面上运动时$F_i$必须沿法线方向),故
+\begin{displaymath}
+	F_i^a\delta x_i=0\eqno(1.4)
+\end{displaymath}
+称此式为虚功原理.注:虽然此时$\delta x_i$是约束条件下任取的,但由于其互相不独立,故不能从此式中推出$F_i^a=0$.\\
+考虑一个不属于力学平衡状态的体系,引入惯性力$-\dot{p}_i$,可以得到
+\begin{displaymath}
+	(F_i^a-\dot{p}_i)\delta x_i=0\eqno(1.5)
+\end{displaymath}
+称此式为D'Alembert原理.由于
+\begin{displaymath}
+	\delta x_i=\dfrac{\partial x_i}{\partial q_j}\delta q_j\eqno(1.6)
+\end{displaymath}
+故
+\begin{displaymath}
+	F_i^a\dfrac{\partial x_i}{\partial q_j}\delta q_j=m_i\dfrac{\mathrm{d}\dot{x}_i}{\mathrm{d}t}\dfrac{\partial x_i}{\partial q_j}\delta q_j\eqno(1.7)
+\end{displaymath}
+令$Q_j=F_i^a\dfrac{\partial x_i}{\partial q_j}$,称其为广义力.
+
+\section{Euler-Lagrange方程}
+由于
+\begin{displaymath}
+	m_i\dfrac{\mathrm{d}\dot{x}_i}{\mathrm{d}t}\dfrac{\partial x_i}{\partial q_j}=m_i\dfrac{\mathrm{d}}{\mathrm{d}t}\left(\dot{x}_i\dfrac{\partial x_i}{\partial q_j}\right)-m_i\dot{x}_i\dfrac{\mathrm{d}}{\mathrm{d}t}\left(\dfrac{\partial x_i}{\partial q_j}\right)\eqno(1.8)
+\end{displaymath}
+又由(1.2)式可得
+\begin{displaymath}
+	\dfrac{\partial \dot{x}_i}{\partial \dot{q}_j}=\dfrac{\partial x_i}{\partial q_j}\eqno(1.9)
+\end{displaymath}
+将(1.9)式代入(1.8)式,整理得
+\begin{displaymath}
+	m_i\dfrac{\mathrm{d}\dot{x}_i}{\mathrm{d}t}\dfrac{\partial x_i}{\partial q_j}=\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial\left(\frac{1}{2}m_i\dot{x}_i^2\right)}{\partial\dot{q}_j}-\dfrac{\partial\left(\frac{1}{2}m_i\dot{x}_i^2\right)}{\partial q_j}\eqno(1.10)
+\end{displaymath}
+令动能$T=\dfrac{1}{2}m_i\dot{x}_i^2$,代入(1.7)式,得
+\begin{displaymath}
+	\left(\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial T}{\partial\dot{q}_j}-\dfrac{\partial T}{\partial q_j}-Q_j\right)\delta q_j=0\eqno(1.11)
+\end{displaymath}
+由于此时$\delta q_j$为任取且相互独立,故
+\begin{displaymath}
+	\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial T}{\partial\dot{q}_j}-\dfrac{\partial T}{\partial q_j}-Q_j=0\eqno(1.12)
+\end{displaymath}
+假设$F_i^a$由一与速度无关的势场提供,即$F_i^a=-\dfrac{\partial V}{\partial x_i}$,则
+\begin{displaymath}
+	\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial(T-V)}{\partial\dot{q}_j}-\dfrac{\partial(T-V)}{\partial q_j}=0\eqno(1.13)
+\end{displaymath}
+令$L=T-V$,即$\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial L}{\partial\dot{q}_j}-\dfrac{\partial L}{\partial q_j}=0$,得到Euler-Lagrange方程.
+
+\section{弱耗散系统}
+对于一耗散体系,(1.5)式不在适用.假设阻力$F^D=-k_jv_j(j=1,2,3)$,构造瑞称耗散函数$F=\sum\limits_{i=1}^N\dfrac{1}{2}k_jv_{ij}^2(j=1,2,3)$,显然$F^D=-\dfrac{\partial F}{\partial v}$.
+将广义力中驱动力一项并入$L$(Lagrange量),则$Q_j=F^D\dfrac{\partial x_i}{\partial q_i}$,即
+\begin{displaymath}
+	Q_j=-\dfrac{\partial F}{\partial \dot{x}_i}\dfrac{\partial x_i}{\partial q_j}=-\dfrac{\partial F}{\partial \dot{q}_i}\eqno(1.14)
+\end{displaymath}
+此时Euler-Lagrange方程修正为
+\begin{displaymath}
+	\dfrac{\mathrm{d}}{\mathrm{d}t}\dfrac{\partial L}{\partial\dot{q}_j}-\dfrac{\partial L}{\partial q_j}+\dfrac{\partial F}{\partial \dot{q}_i}=0\eqno(1.15)
+\end{displaymath}
+
+
+
+\chapter{最小作用量原理}
+
+\section{泛函与变分}
+考虑一组曲线$y(x)$在区间$[x_1,x_2]$上的长度$\displaystyle{S=\int_{x_1}^{x_2}\sqrt{1+{(y^\prime)}^2}\mathrm{d}x}$,对于每一个确定的函数$y(x)$,都可以在实数集中找到与之唯一对应的数$S$,
+我们把这种关系称为泛函,即函数空间向实数集的映射,记为$J[y]$,$y(x)$成为变量函数,$J[y]$称为$y(x)$的泛函.
+下面只讨论积分形式的泛函,可记为$J[y]:\displaystyle{S=\int_{x_1}^{x_2}F(y,y^\prime,x)\mathrm{d}x}$,任取一个与$y(x)$相近的函数(严格定义不给出,直观上理解即可),
+将其与$y(x)$的差记为$\delta y(x)$,称为$y(x)$的变分.
+
+\section{泛函极值与Euler-Lagrange方程}
+考虑一组$x_1,x_2$两端函数值固定的函数,若要使两端点之间的弧长最短,等价于求积分$S=\displaystyle{\int_{x_1}^{x_2}\sqrt{1+{(y^\prime)}^2}\mathrm{d}x}$的最小值,这就是一个最简单的泛函极值问题.
+类比函数极值可以得到泛函$J[y]$的最小值,即$\forall y(x),J[y+\delta y]-J[y]\geqslant 0$恒成立,代入一般表达式为
+\begin{displaymath}
+	J[y+\delta y]-J[y]=\int_{x_1}^{x_2}F[y+\delta y,y^\prime+{(\delta y)}^\prime,x]\mathrm{d}x-\int_{x_1}^{x_2}F(y,y^\prime,x)\mathrm{d}x\eqno(2.1)
+\end{displaymath}
+Taylor展开得到
+\begin{displaymath}
+	J[y+\delta y]-J[y]=\int_{x_1}^{x_2}\left[\dfrac{\partial F}{\partial y}\delta y+\dfrac{\partial F}{\partial y^\prime}{(\delta y)}^\prime\right]\mathrm{d}x+\dfrac{1}{2}\int_{x_1}^{x_2}{\left[\dfrac{\partial }{\partial y}\delta y+\dfrac{\partial }{\partial y^\prime}{(\delta y)}^\prime\right]}^2F\mathrm{d}x+\cdots\eqno(2.2)
+\end{displaymath}
+记$\displaystyle{\int_{x_1}^{x_2}\left[\dfrac{\partial F}{\partial y}\delta y+\dfrac{\partial F}{\partial y^\prime}{(\delta y)}^\prime\right]\mathrm{d}x}$为$\delta J[y]$,称为$J[y]$的一级变分.
+类比函数极值可以得到泛函极值的必要条件是一级变分$\delta J[y]=0$即
+\begin{displaymath}
+	\int_{x_1}^{x_2}\left[\dfrac{\partial F}{\partial y}\delta y+\dfrac{\partial F}{\partial y^\prime}{(\delta y)}^\prime\right]\mathrm{d}x=0\eqno(2.3)
+\end{displaymath}
+对其进行分部积分,得
+\begin{displaymath}
+	\left.\dfrac{\partial F}{\partial y^\prime}\delta y\right|_{x_1}^{x_2}+\int_{x_1}^{x_2}\left[\dfrac{\partial F}{\partial y}\delta y-\dfrac{\mathrm{d}}{\mathrm{d}x}\left(\dfrac{\partial F}{\partial y^\prime}\right)\right]\delta y\mathrm{d}x=0\eqno(2.4)
+\end{displaymath}
+考虑边界条件$\delta y(x_1)=\delta y(x_2)=0$(两端固定),又由于右式$\delta y$可任取,我们不加证明地指出(变分学基本引理可以证明这个结论)
+\begin{displaymath}
+	\dfrac{\partial F}{\partial y}-\dfrac{\mathrm{d}}{\mathrm{d}x}\dfrac{\partial F}{\partial y^\prime}=0\eqno(2.5)
+\end{displaymath}
+得到泛函极值的Euler-Lagrange方程.有关数学的介绍就到这里,如果有兴趣可以参考泛函分析课本.
+
+\section{最小作用量原理与Lagrange函数的形式}
+下面介绍分析力学中最重要的原理:最小作用量原理.
+简而言之,任意一个只存在完整约束的力学系统,都可以用它的广义坐标$q_j$的泛函$S$表示其运动路径,
+称其为力学系统的作用量,可以写成$S=\displaystyle{\int_{t_1}^{t_2}L(q_j,\dot{q}_j,t)\mathrm{d}t}$的形式,
+当$S$取极小值时确定的运动路径为这个系统真实的运动路径,式中$L(q_j,\dot{q}_j,t)$称为Lagrange函数.
+与前述泛函极值的Euler-Lagrange方程推导类似,我们可以得到
+\begin{displaymath}
+	\int_{t_1}^{t_2}\left[\dfrac{\partial L}{\partial q_j}-\dfrac{\mathrm{d}}{\mathrm{d}t}\left(\dfrac{\partial L}{\partial\dot{q}_j}\right)\right]\delta q_j\mathrm{d}t=0\eqno(2.6)
+\end{displaymath}
+前述变分法基本引理对这个和式依然有效,得到$j$个方程($j$是自由量)
+\begin{displaymath}
+	\dfrac{\mathrm{d}}{\mathrm{d}t}\left(\dfrac{\partial L}{\partial\dot{q}_j}\right)-\dfrac{\partial L}{\partial q_j}=0\eqno(2.7)
+\end{displaymath}
+这就是分析力学中的Euler-Lagrange方程.下面讨论Lagrange函数的形式.\\
+首先注意到$L(q_j,\dot{q}_j,t)$的选取具有任意性,假如令其增加一项某个关于坐标和时间的函数的全导数,
+即$L^\prime=L+\dfrac{\mathrm{d}}{\mathrm{d}t}f(q,t)$,代入作用量,得到
+\begin{displaymath}
+	\delta S^\prime=\int_{t_1}^{t_2}\delta L(q_j,\dot{q}_j,t)\mathrm{d}t+\int_{t_1}^{t_2}\dfrac{\mathrm{d}}{\mathrm{d}t}[f(q+\delta q,t)-f(q,t)]\mathrm{d}t\eqno(2.8)
+\end{displaymath}
+第二项可化为
+\begin{displaymath}
+	\dfrac{\partial f}{\partial q}\delta q(t_2)-\dfrac{\partial f}{\partial q}\delta q(t_1)=0(\delta q(t_1)=\delta q(t_2)=0)\eqno(2.9)
+\end{displaymath}
+故其对导出Euler-Lagrange方程无影响,即$L$与$L^\prime$等价.\\
+接下来从最简单的情况开始讨论,即例子在惯性系$K$中的自由运动.
+显然运动只与$|\boldsymbol{v_0}|$有关,所以可以认为Lagrange函数只含$\boldsymbol v^2$,即$L(\boldsymbol{v_0}^2)$.
+然后,令$K$相对于惯性系$K^\prime$以无穷小的速度$\boldsymbol\varepsilon$移动,则质点在$K^\prime$系中速度$\boldsymbol v=\boldsymbol{v_0}+\boldsymbol\varepsilon$,
+在$K^\prime$系中$L^\prime=L(\boldsymbol{v_0}^2+2\boldsymbol{v_0}\boldsymbol\varepsilon+\boldsymbol\varepsilon^2)$,略去高阶小量$\boldsymbol\varepsilon^2$得到$L^\prime=L(\boldsymbol{v_0}^2+2\boldsymbol{v_0}\boldsymbol\varepsilon)$.
+由伽利略相对性原理知,相同的运动在不同惯性系中的Lagrange函数等价,即$L^\prime-L$为某个只含坐标和时间的函数对时间的全导数$\dfrac{\mathrm{d}}{\mathrm{d}t}f(\boldsymbol{x},t)$,由于
+\begin{displaymath}
+	L^\prime-L=\dfrac{\partial L}{\partial\boldsymbol{v_0}^2}\cdot 2\boldsymbol{v_0}\cdot\boldsymbol\varepsilon=2\dfrac{\partial L}{\partial\boldsymbol{v_0}^2}\dfrac{\mathrm{d}}{\mathrm{d}t}(\boldsymbol{x}\cdot\boldsymbol{\varepsilon})\eqno(2.10)
+\end{displaymath}
+所以$2\dfrac{\partial L}{\partial\boldsymbol{v_0}^2}$为常量,定义这个常量为质量,记作$m$,则
+\begin{displaymath}
+	L(\boldsymbol{v_0}^2)=\dfrac{1}{2}m\boldsymbol{v_0}^2\eqno(2.11)
+\end{displaymath}
+2.11式即为质点在惯性系中自由运动时的Lagrange函数.
+不考虑质点间相互作用,由$N$个质点组成的体系有
+\begin{displaymath}
+	L=\sum\limits_{i=1}^N\dfrac{1}{2}m_i\boldsymbol{v_i}^2\eqno(2.12)
+\end{displaymath}
+如果考虑封闭体系质点的相互作用,则应在$L$后附加一项,这一项与所有质点的位置有关
+\begin{displaymath}
+	L=\sum\limits_{i=1}^N\dfrac{1}{2}m_i\boldsymbol{v_i}^2-V(\boldsymbol{x_1},\boldsymbol{x_2},\cdots \boldsymbol{x_N})\eqno(2.13)
+\end{displaymath}
+于是我们得到了封闭质点系的Lagrange函数,若使用广义坐标,则
+\begin{displaymath}
+	L=\sum\limits_{i,j}\dfrac{1}{2}a_{ij}(q)\cdot\dot{q}_i\dot{q}_j-V(q_1,q_2,\cdots q_f)\eqno(2.14)
+\end{displaymath}
+
+\section*{附:物理学的公理化}
+分析力学与矢量力学最大的不同在于它是一个公理化体系,是高度数学化的.这个公理是最小作用量原理和Lagrange函数的形式.
+我们导出Lagrange函数形式的时候并非通过严格的推导,而是寻求必要的条件"连蒙带猜",所以它的形式也是分析力学的公理.
+公理到此就没有了,理论上说,依靠公理可以严格导出整个分析力学体系,这也是为什么分析力学是四大力学中最美丽动人的一个了.
+
