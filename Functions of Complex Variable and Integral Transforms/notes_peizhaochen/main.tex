@@ -10,6 +10,8 @@
 \author{数试82\ 裴兆辰}
 \typo{钱院学辅排版组}  % 排版人员信息
 \date{2020 年 4 月 9 日}
+\version{v1.0}
+%\sourcepage{\url{https://github.com/qyxf/BookHub/}}
 
 % 开启 opensource 选项时，以下信息必须填写
 % \sourcepage{https://example.com/}
@@ -23,10 +25,17 @@
 \newtheorem*{jie}{解}%求解环境
 %定理环境
 
+%微积分符号
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+
 \begin{document}
 
 \maketitle
-
+\input{./subfiles/preface.tex}
 \tableofcontents
 
 \input{./subfiles/chp1.tex}
