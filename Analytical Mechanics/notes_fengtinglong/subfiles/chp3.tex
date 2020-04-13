@@ -1,0 +1,283 @@
+\chapter{对称性与守恒律}
+\section{Largrange函数的性质}
+我们已经知道将系统的Largrange函数代入Euler-Largrange方程即可得到体系的运动方程,而通过研究E-L方程还可以发现Largrange函数一些有用的性质.由$\delta S=\int_{t_1}^{t_2} (\delta q \frac{\partial L}{\partial q} + \delta \dot{q} \frac{\partial L}{\partial q})\,\mathrm{d}t $知,若$L'=L+\frac{\mathrm{d}}{\mathrm{d}t}f(q,t)$,则
+\begin{equation}
+\delta S=\int_{t_1}^{t_2} (\delta q \frac{\partial L}{\partial q} + \delta \dot{q} \frac{\partial L}{\partial q})\,\mathrm{d}t
++ \int_{t_1}^{t_2}\frac{\mathrm{d}}{\mathrm{d}t}\left(\delta q \frac{\partial f}{\partial q}\right)\,\mathrm{d}t
+\end{equation}
+第二项可化为
+\begin{equation}
+\int_{t_1}^{t_2}\frac{\mathrm{d}}{\mathrm{d}t}\left(\delta q \frac{\partial f}{\partial q}\right)\,\mathrm{d}t\,\mathrm{d}t
+= 
+\left.
+\frac{\partial f}{\partial q}\delta q 
+\right|_{t_1}^{t_2}
+= 0
+\end{equation}
+故于Largrange函数而言,增加一项关于坐标和时间的函数的全导数并不影响运动方程.这将是一个有用的性质,下面正式进入对称性与守恒量部分.
+
+\section{时间平移不变性与能量守恒}
+若一个体系的Largrange函数不显含$t$,则称其具有时间平移不变性（时间平移对称性）,则其关于时间的全导数
+\begin{equation}
+\frac{\mathrm{d}L}{\mathrm{d}t} = 
+\frac{\partial L}{\partial q}\dot{q} +
+\frac{\partial L}{\partial \dot{q}}\ddot{q}
+\end{equation}
+则
+\begin{equation}
+\frac{\mathrm{d}L}{\mathrm{d}t} = 
+\frac{\partial L}{\partial q}\dot{q} +
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q}}\dot{q}\right) - 
+\left[
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q}}\right)
+\right]\dot{q}
+\end{equation}
+代入E-L方程,得
+\begin{equation}
+\frac{\mathrm{d}L}{\mathrm{d}t} = 
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q}}\dot{q}\right) = 
+\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial T}{\partial \dot{q}}\dot{q}\right)
+\end{equation}
+由于$T$是关于$\dot{q}$的2次齐次函数,由Euler定理得
+\begin{equation}
+\frac{\mathrm{d}L}{\mathrm{d}t} =
+\frac{\mathrm{d}}{\mathrm{d}t}(2T)
+\end{equation}
+故
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}(2T-L) = 0
+\end{equation}
+即
+\begin{equation}
+T+V = Const
+\end{equation}
+令$T+V=E$.称$E$为体系的能量,得到能量守恒定律.
+
+\section{空间平移不变性与动量守恒}
+若一个体系的Largrange函数不显含位置坐标$\vec{x}_i$,则称其具有空间平移不变性,则
+\begin{equation}
+\partial L = 
+\frac{\partial L}{\partial\vec{x}_i}\delta \vec{x}_i = 0
+\end{equation}
+代入E-L方程,得
+\begin{equation}
+\partial L = 
+\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial \vec{v}_i}
+\right)\delta\vec{x}_i = 0
+\end{equation}
+由于$\delta\vec{x}_i$是任意的,故
+\begin{equation}
+\sum_{i}\frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial \vec{v}_i}
+\right) = 0
+\end{equation}
+即
+\begin{equation}
+\sum_{i}\frac{\partial L}{\partial \vec{v}_i} = Const= \vec{p}
+\end{equation}
+称$\vec{p}$为系统的动量,得到动量守恒定律.若用广义坐标$q_j$代替$\vec{x}_i$,即可得到广义动量$\sum_{j}\frac{\partial L}{\partial \vec{q}_j} = Const$
+
+\section{空间各向同性与角动量守恒}
+若将一个体系旋转一个微小角度$\delta\phi$,而其Largrange函数不发生变化,则称其具有空间各向同性.显然
+\begin{equation}
+\delta\vec{x} = |\delta\vec{\phi}| |\vec{x}|\sin\theta,\quad 
+\theta = \langle \delta\vec{\phi},\vec{x} \rangle
+\end{equation}
+故
+\begin{equation}
+\delta\vec{x} = \delta\vec{\phi} \times \vec{x},\quad 
+\delta\vec{v} = \delta\vec{\phi} \times \vec{v}
+\end{equation}
+由于
+\begin{equation}
+\delta L = \frac{\partial L}{\partial\vec{x}_i}\delta\vec{x}_i + 
+\frac{\partial L}{\partial\vec{v}_i}\delta\vec{v}_i = 0
+\end{equation}
+故
+\begin{equation}
+\frac{\partial L}{\partial\vec{x}_i}(\delta\vec{\phi} \times \vec{x}_i) + 
+\frac{\partial L}{\partial\vec{v}_i}(\delta\vec{\phi} \times \vec{v}_i) = 0
+\end{equation}
+代入E-L方程
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\vec{v}_i}\right)(\delta\vec{\phi} \times \vec{x}_i) + 
+\frac{\partial L}{\partial\vec{v}_i}
+\left[ 
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi} \times \vec{x}_i) - 
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi}) \times \vec{x}_i
+\right] = 0
+\end{equation}
+显然$\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi})=0$,故
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\vec{v}_i}\right)(\delta\vec{\phi} \times \vec{x}_i) + 
+\frac{\partial L}{\partial\vec{v}_i}
+\left[ 
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi} \times \vec{x}_i)
+\right] = 0
+\end{equation}
+即
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} [\delta\vec{\phi}\cdot(\vec{x}_i \times \vec{p}_i)] = 
+\frac{\mathrm{d}}{\mathrm{d}t} (\vec{x}_i \times \vec{p}_i)\cdot\delta\vec{\phi} = 0
+\end{equation}
+由于$\delta\vec{\phi}$是任意的,故
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} (\vec{x}_i \times \vec{p}_i) = 0
+\end{equation}
+得到
+\begin{equation}
+\vec{x}_i \times \vec{p}_i = Const = \vec{L}
+\end{equation}
+称$\vec{L}$为系统的角动量,得到角动量守恒定律.
+
+\section{不同参考系中$E,\vec{p},\vec{L}$间的关系}
+假设参考系$K'$相对于惯性系$K$,以$\vec{V}$运动,即
+\begin{equation}
+\vec{v_0} = \vec{v'} + \vec{V}
+\end{equation}
+则系统的动量为
+\begin{equation}
+\vec{p}_i = m_i \vec{v_0}_i = m_i\vec{v'}_i + \sum_{i}m_i\vec{V}
+\end{equation}
+若在$K'$系中系统动量为0,即$\vec{p'}=0$,只需令
+\begin{equation}
+\vec{V} = \frac{m_i\vec{v_0}_i}{\sum_{i}m_i}
+\end{equation}
+称其为质心速度$\vec{V}_c$,显然,它对时间的原函数是
+\begin{equation}
+\vec{x}_c = \frac{m_i\vec{x_0}_i}{\sum_{i}m_i}
+\end{equation}
+称其为质心坐标$\vec{x}_c$.下文称$\sum m_i$为$\mu$.对于能量$E$,有
+\begin{align}
+E_0 = {} & \frac{1}{2}m_i{\vec{v_0}_i}^2 + V \notag \\
+= {} & \frac{1}{2}m_i{\vec{v'}_i}^2 + m_i v'_i \vec{V} + \frac{1}{2}\mu\vec{V} + V
+\end{align}
+对于$\vec{V} = \vec{V}_c$（即质心系）,有
+\begin{equation}
+E_0 = E' + \frac{1}{2}\mu{\vec{V}_c}^2
+\end{equation}
+对于角动量$\vec{L}$,有
+\begin{equation}
+\vec{L_0} = \vec{x_0}_i \times m_i \vec{v_0}_i
+\end{equation}
+在质心系中,有
+\begin{equation}
+\vec{L_0} = \vec{x'}_i \times m_i \vec{v_0}_i + \vec{x}_c \times m_i \vec{v_0}_i
+\end{equation}
+即
+\begin{equation}
+\vec{L_0} = \sum\vec{x'}_i \times \mu\vec{V_c} + \vec{x}_c \times \mu\vec{V_c}
+\end{equation}
+由于$\mu=\sum_{i}m_i,\ x_c=\frac{\vec{x}_i m_i}{\mu},\ V_c=\frac{m_i {v_0}_i}{\mu}$,所以
+\begin{equation}
+\vec{L_0} = \vec{L}' + \frac{(m_i \vec{x_0}_i)\times (m_j \vec{v_0}_j)}{\sum_{i}m_i}
+\end{equation}
+其中$\vec{L_0}$的第二项成为内禀角动量.
+
+下面看转动参考系的情况.假设参考系$K$相对于$K'$以$\vec{\Omega}$的角速度转动,显然有
+\begin{equation}
+\vec{v}' = \vec{v} + \vec{\Omega}\times\vec{x}
+\label{3.32}
+\end{equation}
+我们直接考虑Largrange函数的形式,先看$K'$系,
+\begin{equation}
+L = \frac{1}{2}m\vec{v_0}^2 - V = \frac{1}{2}m(\vec{v'}+\vec{v})^2 - V
+= \frac{1}{2}m\vec{v'}^2 + m\vec{v'}\cdot\vec{V} + \frac{1}{2}m\vec{V}^2 - V
+\end{equation}
+由于$\vec{V}^2(t)$可看成时间的全导数,故略去,得
+\begin{equation}
+L = \frac{1}{2}m\vec{v'}^2 + m\frac{\mathrm{d}}{\mathrm{d}t}(\vec{x'}\cdot\vec{V}) - m\vec{x}\cdot \frac{\mathrm{d}}{\mathrm{d}t}(\vec{V}) - V
+\end{equation}
+即
+\begin{equation}
+L = \frac{1}{2}m\vec{v'}^2 - m\vec{x}\cdot\vec{V} - V
+\label{3.35}
+\end{equation}
+由于$\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\vec{v'}} \right) = 
+\frac{\partial L}{\partial \vec{x'}}$,所以
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t}(m\vec{v'}) = -m\vec{V} - 
+\frac{\partial V}{\partial\vec{x}}
+\end{equation}
+其中,称$m\vec{V}$为平动引起的惯性力.再考虑$K$系的情况,将\eqref{3.32}式代入\eqref{3.35}式,得
+\begin{align}
+L & = \frac{1}{2}m\vec{v}^2 + m\vec{v}\cdot(\vec{\Omega}\times\vec{x}) + \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 - m\vec{x}\cdot\vec{V} - V \\
+\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\vec{v}} \right) & = 
+m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} + m\vec{\Omega}\times\vec{x} + m\vec{\Omega}\times\vec{v} \\
+\frac{\partial L}{\partial\vec{x}} & = m(\vec{v}\times\vec{\Omega}) + m(\vec{\Omega}\times\vec{x})\times\vec{\Omega} - m\vec{V} - \frac{\partial V}{\partial\vec{x}}
+\end{align}
+整理得
+\begin{equation}
+m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = -\frac{\partial V}{\partial\vec{x}} -m\vec{V} + 
+2m(\vec{v}\times\vec{\Omega}) + m(\vec{\Omega}\times\vec{x})\times\vec{\Omega} - m\vec{\Omega}\times\vec{x}
+\end{equation}
+其中$2m(\vec{v}\times\vec{\Omega})$称为科里奥利力,$m(\vec{\Omega}\times\vec{x})$称为惯性离心力.再考虑能量的情况：
+\begin{align}
+%此处看不清下标
+E & = \frac{\partial L}{\partial\vec{v}}\vec{v} - L\\
+E_0 & = \frac{1}{2}m\vec{v}^2 - \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 + m\vec{x}'\vec{V} + V
+\end{align}
+假设$K'$相对于$K_0$无平动加速度,则
+\begin{equation}
+E_0 = \frac{1}{2}m\vec{v}^2 - \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 + V
+\end{equation}
+称$-\frac{1}{2}m(\vec{\Omega}\times\vec{x})^2$为惯性离心力势能.代入\eqref{3.32}式,得
+\begin{equation}
+E = E_0 - \vec{\Omega}\cdot\vec{L}
+\end{equation}
+
+\section{力学相似性}
+考虑变换$x'=\lambda_1 x,\ t'=\lambda_2 t$,假设$V(x_1,x_2,\cdots,x_N)$是$k$次齐次函数,则
+\begin{equation}
+V(x'_1,x'_2,\cdots,x'_N) = \lambda_1^k V(x_1,x_2,\cdots,x_N)
+\end{equation}
+同理,
+\begin{equation}
+T(v'_1,v'_2,\cdots,v'_N) = \left(\frac{\lambda_1}{\lambda_2}\right)^k %此处笔记似乎有误
+T(v_1,v_2,\cdots,v_N)
+\end{equation}
+若
+\begin{equation}
+\lambda_2 = \lambda_1^{1-\frac{k}{2}}
+\end{equation}
+则Largrange函数只是整体乘一个系数,运动方程不变,一个有价值的应用是
+\begin{equation}
+\frac{t'}{t} = \left(\frac{x'}{x}\right)^{1-\frac{k}{2}}
+\end{equation}
+$k=-1$时,得到开普勒第三定律.另一个应用与能量平均值有关,由于 %笔记误为“由关”.
+\begin{equation}
+\frac{\partial L}{\partial \vec{v}_i}\vec{v}_i = \frac{\mathrm{d}}{\mathrm{d}t}
+\left(
+\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i
+\right)
+- \frac{\partial L}{\partial \vec{x}_i}\vec{x}_i
+\end{equation}
+两边对时间求平均,得
+\begin{equation}
+2\langle T \rangle = \lim_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i\right)\frac{1}{t} + k\langle V \rangle
+\end{equation}
+由于$\lim\limits_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i\right)\frac{1}{t} = 0$,所以
+\begin{equation}
+2\langle T \rangle = k\langle V \rangle
+\end{equation}
+称其为位力定理.
+
+\section*{附：齐次函数的Euler定理}
+
+定义：$f(\lambda x_1,\lambda x_2,\dots,\lambda x_i) = \lambda^k f(x_1,x_2,\dots,x_i)$,则$f(x_1,x_2,\dots,x_i)$为$k$次齐次函数.
+
+两边对$\lambda$求偏导,得
+\begin{align}
+\sum\limits_{i}\frac{\partial f(\lambda x_1,\lambda x_2,\dots,\lambda x_i)}{\partial(\lambda x_i)}
+\frac{\partial(\lambda x_i)}{\partial \lambda} & = k\lambda^{k-1}f(x_1,x_2,\dots,x_i)\\
+\sum_{i}\frac{\partial f(\lambda x_1,\lambda x_2,\dots,\lambda x_i)}{\partial(\lambda x_i)}\cdot
+\lambda x_i & = k\lambda^{k}f(x_1,x_2,\dots,x_i)
+\end{align}
+令$\lambda = 1$,得
+\begin{equation}
+\sum\limits_{i}\frac{\partial f(x_1, x_2,\dots,x_i)}{\partial x_i}\cdot
+\lambda x_i = kf(x_1,x_2,\dots,x_i)
+\end{equation}
