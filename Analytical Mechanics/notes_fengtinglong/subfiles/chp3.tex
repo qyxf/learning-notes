@@ -54,179 +54,178 @@ T+V = Const
 令$T+V=E$.称$E$为体系的能量,得到能量守恒定律.
 
 \section{空间平移不变性与动量守恒}
-若一个体系的Largrange函数不显含位置坐标$\vec{x}_i$,则称其具有空间平移不变性,则
+若一个体系的Largrange函数不显含位置坐标$\boldsymbol{x}_i$,则称其具有空间平移不变性,则
 \begin{equation}
 \partial L = 
-\frac{\partial L}{\partial\vec{x}_i}\delta \vec{x}_i = 0
+\frac{\partial L}{\partial\boldsymbol{x}_i}\delta \boldsymbol{x}_i = 0
 \end{equation}
 代入E-L方程,得
 \begin{equation}
 \partial L = 
 \frac{\mathrm{d}}{\mathrm{d}t}
 \left(
-\frac{\partial L}{\partial \vec{v}_i}
-\right)\delta\vec{x}_i = 0
+\frac{\partial L}{\partial \boldsymbol{v}_i}
+\right)\delta\boldsymbol{x}_i = 0
 \end{equation}
-由于$\delta\vec{x}_i$是任意的,故
+由于$\delta\boldsymbol{x}_i$是任意的,故
 \begin{equation}
 \sum_{i}\frac{\mathrm{d}}{\mathrm{d}t}
 \left(
-\frac{\partial L}{\partial \vec{v}_i}
+\frac{\partial L}{\partial \boldsymbol{v}_i}
 \right) = 0
 \end{equation}
 即
 \begin{equation}
-\sum_{i}\frac{\partial L}{\partial \vec{v}_i} = Const= \vec{p}
+\sum_{i}\frac{\partial L}{\partial \boldsymbol{v}_i} = Const= \boldsymbol{p}
 \end{equation}
-称$\vec{p}$为系统的动量,得到动量守恒定律.若用广义坐标$q_j$代替$\vec{x}_i$,即可得到广义动量$\sum_{j}\frac{\partial L}{\partial \vec{q}_j} = Const$
+称$\boldsymbol{p}$为系统的动量,得到动量守恒定律.若用广义坐标$q_j$代替$\boldsymbol{x}_i$,即可得到广义动量$\sum_{j}\frac{\partial L}{\partial \boldsymbol{q}_j} = Const$
 
 \section{空间各向同性与角动量守恒}
 若将一个体系旋转一个微小角度$\delta\phi$,而其Largrange函数不发生变化,则称其具有空间各向同性.显然
 \begin{equation}
-\delta\vec{x} = |\delta\vec{\phi}| |\vec{x}|\sin\theta,\quad 
-\theta = \langle \delta\vec{\phi},\vec{x} \rangle
+\delta\boldsymbol{x} = |\delta\boldsymbol{\phi}| |\boldsymbol{x}|\sin\theta,\quad 
+\theta = \langle \delta\boldsymbol{\phi},\boldsymbol{x} \rangle
 \end{equation}
 故
 \begin{equation}
-\delta\vec{x} = \delta\vec{\phi} \times \vec{x},\quad 
-\delta\vec{v} = \delta\vec{\phi} \times \vec{v}
+\delta\boldsymbol{x} = \delta\boldsymbol{\phi} \times \boldsymbol{x},\quad 
+\delta\boldsymbol{v} = \delta\boldsymbol{\phi} \times \boldsymbol{v}
 \end{equation}
 由于
 \begin{equation}
-\delta L = \frac{\partial L}{\partial\vec{x}_i}\delta\vec{x}_i + 
-\frac{\partial L}{\partial\vec{v}_i}\delta\vec{v}_i = 0
+\delta L = \frac{\partial L}{\partial\boldsymbol{x}_i}\delta\boldsymbol{x}_i + 
+\frac{\partial L}{\partial\boldsymbol{v}_i}\delta\boldsymbol{v}_i = 0
 \end{equation}
 故
 \begin{equation}
-\frac{\partial L}{\partial\vec{x}_i}(\delta\vec{\phi} \times \vec{x}_i) + 
-\frac{\partial L}{\partial\vec{v}_i}(\delta\vec{\phi} \times \vec{v}_i) = 0
+\frac{\partial L}{\partial\boldsymbol{x}_i}(\delta\boldsymbol{\phi} \times \boldsymbol{x}_i) + 
+\frac{\partial L}{\partial\boldsymbol{v}_i}(\delta\boldsymbol{\phi} \times \boldsymbol{v}_i) = 0
 \end{equation}
 代入E-L方程
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\vec{v}_i}\right)(\delta\vec{\phi} \times \vec{x}_i) + 
-\frac{\partial L}{\partial\vec{v}_i}
+\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\boldsymbol{v}_i}\right)(\delta\boldsymbol{\phi} \times \boldsymbol{x}_i) + 
+\frac{\partial L}{\partial\boldsymbol{v}_i}
 \left[ 
-\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi} \times \vec{x}_i) - 
-\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi}) \times \vec{x}_i
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\boldsymbol{\phi} \times \boldsymbol{x}_i) - 
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\boldsymbol{\phi}) \times \boldsymbol{x}_i
 \right] = 0
 \end{equation}
-显然$\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi})=0$,故
+显然$\frac{\mathrm{d}}{\mathrm{d}t}(\delta\boldsymbol{\phi})=0$,故
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\vec{v}_i}\right)(\delta\vec{\phi} \times \vec{x}_i) + 
-\frac{\partial L}{\partial\vec{v}_i}
+\frac{\mathrm{d}}{\mathrm{d}t} \left(\frac{\partial L}{\partial\boldsymbol{v}_i}\right)(\delta\boldsymbol{\phi} \times \boldsymbol{x}_i) + 
+\frac{\partial L}{\partial\boldsymbol{v}_i}
 \left[ 
-\frac{\mathrm{d}}{\mathrm{d}t}(\delta\vec{\phi} \times \vec{x}_i)
+\frac{\mathrm{d}}{\mathrm{d}t}(\delta\boldsymbol{\phi} \times \boldsymbol{x}_i)
 \right] = 0
 \end{equation}
 即
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t} [\delta\vec{\phi}\cdot(\vec{x}_i \times \vec{p}_i)] = 
-\frac{\mathrm{d}}{\mathrm{d}t} (\vec{x}_i \times \vec{p}_i)\cdot\delta\vec{\phi} = 0
+\frac{\mathrm{d}}{\mathrm{d}t} [\delta\boldsymbol{\phi}\cdot(\boldsymbol{x}_i \times \boldsymbol{p}_i)] = 
+\frac{\mathrm{d}}{\mathrm{d}t} (\boldsymbol{x}_i \times \boldsymbol{p}_i)\cdot\delta\boldsymbol{\phi} = 0
 \end{equation}
-由于$\delta\vec{\phi}$是任意的,故
+由于$\delta\boldsymbol{\phi}$是任意的,故
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t} (\vec{x}_i \times \vec{p}_i) = 0
+\frac{\mathrm{d}}{\mathrm{d}t} (\boldsymbol{x}_i \times \boldsymbol{p}_i) = 0
 \end{equation}
 得到
 \begin{equation}
-\vec{x}_i \times \vec{p}_i = Const = \vec{L}
+\boldsymbol{x}_i \times \boldsymbol{p}_i = Const = \boldsymbol{L}
 \end{equation}
-称$\vec{L}$为系统的角动量,得到角动量守恒定律.
+称$\boldsymbol{L}$为系统的角动量,得到角动量守恒定律.
 
-\section{不同参考系中$E,\vec{p},\vec{L}$间的关系}
-假设参考系$K'$相对于惯性系$K$,以$\vec{V}$运动,即
+\section{不同参考系中$E,\boldsymbol{p},\boldsymbol{L}$间的关系}
+假设参考系$K'$相对于惯性系$K$,以$\boldsymbol{V}$运动,即
 \begin{equation}
-\vec{v_0} = \vec{v'} + \vec{V}
+\boldsymbol{v_0} = \boldsymbol{v'} + \boldsymbol{V}
 \end{equation}
 则系统的动量为
 \begin{equation}
-\vec{p}_i = m_i \vec{v_0}_i = m_i\vec{v'}_i + \sum_{i}m_i\vec{V}
+\boldsymbol{p}_i = m_i \boldsymbol{v_0}_i = m_i\boldsymbol{v'}_i + \sum_{i}m_i\boldsymbol{V}
 \end{equation}
-若在$K'$系中系统动量为0,即$\vec{p'}=0$,只需令
+若在$K'$系中系统动量为0,即$\boldsymbol{p'}=0$,只需令
 \begin{equation}
-\vec{V} = \frac{m_i\vec{v_0}_i}{\sum_{i}m_i}
+\boldsymbol{V} = \frac{m_i\boldsymbol{v_0}_i}{\sum_{i}m_i}
 \end{equation}
-称其为质心速度$\vec{V}_c$,显然,它对时间的原函数是
+称其为质心速度$\boldsymbol{V}_c$,显然,它对时间的原函数是
 \begin{equation}
-\vec{x}_c = \frac{m_i\vec{x_0}_i}{\sum_{i}m_i}
+\boldsymbol{x}_c = \frac{m_i\boldsymbol{x_0}_i}{\sum_{i}m_i}
 \end{equation}
-称其为质心坐标$\vec{x}_c$.下文称$\sum m_i$为$\mu$.对于能量$E$,有
+称其为质心坐标$\boldsymbol{x}_c$.下文称$\sum m_i$为$\mu$.对于能量$E$,有
 \begin{align}
-E_0 = {} & \frac{1}{2}m_i{\vec{v_0}_i}^2 + V \notag \\
-= {} & \frac{1}{2}m_i{\vec{v'}_i}^2 + m_i v'_i \vec{V} + \frac{1}{2}\mu\vec{V} + V
+E_0 = {} & \frac{1}{2}m_i{\boldsymbol{v_0}_i}^2 + V \notag \\
+= {} & \frac{1}{2}m_i{\boldsymbol{v'}_i}^2 + m_i v'_i \boldsymbol{V} + \frac{1}{2}\mu\boldsymbol{V} + V
 \end{align}
-对于$\vec{V} = \vec{V}_c$（即质心系）,有
+对于$\boldsymbol{V} = \boldsymbol{V}_c$（即质心系）,有
 \begin{equation}
-E_0 = E' + \frac{1}{2}\mu{\vec{V}_c}^2
+E_0 = E' + \frac{1}{2}\mu{\boldsymbol{V}_c}^2
 \end{equation}
-对于角动量$\vec{L}$,有
+对于角动量$\boldsymbol{L}$,有
 \begin{equation}
-\vec{L_0} = \vec{x_0}_i \times m_i \vec{v_0}_i
+\boldsymbol{L_0} = \boldsymbol{x_0}_i \times m_i \boldsymbol{v_0}_i
 \end{equation}
 在质心系中,有
 \begin{equation}
-\vec{L_0} = \vec{x'}_i \times m_i \vec{v_0}_i + \vec{x}_c \times m_i \vec{v_0}_i
+\boldsymbol{L_0} = \boldsymbol{x'}_i \times m_i \boldsymbol{v_0}_i + \boldsymbol{x}_c \times m_i \boldsymbol{v_0}_i
 \end{equation}
 即
 \begin{equation}
-\vec{L_0} = \sum\vec{x'}_i \times \mu\vec{V_c} + \vec{x}_c \times \mu\vec{V_c}
+\boldsymbol{L_0} = \sum\boldsymbol{x'}_i \times \mu\boldsymbol{V_c} + \boldsymbol{x}_c \times \mu\boldsymbol{V_c}
 \end{equation}
-由于$\mu=\sum_{i}m_i,\ x_c=\frac{\vec{x}_i m_i}{\mu},\ V_c=\frac{m_i {v_0}_i}{\mu}$,所以
+由于$\mu=\sum_{i}m_i,\ x_c=\frac{\boldsymbol{x}_i m_i}{\mu},\ V_c=\frac{m_i {v_0}_i}{\mu}$,所以
 \begin{equation}
-\vec{L_0} = \vec{L}' + \frac{(m_i \vec{x_0}_i)\times (m_j \vec{v_0}_j)}{\sum_{i}m_i}
+\boldsymbol{L_0} = \boldsymbol{L}' + \frac{(m_i \boldsymbol{x_0}_i)\times (m_j \boldsymbol{v_0}_j)}{\sum_{i}m_i}
 \end{equation}
-其中$\vec{L_0}$的第二项成为内禀角动量.
+其中$\boldsymbol{L_0}$的第二项成为内禀角动量.
 
-下面看转动参考系的情况.假设参考系$K$相对于$K'$以$\vec{\Omega}$的角速度转动,显然有
+下面看转动参考系的情况.假设参考系$K$相对于$K'$以$\boldsymbol{\Omega}$的角速度转动,显然有
 \begin{equation}
-\vec{v}' = \vec{v} + \vec{\Omega}\times\vec{x}
+\boldsymbol{v}' = \boldsymbol{v} + \boldsymbol{\Omega}\times\boldsymbol{x}
 \label{3.32}
 \end{equation}
 我们直接考虑Largrange函数的形式,先看$K'$系,
 \begin{equation}
-L = \frac{1}{2}m\vec{v_0}^2 - V = \frac{1}{2}m(\vec{v'}+\vec{v})^2 - V
-= \frac{1}{2}m\vec{v'}^2 + m\vec{v'}\cdot\vec{V} + \frac{1}{2}m\vec{V}^2 - V
+L = \frac{1}{2}m\boldsymbol{v_0}^2 - V = \frac{1}{2}m(\boldsymbol{v'}+\boldsymbol{v})^2 - V
+= \frac{1}{2}m\boldsymbol{v'}^2 + m\boldsymbol{v'}\cdot\boldsymbol{V} + \frac{1}{2}m\boldsymbol{V}^2 - V
 \end{equation}
-由于$\vec{V}^2(t)$可看成时间的全导数,故略去,得
+由于$\boldsymbol{V}^2(t)$可看成时间的全导数,故略去,得
 \begin{equation}
-L = \frac{1}{2}m\vec{v'}^2 + m\frac{\mathrm{d}}{\mathrm{d}t}(\vec{x'}\cdot\vec{V}) - m\vec{x}\cdot \frac{\mathrm{d}}{\mathrm{d}t}(\vec{V}) - V
+L = \frac{1}{2}m\boldsymbol{v'}^2 + m\frac{\mathrm{d}}{\mathrm{d}t}(\boldsymbol{x'}\cdot\boldsymbol{V}) - m\boldsymbol{x}\cdot \frac{\mathrm{d}}{\mathrm{d}t}(\boldsymbol{V}) - V
 \end{equation}
 即
 \begin{equation}
-L = \frac{1}{2}m\vec{v'}^2 - m\vec{x}\cdot\vec{V} - V
+L = \frac{1}{2}m\boldsymbol{v'}^2 - m\boldsymbol{x}\cdot\boldsymbol{\dot{V}} - V
 \label{3.35}
 \end{equation}
-由于$\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\vec{v'}} \right) = 
-\frac{\partial L}{\partial \vec{x'}}$,所以
+由于$\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\boldsymbol{v'}} \right) = 
+\frac{\partial L}{\partial \boldsymbol{x'}}$,所以
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t}(m\vec{v'}) = -m\vec{V} - 
-\frac{\partial V}{\partial\vec{x}}
+\frac{\mathrm{d}}{\mathrm{d}t}(m\boldsymbol{v'}) = -m\boldsymbol{\dot{V}} - 
+\frac{\partial V}{\partial\boldsymbol{x}}
 \end{equation}
-其中,称$m\vec{V}$为平动引起的惯性力.再考虑$K$系的情况,将\eqref{3.32}式代入\eqref{3.35}式,得
+其中,称$m\boldsymbol{\dot{V}}$为平动引起的惯性力.再考虑$K$系的情况,将\eqref{3.32}式代入\eqref{3.35}式,得
 \begin{align}
-L & = \frac{1}{2}m\vec{v}^2 + m\vec{v}\cdot(\vec{\Omega}\times\vec{x}) + \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 - m\vec{x}\cdot\vec{V} - V \\
-\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\vec{v}} \right) & = 
-m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} + m\vec{\Omega}\times\vec{x} + m\vec{\Omega}\times\vec{v} \\
-\frac{\partial L}{\partial\vec{x}} & = m(\vec{v}\times\vec{\Omega}) + m(\vec{\Omega}\times\vec{x})\times\vec{\Omega} - m\vec{V} - \frac{\partial V}{\partial\vec{x}}
+L & = \frac{1}{2}m\boldsymbol{v}^2 + m\boldsymbol{v}\cdot(\boldsymbol{\Omega}\times\boldsymbol{x}) + \frac{1}{2}m(\boldsymbol{\Omega}\times\boldsymbol{x})^2 - m\boldsymbol{x}\cdot\boldsymbol{\dot{V}} - V \\
+\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial L}{\partial\boldsymbol{v}} \right) & = 
+m\frac{\mathrm{d}\boldsymbol{v}}{\mathrm{d}t} + m\boldsymbol{\dot{\Omega}}\times\boldsymbol{x} + m\boldsymbol{\Omega}\times\boldsymbol{v} \\
+\frac{\partial L}{\partial\boldsymbol{x}} & = m(\boldsymbol{v}\times\boldsymbol{\Omega}) + m(\boldsymbol{\Omega}\times\boldsymbol{x})\times\boldsymbol{\Omega} - m\boldsymbol{\dot{V}} - \frac{\partial V}{\partial\boldsymbol{x}}
 \end{align}
 整理得
 \begin{equation}
-m\frac{\mathrm{d}\vec{v}}{\mathrm{d}t} = -\frac{\partial V}{\partial\vec{x}} -m\vec{V} + 
-2m(\vec{v}\times\vec{\Omega}) + m(\vec{\Omega}\times\vec{x})\times\vec{\Omega} - m\vec{\Omega}\times\vec{x}
+m\frac{\mathrm{d}\boldsymbol{v}}{\mathrm{d}t} = -\frac{\partial V}{\partial\boldsymbol{x}} -m\boldsymbol{\dot{V}} + 
+2m(\boldsymbol{v}\times\boldsymbol{\Omega}) + m(\boldsymbol{\Omega}\times\boldsymbol{x})\times\boldsymbol{\Omega} - m\boldsymbol{\dot{\Omega}}\times\boldsymbol{x}
 \end{equation}
-其中$2m(\vec{v}\times\vec{\Omega})$称为科里奥利力,$m(\vec{\Omega}\times\vec{x})$称为惯性离心力.再考虑能量的情况：
+其中$2m(\boldsymbol{v}\times\boldsymbol{\Omega})$称为科里奥利力,$m(\boldsymbol{\Omega}\times\boldsymbol{x})$称为惯性离心力.再考虑能量的情况：
 \begin{align}
-%此处看不清下标
-E & = \frac{\partial L}{\partial\vec{v}}\vec{v} - L\\
-E_0 & = \frac{1}{2}m\vec{v}^2 - \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 + m\vec{x}'\vec{V} + V
+E & = \frac{\partial L}{\partial\boldsymbol{v}}\boldsymbol{v} - L\\
+E & = \frac{1}{2}m\boldsymbol{v}^2 - \frac{1}{2}m(\boldsymbol{\Omega}\times\boldsymbol{x})^2 + m\boldsymbol{x}'\boldsymbol{\dot{V}} + V
 \end{align}
 假设$K'$相对于$K_0$无平动加速度,则
 \begin{equation}
-E_0 = \frac{1}{2}m\vec{v}^2 - \frac{1}{2}m(\vec{\Omega}\times\vec{x})^2 + V
+E = \frac{1}{2}m\boldsymbol{v}^2 - \frac{1}{2}m(\boldsymbol{\Omega}\times\boldsymbol{x})^2 + V
 \end{equation}
-称$-\frac{1}{2}m(\vec{\Omega}\times\vec{x})^2$为惯性离心力势能.代入\eqref{3.32}式,得
+称$-\frac{1}{2}m(\boldsymbol{\Omega}\times\boldsymbol{x})^2$为惯性离心力势能.代入\eqref{3.32}式,得
 \begin{equation}
-E = E_0 - \vec{\Omega}\cdot\vec{L}
+E = E_0 - \boldsymbol{\Omega}\cdot\boldsymbol{L}
 \end{equation}
 
 \section{力学相似性}
@@ -236,7 +235,7 @@ V(x'_1,x'_2,\cdots,x'_N) = \lambda_1^k V(x_1,x_2,\cdots,x_N)
 \end{equation}
 同理,
 \begin{equation}
-T(v'_1,v'_2,\cdots,v'_N) = \left(\frac{\lambda_1}{\lambda_2}\right)^k %此处笔记似乎有误
+T(v'_1,v'_2,\cdots,v'_N) = \left(\frac{\lambda_1}{\lambda_2}\right)^k 
 T(v_1,v_2,\cdots,v_N)
 \end{equation}
 若
@@ -249,17 +248,17 @@ T(v_1,v_2,\cdots,v_N)
 \end{equation}
 $k=-1$时,得到开普勒第三定律.另一个应用与能量平均值有关,由于 %笔记误为“由关”.
 \begin{equation}
-\frac{\partial L}{\partial \vec{v}_i}\vec{v}_i = \frac{\mathrm{d}}{\mathrm{d}t}
+\frac{\partial L}{\partial \boldsymbol{v}_i}\boldsymbol{v}_i = \frac{\mathrm{d}}{\mathrm{d}t}
 \left(
-\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i
+\frac{\partial L}{\partial \boldsymbol{v}_i}\boldsymbol{x}_i
 \right)
-- \frac{\partial L}{\partial \vec{x}_i}\vec{x}_i
+- \frac{\partial L}{\partial \boldsymbol{x}_i}\boldsymbol{x}_i
 \end{equation}
 两边对时间求平均,得
 \begin{equation}
-2\langle T \rangle = \lim_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i\right)\frac{1}{t} + k\langle V \rangle
+2\langle T \rangle = \lim_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \boldsymbol{v}_i}\boldsymbol{x}_i\right)\frac{1}{t} + k\langle V \rangle
 \end{equation}
-由于$\lim\limits_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \vec{v}_i}\vec{x}_i\right)\frac{1}{t} = 0$,所以
+由于$\lim\limits_{t \rightarrow +\infty} \left(\frac{\partial L}{\partial \boldsymbol{v}_i}\boldsymbol{x}_i\right)\frac{1}{t} = 0$,所以
 \begin{equation}
 2\langle T \rangle = k\langle V \rangle
 \end{equation}
