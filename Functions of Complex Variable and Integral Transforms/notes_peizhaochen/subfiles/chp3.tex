@@ -1,5 +1,153 @@
 \chapter{柯西积分公式及应用}
 
+\section{全纯函数的积分表示}
+可求长曲线. 对$[a,b]$ 做分割$\lambda : a = t_0 < t_1 < ... < t_n = b$, 取$\xi_i \in [t_{i-1}, t_i], i=1,...,n$.
+做Riemann和：$\sum_{k=1} ^{n} f(\xi_k) (z_k - z_{k-1})$. 设$d=\Vert  \lambda \Vert$. $d \rightarrow 0$时，Riemann和有极限（略去）. 记$\Delta z_k = z_k - z_{k-1}$. 故
+\begin{align*}
+R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
+&= \sum_{k=1}^{n} (u(\xi_k) + i v(\xi_k))(\Delta x_k + i \Delta y_k) \\
+&= \sum_{k=1} ^{n} u(\xi_k) \Delta x_k - \sum_{k=1}^{n} v(\xi_k) \Delta y_k + i [(\sum_{k=1}^{n} u(\xi_k) \Delta y_k + \sum_{k=1}^n v(\xi_k) \Delta x_k]
+\end{align*}
+故当u于v在$\gamma$上连续时，令$d \rightarrow 0$，则f的Riemann和趋于曲线积分：$\int_{\gamma} (udx - vdy) + i \int_{\gamma}vdx-udy$, 即： 
+\begin{mypro}
+	$f = u+iv$在可求长曲线$\gamma$上连续，则有：
+	$$\int_\gamma f(z) dz = \int_\gamma (udx-vdy) + i\int_\gamma (vdx+udy).$$
+\end{mypro}
+\begin{mypro}
+	若$z=\gamma(t)$为光滑的曲线，$f$在$\gamma$上连续，则：$\int_\gamma f(z)dz = \int_a^b f(\gamma(t))\gamma'(t) dt$
+\end{mypro}
+\begin{proof}
+	由于$z=\gamma(t)$ 故$\gamma'(t)=x'(t) + i y'(t)$.
+	
+	而$dx=x'(t)dt, dy = y'(t)dt$，代入3.1.1即可得证.
+\end{proof}
+
+\begin{mypro}
+	若$f, g$在可求长曲线$\gamma$上连续，则：
+	\begin{enumerate}[i)]
+		\item $\int_\gamma f(z)dz = -\int_\gamma f(z)dz$
+		\item $\int_\gamma (\alpha f(z) + \beta g(z)) dz = \alpha \int_\gamma f(z) dz + \beta \int_\gamma g(z) dz$, \quad $\alpha, \beta \in \mathbb{C}$
+		\item $\int_\gamma f(z) dz = \int_{\gamma_1} f(z) dz + \int_{\gamma_2} f(z) dz$. 其中$\gamma_1 \cup \gamma_2 = \gamma$, $\gamma_1 \cap \gamma_2 = \emptyset $
+	\end{enumerate}
+\end{mypro}
+
+\begin{mypro}[长大不等式]
+	
+	若曲线$\gamma$的长度为$L$， $M = \max_{z \in \gamma} \vert f(x) \vert$,
+	则$ \vert \int_\gamma  f(z) dz \vert \leq ML$
+\end{mypro}
+\begin{proof}
+	直接利用Riemann和验证即可.
+\end{proof}
+
+\section{\emph{Caucy}积分定理}
+\begin{mypro}[\emph{Caucy}]
+	设$D$为$\mathbb{C}$中的单连通域，$f \in H(D)$，且$f' \in C(D)$, 则对$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) dz = 0$.
+\end{mypro}
+\begin{proof}
+	由Green公式以及C-R方程直接得到.
+\end{proof}
+
+\begin{mypro}
+	设$f$是域$D$中的连续函数，$\gamma$是$D$内可求长曲线，则$\forall \varepsilon > 0$, 存在一条$D$上的折线$P$使得：
+	\begin{enumerate}[(i)]
+		\item $P$和$\gamma$有相同的起点和终点，$P$的其他顶点在$\gamma$上.
+		\item $\vert \int_\gamma f(z) dz - \int_Pf(z) dz \vert < \varepsilon $.
+	\end{enumerate}
+\end{mypro}
+\begin{proof}
+	见chb笔记.
+\end{proof}
+
+\begin{mypro}[\emph{Cauchy-Goursat}]
+	设$D$为$\mathbb C$中的单连通域，若$f \in H(D)$, 则对于$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) dz = 0$.
+\end{mypro}
+\begin{proof}
+	利用上一定理3.2.2，见chb笔记.
+\end{proof}
+
+但定理3.2.3的条件仍可以再做减弱：
+\begin{mypro}
+	设$D$是简单可求长闭曲线$\gamma$的内部，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) dz = 0$.
+\end{mypro}
+这一定理的证明现在无法进行，我们对其弱化进行证明：
+
+\addtocounter{mypro}{-1}
+\begin{mypro}[*]
+	设$\gamma$为$\mathbb{C}$上分段光滑的可求长闭曲线，记$D$为$\gamma$围成的区域内部，且存在$D$中的点$z_0$，使得任意一条从$z_0$发出的射线与$\gamma$有且只有唯一交点，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) dz = 0$.
+\end{mypro}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{chp3_p2}
+\end{figure}
+
+\begin{proof}
+	由于我们增加的条件，故$\gamma$可写为$z = z_0 + \gamma(t)$, $a \leq t \leq b$.
+	记$p = \max_{a \leq t \leq b} \vert \lambda (t) \vert, q = \max_{a \leq t \leq b} \vert \lambda'(t) \vert$. 闭区间分段连续保证有最值（光滑保证）
+	由于$f$在$\bar{D}$上连续，故一致连续，即$\forall \varepsilon > 0$, 存在$\delta > 0$ $s.t. z_1, z_2 \in \bar{D}, \vert z_1 - z_2 \vert < \delta$ 时，$\vert f(z_1) - f(z_2) \vert < \varepsilon$
+	取 $\delta_0 = \min \{ \delta, p \}$, 故$\frac{\delta_0}{p} <1 $, 取 $\rho$ $ s.t. 1 - \frac{\delta_0}{p} < \rho < 1$
+	
+	记曲线$\gamma_\rho: z = z_0 + \rho \lambda(t), a \leq t \leq b$, 则$\gamma_\rho \subset D$. 由定理3.2.3得 $\int_{\gamma_\rho} f(z)dz = \int_a^b f(z_0 + \rho \lambda(t)) \rho \lambda'(t) dt = 0 \Rightarrow \int_a^b f(z_0 + \rho \lambda(t)) \lambda'(t) dt = 0$.
+	由于$\vert (z_0 + \rho \lambda(t)) - (z_0 + \lambda(t)) \vert = (1 - \rho) \vert \lambda(t) \vert \leq (1-\rho) p < \delta_0 < \delta$
+	故$\vert f(z_0 + \rho \lambda(t)) - f(z_0 + \lambda(t)) \vert < \varepsilon$.
+	故
+	\begin{align*}
+	\vert \int_\gamma f(z) dz \vert &= \vert \int_a ^b f(z_0 + \lambda(t)) \lambda'(t) dt \vert \\
+	&= \vert \int_a^b [f(z_0 + \lambda(t)) - f(z_0 + \rho \lambda(t))] \lambda'(t) dt \vert\\
+	&\leq \int_a^b \vert f(z_0 + \rho \lambda(t)) - f(z_0 + \lambda(t)) \vert \vert \lambda'(t) \vert dt\\
+	&< \varepsilon q(b-a)
+	\end{align*}
+	由$\varepsilon$的任意性得$\int_\gamma f(z) dz = 0$.
+	
+\end{proof}
+
+
+
+
+\begin{mypro}[多连同区域的\emph{Cauchy}积分公式]  略.
+\end{mypro}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{chp3_p3_1.png}
+\end{figure}
+\begin{eg}
+	计算积分$\int_\gamma \frac{dz}{(z - a)^n}, n \in \mathbb{Z}$ , a 在$\gamma$ 围成区域内部.
+\end{eg}
+\begin{jie}
+	
+	故$\int_\gamma \frac{dz}{(z-a)^n} = \int_{|z-a| = r} \frac{dz}{(z-a) ^n}  = \int_0 ^ \pi \frac{r e ^{i \theta} i d \theta}{(re^{i \theta})^n} = i r^{1-n} \int_0^{2\pi} (e^{i\theta})^{1-n} d \theta$.
+	
+	若$n \neq 1$, 则$\int_0 ^{2\pi} (e^{i \theta})^{1-n} d\theta$为复积分，值为0;
+	若$n=1$，则$\int_\gamma \frac{dz}{(z - a)^n} = i \int_0 ^{2\pi} 1 d\theta = 2\pi i$.
+\end{jie}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{chp3_p3_2.png}
+\end{figure}
+
+\begin{eg}
+	计算积分$\int_\gamma \frac{dz}{z - a}$.
+\end{eg}
+\begin{jie}
+	\begin{enumerate}[(1)]
+		\item a在$\gamma$围成区域内部，结果同上，$\int_\gamma \frac{dz}{z-a} = 2\pi i$.
+		\item a在$\gamma$围成区域外部，故$\int_\gamma \frac{dz}{z-a} = \int_{\gamma_2} \frac{dz}{z -a} - \int_{\gamma_1} \frac{dz}{z-a} = 0$.
+	\end{enumerate}
+\end{jie}
+
+
+\section{全纯函数的原函数}
+\begin{mypro}
+	设f在域D中连续，且对于D中任意可求长闭曲线，均有$\int_\gamma f(z) dz = 0$, 那么$F(z) = \int_{z_0}^{z} f(\xi) d\xi$ 是D上的全纯函数且在D中有$F'(z) = f(z)$.
+\end{mypro}
+\begin{mypro}
+	见chb笔记，略.
+\end{mypro}
+
 \section{\emph{Cauchy}积分公式的一些重要推论}
 
 \begin{mypro}[Liouville定理]
