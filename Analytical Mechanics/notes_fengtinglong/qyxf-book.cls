@@ -212,7 +212,7 @@ left=20pt,top=0.5ex,before skip=0pt]
   本作品的版本号为\textsf{\the\version}。
   \end{tcolorbox}
 \fi
-\newpage
+%\newpage
 \pagestyle{fancy}
 }
 
