@@ -11,10 +11,10 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 故当u于v在$\gamma$上连续时，令$d \rightarrow 0$，则f的Riemann和趋于曲线积分：$\int_{\gamma} (udx - vdy) + i \int_{\gamma}vdx-udy$, 即： 
 \begin{mypro}
 	$f = u+iv$在可求长曲线$\gamma$上连续，则有：
-	$$\int_\gamma f(z) dz = \int_\gamma (udx-vdy) + i\int_\gamma (vdx+udy).$$
+	$$\int_\gamma f(z) \di{z} = \int_\gamma (udx-vdy) + i\int_\gamma (vdx+udy).$$
 \end{mypro}
 \begin{mypro}
-	若$z=\gamma(t)$为光滑的曲线，$f$在$\gamma$上连续，则：$\int_\gamma f(z)dz = \int_a^b f(\gamma(t))\gamma'(t) dt$
+	若$z=\gamma(t)$为光滑的曲线，$f$在$\gamma$上连续，则：$\int_\gamma f(z)\di{z} = \int_a^b f(\gamma(t))\gamma'(t) dt$
 \end{mypro}
 \begin{proof}
 	由于$z=\gamma(t)$ 故$\gamma'(t)=x'(t) + i y'(t)$.
@@ -25,24 +25,24 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{mypro}
 	若$f, g$在可求长曲线$\gamma$上连续，则：
 	\begin{enumerate}[i)]
-		\item $\int_\gamma f(z)dz = -\int_\gamma f(z)dz$
-		\item $\int_\gamma (\alpha f(z) + \beta g(z)) dz = \alpha \int_\gamma f(z) dz + \beta \int_\gamma g(z) dz$, \quad $\alpha, \beta \in \mathbb{C}$
-		\item $\int_\gamma f(z) dz = \int_{\gamma_1} f(z) dz + \int_{\gamma_2} f(z) dz$. 其中$\gamma_1 \cup \gamma_2 = \gamma$, $\gamma_1 \cap \gamma_2 = \emptyset $
+		\item $\int_\gamma f(z)\di{z} = -\int_\gamma f(z)\di{z}$
+		\item $\int_\gamma (\alpha f(z) + \beta g(z)) \di{z} = \alpha \int_\gamma f(z) \di{z} + \beta \int_\gamma g(z) \di{z}$, \quad $\alpha, \beta \in \mathbb{C}$
+		\item $\int_\gamma f(z) \di{z} = \int_{\gamma_1} f(z) \di{z} + \int_{\gamma_2} f(z) \di{z}$. 其中$\gamma_1 \cup \gamma_2 = \gamma$, $\gamma_1 \cap \gamma_2 = \emptyset $
 	\end{enumerate}
 \end{mypro}
 
 \begin{mypro}[长大不等式]
 	
 	若曲线$\gamma$的长度为$L$， $M = \max_{z \in \gamma} \vert f(x) \vert$,
-	则$ \vert \int_\gamma  f(z) dz \vert \leq ML$
+	则$ \vert \int_\gamma  f(z) \di{z} \vert \leq ML$
 \end{mypro}
 \begin{proof}
 	直接利用Riemann和验证即可.
 \end{proof}
 
-\section{\emph{Caucy}积分定理}
+\section{\emph{Cauchy}积分定理}
 \begin{mypro}[\emph{Caucy}]
-	设$D$为$\mathbb{C}$中的单连通域，$f \in H(D)$，且$f' \in C(D)$, 则对$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) dz = 0$.
+	设$D$为$\mathbb{C}$中的单连通域，$f \in H(D)$，且$f' \in C(D)$, 则对$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) \di{z} = 0$.
 \end{mypro}
 \begin{proof}
 	由Green公式以及C-R方程直接得到.
@@ -52,7 +52,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	设$f$是域$D$中的连续函数，$\gamma$是$D$内可求长曲线，则$\forall \varepsilon > 0$, 存在一条$D$上的折线$P$使得：
 	\begin{enumerate}[(i)]
 		\item $P$和$\gamma$有相同的起点和终点，$P$的其他顶点在$\gamma$上.
-		\item $\vert \int_\gamma f(z) dz - \int_Pf(z) dz \vert < \varepsilon $.
+		\item $\vert \int_\gamma f(z) \di{z} - \int_Pf(z) \di{z} \vert < \varepsilon $.
 	\end{enumerate}
 \end{mypro}
 \begin{proof}
@@ -60,7 +60,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \end{proof}
 
 \begin{mypro}[\emph{Cauchy-Goursat}]
-	设$D$为$\mathbb C$中的单连通域，若$f \in H(D)$, 则对于$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) dz = 0$.
+	设$D$为$\mathbb C$中的单连通域，若$f \in H(D)$, 则对于$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) \di{z} = 0$.
 \end{mypro}
 \begin{proof}
 	利用上一定理3.2.2，见chb笔记.
@@ -68,13 +68,13 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 但定理3.2.3的条件仍可以再做减弱：
 \begin{mypro}
-	设$D$是简单可求长闭曲线$\gamma$的内部，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) dz = 0$.
+	设$D$是简单可求长闭曲线$\gamma$的内部，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) \di{z} = 0$.
 \end{mypro}
 这一定理的证明现在无法进行，我们对其弱化进行证明：
 
 \addtocounter{mypro}{-1}
 \begin{mypro}[*]
-	设$\gamma$为$\mathbb{C}$上分段光滑的可求长闭曲线，记$D$为$\gamma$围成的区域内部，且存在$D$中的点$z_0$，使得任意一条从$z_0$发出的射线与$\gamma$有且只有唯一交点，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) dz = 0$.
+	设$\gamma$为$\mathbb{C}$上分段光滑的可求长闭曲线，记$D$为$\gamma$围成的区域内部，且存在$D$中的点$z_0$，使得任意一条从$z_0$发出的射线与$\gamma$有且只有唯一交点，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) \di{z} = 0$.
 \end{mypro}
 
 \begin{figure}[h]
@@ -88,17 +88,17 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	由于$f$在$\bar{D}$上连续，故一致连续，即$\forall \varepsilon > 0$, 存在$\delta > 0$ $s.t. z_1, z_2 \in \bar{D}, \vert z_1 - z_2 \vert < \delta$ 时，$\vert f(z_1) - f(z_2) \vert < \varepsilon$
 	取 $\delta_0 = \min \{ \delta, p \}$, 故$\frac{\delta_0}{p} <1 $, 取 $\rho$ $ s.t. 1 - \frac{\delta_0}{p} < \rho < 1$
 	
-	记曲线$\gamma_\rho: z = z_0 + \rho \lambda(t), a \leq t \leq b$, 则$\gamma_\rho \subset D$. 由定理3.2.3得 $\int_{\gamma_\rho} f(z)dz = \int_a^b f(z_0 + \rho \lambda(t)) \rho \lambda'(t) dt = 0 \Rightarrow \int_a^b f(z_0 + \rho \lambda(t)) \lambda'(t) dt = 0$.
+	记曲线$\gamma_\rho: z = z_0 + \rho \lambda(t), a \leq t \leq b$, 则$\gamma_\rho \subset D$. 由定理3.2.3得 $\int_{\gamma_\rho} f(z)\di{z} = \int_a^b f(z_0 + \rho \lambda(t)) \rho \lambda'(t) dt = 0 \Rightarrow \int_a^b f(z_0 + \rho \lambda(t)) \lambda'(t) dt = 0$.
 	由于$\vert (z_0 + \rho \lambda(t)) - (z_0 + \lambda(t)) \vert = (1 - \rho) \vert \lambda(t) \vert \leq (1-\rho) p < \delta_0 < \delta$
 	故$\vert f(z_0 + \rho \lambda(t)) - f(z_0 + \lambda(t)) \vert < \varepsilon$.
 	故
 	\begin{align*}
-	\vert \int_\gamma f(z) dz \vert &= \vert \int_a ^b f(z_0 + \lambda(t)) \lambda'(t) dt \vert \\
+	\vert \int_\gamma f(z) \di{z} \vert &= \vert \int_a ^b f(z_0 + \lambda(t)) \lambda'(t) dt \vert \\
 	&= \vert \int_a^b [f(z_0 + \lambda(t)) - f(z_0 + \rho \lambda(t))] \lambda'(t) dt \vert\\
 	&\leq \int_a^b \vert f(z_0 + \rho \lambda(t)) - f(z_0 + \lambda(t)) \vert \vert \lambda'(t) \vert dt\\
 	&< \varepsilon q(b-a)
 	\end{align*}
-	由$\varepsilon$的任意性得$\int_\gamma f(z) dz = 0$.
+	由$\varepsilon$的任意性得$\int_\gamma f(z) \di{z} = 0$.
 	
 \end{proof}
 
@@ -113,14 +113,14 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	\includegraphics[scale=0.4]{chp3_p3_1.png}
 \end{figure}
 \begin{eg}
-	计算积分$\int_\gamma \frac{dz}{(z - a)^n}, n \in \mathbb{Z}$ , a 在$\gamma$ 围成区域内部.
+	计算积分$\int_\gamma \frac{\di{z}}{(z - a)^n}, n \in \mathbb{Z}$ , a 在$\gamma$ 围成区域内部.
 \end{eg}
 \begin{jie}
 	
-	故$\int_\gamma \frac{dz}{(z-a)^n} = \int_{|z-a| = r} \frac{dz}{(z-a) ^n}  = \int_0 ^ \pi \frac{r e ^{i \theta} i d \theta}{(re^{i \theta})^n} = i r^{1-n} \int_0^{2\pi} (e^{i\theta})^{1-n} d \theta$.
+	故$\int_\gamma \frac{\di{z}}{(z-a)^n} = \int_{|z-a| = r} \frac{\di{z}}{(z-a) ^n}  = \int_0 ^ \pi \frac{r e ^{i \theta} i d \theta}{(re^{i \theta})^n} = i r^{1-n} \int_0^{2\pi} (e^{i\theta})^{1-n} d \theta$.
 	
 	若$n \neq 1$, 则$\int_0 ^{2\pi} (e^{i \theta})^{1-n} d\theta$为复积分，值为0;
-	若$n=1$，则$\int_\gamma \frac{dz}{(z - a)^n} = i \int_0 ^{2\pi} 1 d\theta = 2\pi i$.
+	若$n=1$，则$\int_\gamma \frac{\di{z}}{(z - a)^n} = i \int_0 ^{2\pi} 1 d\theta = 2\pi i$.
 \end{jie}
 
 
@@ -130,27 +130,159 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \end{figure}
 
 \begin{eg}
-	计算积分$\int_\gamma \frac{dz}{z - a}$.
+	计算积分$\int_\gamma \frac{\di{z}}{z - a}$.
 \end{eg}
 \begin{jie}
 	\begin{enumerate}[(1)]
-		\item a在$\gamma$围成区域内部，结果同上，$\int_\gamma \frac{dz}{z-a} = 2\pi i$.
-		\item a在$\gamma$围成区域外部，故$\int_\gamma \frac{dz}{z-a} = \int_{\gamma_2} \frac{dz}{z -a} - \int_{\gamma_1} \frac{dz}{z-a} = 0$.
+		\item a在$\gamma$围成区域内部，结果同上，$\int_\gamma \frac{\di{z}}{z-a} = 2\pi i$.
+		\item a在$\gamma$围成区域外部，故$\int_\gamma \frac{\di{z}}{z-a} = \int_{\gamma_2} \frac{\di{z}}{z -a} - \int_{\gamma_1} \frac{\di{z}}{z-a} = 0$.
 	\end{enumerate}
 \end{jie}
 
 
 \section{全纯函数的原函数}
 \begin{mypro}
-	设f在域D中连续，且对于D中任意可求长闭曲线，均有$\int_\gamma f(z) dz = 0$, 那么$F(z) = \int_{z_0}^{z} f(\xi) d\xi$ 是D上的全纯函数且在D中有$F'(z) = f(z)$.
+	设f在域D中连续，且对于D中任意可求长闭曲线，均有$\int_\gamma f(z) \di{z} = 0$, 那么$F(z) = \int_{z_0}^{z} f(\xi) \di{\xi}$ 是D上的全纯函数且在D中有$F'(z) = f(z)$.
 \end{mypro}
 \begin{mypro}
 	见chb笔记，略.
 \end{mypro}
 
+
+
+
+
+\begin{mypro}
+	设$D$是$\mathbb{C}$中的单连通域。$f\in H(D)$。那么$F(z)=\int_{z_0}^{z}f(\xi)\di{\xi}$是$f$在$D$中的一个原函数
+\end{mypro}
+\begin{mypro}[\emph{Newton-Leibniz}]
+	设$D$是$\mathbb{C}$中的单连通域。$f\in H(D)$。$\Psi$是$f$的一个原函数。则$\int_{z_0}^{z}f(\xi)\di{\xi}=\Psi(z)-\Psi(z_0)$
+\end{mypro}
+
+若$D$为$\mathbb{C}$中的多连通区域$f\in H(D)$。一般的$F(z)=\int_{z_0}^{z}f(\xi)\di{\xi}$为一个多值函数。值受连接$z_0$与$z$的曲线控制。
+
+令$D=\mathbb{C}|{0}.f(z)=\dfrac{1}{z}\in H(D)$。考虑积分$\int_{1}^{z}\dfrac{\di{\xi}}{\xi}$。对于连接1与$z$的曲线$\gamma$：
+\begin{itemize}
+	\item 若$\gamma$不围绕O点。
+	\[\int_{1}^{z}\dfrac{\di{\xi}}{\xi}=\int_{1}^{|z|}=\dfrac{\di{x}}{x}+\int_{0}^{\arg z}\dfrac{\di{(|z|e^{i\theta})}}{|z|e^{i\theta}}=\log|Z|+i\arg z=\log Z\]
+	\begin{center}
+		\includegraphics[width=4cm]{chp3_4_1.png}
+	\end{center}
+	\item 若$\gamma$围绕O点。则$\gamma=\wideparen{abcd}$。考虑$\gamma_1=\wideparen{ad},\gamma_2=\wideparen{cb}$。故$\gamma'$是不围绕O点的连线1与$z$的曲线。
+	
+	故对于如图所示的$\gamma$，有
+	\[\int_\gamma\dfrac{\di{z}}{z}=\int_{\gamma_1}\dfrac{\di{z}}{z}+\int_{\gamma_2}\dfrac{\di{z}}{z}=\log z+2\pi i\]
+	\begin{center}
+		\includegraphics[width=4cm]{chp3_4_2.png}
+	\end{center}
+	故对于一般的曲线$\gamma$，$\int_\gamma\dfrac{\di{z}}{z}=\log z+R\cdot2\pi i=Logz$。$k$为曲线$\gamma$绕原点所转圈数。
+	\begin{center}
+		\includegraphics[width=4cm]{chp3_4_3.png}
+	\end{center}
+	以上给出了$\log z$的另一种定义。
+\end{itemize}
+
+
+\section{\emph{Cauchy}积分公式}
+
+\begin{mypro}
+	设$D$是用简单可求长闭曲线$\gamma$围成的区域。若$f\in H(D)\cap C(\bar{D})$。那么对任意的$z\in D$均有
+	\[f(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}\]
+\end{mypro}
+\begin{proof}
+	任取$z\in D$。由于$f$在$z$处连续，故$\forall\epsilon>0$，存在$\sigma>0.s.t.|z-\xi|<\sigma$时，$|f(z)-f(\xi)|<\epsilon$。取$\rho<\sigma,s.t.B(z,\rho)\subset D$。记$\gamma_\rho={\xi:|\xi-z|<\rho}$
+	设由$\gamma$与$\gamma_\rho$新城的二连通区域为$D'$，则$\dfrac{f(\xi}{\xi-z}\in H(D')\cap C(\bar{D'})$
+	\begin{center}
+		\includegraphics[width=3cm]{chp3_4_4}
+	\end{center}
+	于是有$\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}=\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}$，又由于$\dfrac{1}{2\pi i}\int_{\gamma\rho}\dfrac{\di{z}}{\xi-z}=1$，
+	故$f(z)=\int_{\gamma\rho}\dfrac{f(z)}{\xi-z}\di{\xi}$，故，
+	
+	\begin{align*}
+	|f(z)-\dfrac{1}{2\pi i}\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}|&=\dfrac{1}{2\pi}|\int_{\gamma\rho}\dfrac{f(z)}{\xi-z}\di{\xi}-\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}|\\
+	&=\dfrac{1}{2\pi}|\int_{\gamma\rho}\dfrac{f(z)-f(\xi)}{\xi-z}\di{\xi}|\\
+	&\leq\dfrac{1}{2\pi}\int_{\gamma\rho}\dfrac{|f(z)-f(\xi)|}{|\xi-z|}\di{\xi}\leq\dfrac{1}{2\pi}\cdot 2\pi \rho\dfrac{\epsilon}{\rho}\\
+	&=\epsilon 
+	\end{align*}
+\end{proof}
+
+于是有$\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}=\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}$，又由于$\dfrac{1}{2\pi i}\int_{\gamma\rho}\dfrac{\di{z}}{\xi-z}=1$，
+故$f(z)=\int_{\gamma\rho}\dfrac{f(z)}{\xi-z}\di{\xi}$，故，
+
+\begin{align*}
+|f(z)-\dfrac{1}{2\pi i}\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}|&=\dfrac{1}{2\pi}|\int_{\gamma\rho}\dfrac{f(z)}{\xi-z}\di{\xi}-\int_{\gamma\rho}\dfrac{f(\xi)}{\xi-z}\di{\xi}|\\
+&=\dfrac{1}{2\pi}|\int_{\gamma\rho}\dfrac{f(z)-f(\xi)}{\xi-z}\di{\xi}|\\
+&\leq\dfrac{1}{2\pi}\int_{\gamma\rho}\dfrac{|f(z)-f(\xi)|}{|\xi-z|}\di{\xi}\leq\dfrac{1}{2\pi}\cdot 2\pi \rho\dfrac{\epsilon}{\rho}\\
+&=\epsilon 
+\end{align*}
+\begin{mypro}
+	设$\gamma$是$\mathbb{C}$中可求长曲线，$g$是$\gamma$上的连续函数，那么由\emph{Cauchy}型积分确定的函数：
+	\[G(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{g(\xi)}{\xi-z}\di{\xi}\]
+	在$\mathbb{C}|\gamma$上有任意阶导数。
+\end{mypro}
+\begin{proof}
+	{见史济怀《复变函数》。}
+\end{proof}{}
+\begin{mypro}
+	设$D$是由可求长简单闭曲线$\gamma$围成的域，若$f\in\mathbb{H}(D)\cap\mathbb{C}(D)$，那么$f$在$D$上有任意阶导数且对任意的$z\in D$，有：
+	\[f^{(n)}(z)=\dfrac{n!}{2\pi i}\int_\gamma\dfrac{f(\xi)}{(\xi-z)^{n+1}}\di{\xi}, \hspace{2em}n=1,2,...\]
+\end{mypro}
+\begin{proof}
+	在定理3.4.2中令$g(z)=f(Z)$即可。
+\end{proof}
+\begin{mypro}
+	若$f$在$D$上解析，则$f$在$D$上有任意阶导数。
+\end{mypro}
+\begin{proof}
+	任取$z_0\in D$，存在充分小的$\delta,s.t$，$\bar{B}(z_0,\delta)\subset D$。由定理3.4.3.$f$在$B(z_0,\delta)$中有任意阶导数。又由于$z_0$是任意的，故$f$在$D$中有任意阶导数
+\end{proof}
+\begin{eg}
+	计算积分$\int_{|z|=2}\dfrac{\di{z}}{z^2(z^2+16)}$
+	
+	法1：原式$=\int_{|z|=2}\dfrac{\dfrac{\di{z}}{z^2+16}}{z^2}$，令$f(z)=\dfrac{1}{z^2+16}$。$f(z)$在$|z|=2$内部解析：
+	
+	由定理3.4.3得
+	\[\int_{|z|=2}\dfrac{f(z)}{z^2}\di{z}=2\pi if'(0)=0\]
+	
+	法2：$\int_{|z|=2}\dfrac{\di{z}}{z^2(z^2+16)}=\dfrac{1}{16}(\int_{|z|=2}\dfrac{\di{z}}{z^2}-\int_{|z|=2}\dfrac{\di{z}}{z^2+16})=0$
+\end{eg}
+
+\begin{mypro}
+	设$r_0,r_1...r_k$是$k+1$条可求长简单闭曲线。$r_1,r_2...r_k$都存在$r_0$内部。$r_1,r_2...r_k$中每条都在其他$k-1$条外部。$D$是由这$k+1$条曲线围成的区域。$D$的边界$r$由$r_0,r_1...r_k$组成。若$f\in H(D)\cap C(\bar{D})$，则$\forall z\in D$，有,$f(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}$，且$f$有任意阶导数。
+	\[f^{(n)}(z)=\dfrac{n!}{2\pi!}\int_\gamma\dfrac{f(\xi)}{(\xi-z)^{n+1}}\di{\xi}, n=1,2,...\]
+\end{mypro}
+
+\begin{eg}
+	计算积分$\int_{|z|=2}\dfrac{\di{z}}{(z^3-1)(z+4)^2}$
+	\begin{center}
+		\includegraphics[width=3cm]{chp3_p6_1}
+	\end{center}
+	
+	以原点为圆心做半径大于4，半径为$R$得圆，则在圆环${z:2\leq|z|\leq R}$上$f(z)=\dfrac{1}{z^3+1}$解析。
+	故
+	\begin{align*}
+	\int_\gamma\dfrac{\di{z}}{(z^3-1)(z+4)^2}&=(\int_{\gamma 1}+\int_{\gamma 2})\dfrac{\di{z}}{(z^3-1)(z+4)^2}\\
+	&=2\pi i(\dfrac{1}{z^3-1})'|_{z=-4}\\
+	&=-\dfrac{32}{1323}\pi i
+	\end{align*}
+	故\begin{equation}
+	\int_{|z|=2}=\dfrac{32}{1323}\pi i+\int_{|z|=R}\dfrac{\di{z}}{(z^3-1)(z+4)^2}
+	\end{equation}
+	由于$|z|=R$时有$|(z^3-1)(z+3)^2|\leq(R^3-1)(R-4)^2$，故由长大不等式得：
+	\[|\int_{|z|=R}\dfrac{\di{z}}{(z^3-1)(z+4)^2}|<\dfrac{2\pi R}{(R^3-1)(R-4)^2}\to 0(R\to+\infty)\]
+	故在(1)中令$R\to+\infty$，得$\int_{|z|=R}\dfrac{\di{z}}{(z^3-1)(z+4)^2}=\dfrac{32}{1323}\pi i$
+	
+\end{eg}
+
+
+
+
+
+
+
 \section{\emph{Cauchy}积分公式的一些重要推论}
 
-\begin{mypro}[Liouville定理]
+\begin{mypro}[\emph{Liouville}定理]
 	有界整函数必为常数
 \end{mypro}
 \begin{proof}
@@ -166,7 +298,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	略，见$chb.$和史济怀\quad$\displaystyle{(F(x)=\frac{1}{P_{z}})}$
 \end{proof}
 
-\begin{mypro}[Morera]
+\begin{mypro}[\emph{Morera}]
 	若$f$是域$\mathbb{D}$上的连续函数，且沿$\mathbb{D}$内任意可求长闭曲线上的积分是0，那么$f$在$\mathbb{D}$上解析
 \end{mypro}
 \begin{proof}
@@ -175,25 +307,25 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 \subsection*{习题}
 \begin{eg}
-	{\rm Liouville}定理的另一个证明
+	\emph{Liouville}定理的另一个证明
 \end{eg}
 \begin{proof}
 	设$f$是有界整函数，$z_{1},z_{2}$是$B(0,r)$中的任意两点，则：
 	\begin{align*}
-	\int_{|z|=r}\frac{f(z)}{(z-z_1)(z-z_2)}dz
+	\int_{|z|=r}\frac{f(z)}{(z-z_1)(z-z_2)}\di{z}
 	&=\frac{1}{z_1-z_2}
-	\left(\int_{|z|=r}\frac{f(z)}{z-z_1}dz-\int_{|z|=r}\frac{f(z)}{z-z_2}dz\right)\\
+	\left(\int_{|z|=r}\frac{f(z)}{z-z_1}\di{z}-\int_{|z|=r}\frac{f(z)}{z-z_2}\di{z}\right)\\
 	&=\frac{1}{z_2-z_1}\left(f(z_1)-f(z_2)\right)
 	\end{align*}
 	由于$f$有界.故存在$M>0,s.t\quad|f(z)|\leq M,\forall z\in \mathbb{C}$\\
 	故：
 	\begin{align*}
-	\left|\int_{|z|=r}\frac{f(z)dz}{(z-z_1)(z-z_2)}\right|
+	\left|\int_{|z|=r}\frac{f(z)\di{z}}{(z-z_1)(z-z_2)}\right|
 	&\leq\int_0^{2\pi}\left|\frac{f(z)\cdot zd\theta}{(z-z_1)(z-z_2)}\right|\\
 	&\leq\int_0^{2\pi}\frac{M\cdot r}{|z-z_1|\cdot|z-z_2|}d\theta\\
 	&\rightarrow 0\quad(r\rightarrow\infty)
 	\end{align*}
-	故：$\displaystyle{\int_{|z|=r}\frac{f(z)dz}{(z-z_1)(z-z_2)}=0}$. \quad 故:$\displaystyle{f(z_1)=f(z_2)}$.\\
+	故：$\displaystyle{\int_{|z|=r}\frac{f(z)\di{z}}{(z-z_1)(z-z_2)}=0}$. \quad 故:$\displaystyle{f(z_1)=f(z_2)}$.\\
 	由于$r,z_1,z_2$的任意性，故$f(z)$为常值函数.
 \end{proof}
 
@@ -203,11 +335,13 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{proof}
 	记.$k=[\alpha]+1$\\
 	$\displaystyle{\Rightarrow\lim\limits_{z\to\infty}\frac{f(z)}{z^k}=0}$.
-	由于$\displaystyle{f^{(k)}(z)=\frac{k!}{z\pi i}\int_{|z|=R}\frac{f(\xi)}{(\xi-z)^{k+1}}d\xi}$.
+	由于$\displaystyle{f^{(k)}(z)=\frac{k!}{z\pi i}\int_{|z|=R}\frac{f(\xi)}{(\xi-z)^{k+1}}\di{\xi}}$.
 	故$\forall\epsilon>0.\exists R, s.t\quad r>R$有$\displaystyle{\left|\frac{f(z)}{z^k}\right|<\epsilon,z\in B(0,r)}$.（令$r\rightarrow\infty$）\\
-	$\displaystyle{\Rightarrow\left|f^{(k)}(z)\right|\leq\frac{1}{2\pi}\int_{|z-\xi|=r}\left|\frac{f(\xi)}{(\xi-z)^{k+1}}\right|d\xi=r\epsilon}$.
+	$\displaystyle{\Rightarrow\left|f^{(k)}(z)\right|\leq\frac{1}{2\pi}\int_{|z-\xi|=r}\left|\frac{f(\xi)}{(\xi-z)^{k+1}}\right|\di{\xi}=r\epsilon}$.
 	故$f^{(k)}\equiv0$.
 \end{proof}
+
+
 
 \begin{eg}
 	设$f$为整函数，如果$f(\mathbb{C})\subset\{z\in\mathbb{C};I\!m\ z>0\}$,证明$f$为常值函数.
@@ -226,9 +360,9 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	故$h(\mathbb{C})\subset\{z\in\mathbb{C};I\!m\ z>0\}$.故$h$为常值函数.故$f$为常值函数
 \end{proof}
 
-\begin{eg}[更强形式的Morera]
+\begin{eg}[更强形式的\emph{Morera}]
 	设$f$是域$\mathbb{D}$上的连续函数,若对于任意边界和内部位于$\mathbb{D}$中三角形域$\triangle$,
-	总有$\int_{\partial\triangle}f(z)dz=0$.证明$f\in H(\mathbb{D})$.
+	总有$\int_{\partial\triangle}f(z)\di{z}=0$.证明$f\in H(\mathbb{D})$.
 \end{eg}
 \begin{proof}
 	思路同\emph{Cauchy-Gousart}.此处省略
@@ -240,37 +374,37 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{jie}
 	\begin{align*}
 	&\int_{|z|=a}\frac{e^z}{z^2+a^2}\\
-	=&\int_{|z|=a}\frac{e^z}{(z+ai)(z-ai)}dz=\frac{1}{2ai}\int_{|z|=a}\left(\frac{e^z}{z-ai}-\frac{e^z}{z+ai}\right)dz\\
+	=&\int_{|z|=a}\frac{e^z}{(z+ai)(z-ai)}\di{z}=\frac{1}{2ai}\int_{|z|=a}\left(\frac{e^z}{z-ai}-\frac{e^z}{z+ai}\right)\di{z}\\
 	=&\frac{2\pi i}{2ai}\left((e^z)|_{z=ai}-(e^z)|_{z=-ai}\right)=\frac{2\pi i}{a}\sin a
 	\end{align*}
 \end{jie}
 
 \begin{eg}
 	设$f\in H(\{z:r<|z|<+\infty\})$.且$\lim\limits_{z\rightarrow\infty}z\cdot f(z)=A$.
-	证明：$\displaystyle{\int_{|z|=R}f(z)dz\rightarrow 2\pi iA}$,\\$(R\rightarrow\infty)$.
+	证明：$\displaystyle{\int_{|z|=R}f(z)\di{z}\rightarrow 2\pi iA}$,\\$(R\rightarrow\infty)$.
 \end{eg}
 \begin{proof}
 	由条件得.$\forall\epsilon>0,\exists R_0>r,s.t.|z|\geq R_0$时,有$|zf(z)-A|<\epsilon$.
 	故：
 	\begin{align*}
-	\left|\int_{|z|=R}f(z)dz-2\pi iA\right|
-	&=\left|\int_{|z|=R}f(z)dz-\int_{|z|=R}\frac{A}{z}dz\right|\\
-	&=\left|\int_{|z|=R}(f(z)-\frac{A}{z})dz\right|\leq\int_{|z|=R}\left|f(z)-\frac{A}{z}\right|dz\\
-	&\leq\int_{|z|=R}\frac{\epsilon}{R}dz=2\pi\epsilon
+	\left|\int_{|z|=R}f(z)\di{z}-2\pi iA\right|
+	&=\left|\int_{|z|=R}f(z)\di{z}-\int_{|z|=R}\frac{A}{z}\di{z}\right|\\
+	&=\left|\int_{|z|=R}(f(z)-\frac{A}{z})\di{z}\right|\leq\int_{|z|=R}\left|f(z)-\frac{A}{z}\right|\di{z}\\
+	&\leq\int_{|z|=R}\frac{\epsilon}{R}\di{z}=2\pi\epsilon
 	\end{align*}
 \end{proof}
 \begin{eg}
 	无界区域的\emph{Cauchy}积分公式：\\
 	设$\gamma$为$\mathbb{C}$中的有限的可求长闭曲线，设$\gamma$围成的区域为$D$.记$\Omega=\mathbb{C}\backslash(D\cup \gamma)$\\
 	设$f\in C(\Omega\cup \gamma)\cap H(\Omega)$，且$\lim\limits_{|z|\rightarrow\infty}f(z)=f(\infty)\in\mathbb{C}$.
-	则$\displaystyle{f(z)=f(\infty)-\frac{1}{2\pi i}\int_{\gamma}\frac{f(\xi)}{\xi-z}d\xi}$.
+	则$\displaystyle{f(z)=f(\infty)-\frac{1}{2\pi i}\int_{\gamma}\frac{f(\xi)}{\xi-z}\di{\xi}}$.
 \end{eg}
 \begin{proof}
 	任取$\displaystyle{z\in\Omega.\exists R>0,s.t.\ \gamma\cup\{z\}\subset B(0,R)}$.\\
-	由$\displaystyle{f(z)=\frac{1}{2\pi i}\int_{|z|=R}\frac{f(\xi)}{\xi-z}d\xi-\frac{1}{2\pi i}\int_{\gamma}\frac{f(\xi)}{\xi-z}d\xi}$.\\
+	由$\displaystyle{f(z)=\frac{1}{2\pi i}\int_{|z|=R}\frac{f(\xi)}{\xi-z}\di{\xi}-\frac{1}{2\pi i}\int_{\gamma}\frac{f(\xi)}{\xi-z}\di{\xi}}$.\\
 	取$\displaystyle{\xi\in\{z:|z|=R\}}$.令$\displaystyle{R\rightarrow+\infty,\ \frac{f(\xi)}{\xi-z}\cdot\xi\ \rightarrow f(\infty)}$\\
-	由前例子可得$\displaystyle{\frac{1}{2\pi i}\int_{|z|=R}\frac{f(\xi)}{\xi-z}d\xi\ \rightarrow f(\infty),\ R\rightarrow+\infty}$\\
-	故$\displaystyle{f(z)=f(\infty)-\frac{1}{2\pi i}\int_\gamma\frac{f(\xi)}{\xi-z}d\xi}$
+	由前例子可得$\displaystyle{\frac{1}{2\pi i}\int_{|z|=R}\frac{f(\xi)}{\xi-z}\di{\xi}\ \rightarrow f(\infty),\ R\rightarrow+\infty}$\\
+	故$\displaystyle{f(z)=f(\infty)-\frac{1}{2\pi i}\int_\gamma\frac{f(\xi)}{\xi-z}\di{\xi}}$
 \end{proof}
 
 \begin{eg}[Painlev\'e原理]
@@ -286,8 +420,8 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	设$f\in H(B(z_0,r))\cap C(\,\overline{B(z_0,r)}\,)$.则：$\displaystyle{f(z_0)=\frac{1}{2\pi}\int_0^{2\pi}f(z_0+re^{i\theta})d\theta}$.
 \end{mypro}
 \begin{proof}
-	由\emph{Cauchy}积分公式得$\displaystyle{f(z_0)=\frac{1}{2\pi i}\int_{|z-z_0|=r}\frac{f(\xi)}{\xi-z_0}d\xi}$\\
-	记$\displaystyle{\xi=z_0+re^{i\theta}\Rightarrow d\xi=ire^{i\theta}d\theta=i(\xi-z_0)d\theta}$\\
+	由\emph{Cauchy}积分公式得$\displaystyle{f(z_0)=\frac{1}{2\pi i}\int_{|z-z_0|=r}\frac{f(\xi)}{\xi-z_0}\di{\xi}}$\\
+	记$\displaystyle{\xi=z_0+re^{i\theta}\Rightarrow \di{\xi}=ire^{i\theta}d\theta=i(\xi-z_0)d\theta}$\\
 	$\displaystyle{\Rightarrow f(z_0)=\frac{1}{2\pi}\int_0^{2\pi}f(z_0+re^{i\theta})d\theta}$
 \end{proof}
 \begin{mypro}[最大模定理]
@@ -320,8 +454,8 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	设$\gamma_0,\gamma_1\dots \gamma_n$是$n+1$条可求长简单闭曲线,$\gamma_1,\gamma_2\dots \gamma_n$在$r_0$的内部.
 	$\gamma_1,\gamma_2\dots \gamma_n$中的任一条均在其余的$n-1$条的外部.
 	设$D$是这$n+1$条曲线围成的区域,若$f\in C^1(D)$.则$\forall z\in D$.
-	有：$\displaystyle{f(z)=\frac{1}{2\pi i}\int_{\partial D}\frac{f(\xi)}{\xi-z}d\xi
-		+\frac{1}{2\pi i}\int_D\frac{\partial f(\xi)}{\partial\overline{\xi}}\frac{1}{\xi-z}d\xi\bigwedge d\overline{\xi}}$
+	有：$\displaystyle{f(z)=\frac{1}{2\pi i}\int_{\partial D}\frac{f(\xi)}{\xi-z}\di{\xi}
+		+\frac{1}{2\pi i}\int_D\frac{\partial f(\xi)}{\partial\overline{\xi}}\frac{1}{\xi-z}\di{\xi}\bigwedge d\overline{\xi}}$
 \end{mypro}
 \begin{proof}
 	见史济怀\emph{《复变函数》}
