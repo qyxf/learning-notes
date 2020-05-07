@@ -28,9 +28,13 @@
 
 %定理环境配置
 \usepackage{amsthm}%调用定理环境宏包
+%\usepackage{ntheorem}
 \newtheorem{mypro}{定理}[section]%定理环境
-\newtheorem*{eg}{eg}%例题环境
-\newtheorem*{jie}{解}%求解环境
+\newtheorem*{eg}{e.g}%例题环境
+\newenvironment{jie}[1]{%求解环境
+	
+	\noindent\heiti{解 #1}\normalfont}{}
+\newtheorem{method}{法}
 %定理环境
 \usepackage{wrapfig}
 \usepackage{fancyhdr}

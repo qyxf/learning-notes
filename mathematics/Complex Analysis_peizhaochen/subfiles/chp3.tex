@@ -41,7 +41,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \end{proof}
 
 \section{\emph{Cauchy}积分定理}
-\begin{mypro}[\emph{Caucy}]
+\begin{mypro}[\emph{Cauhcy}]
 	设$D$为$\mathbb{C}$中的单连通域，$f \in H(D)$，且$f' \in C(D)$, 则对$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) \di{z} = 0$.
 \end{mypro}
 \begin{proof}
@@ -115,7 +115,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{eg}
 	计算积分$\int_\gamma \frac{\di{z}}{(z - a)^n}, n \in \mathbb{Z}$ , a 在$\gamma$ 围成区域内部.
 \end{eg}
-\begin{jie}
+\begin{jie}{}
 	
 	故$\int_\gamma \frac{\di{z}}{(z-a)^n} = \int_{|z-a| = r} \frac{\di{z}}{(z-a) ^n}  = \int_0 ^ \pi \frac{r e ^{i \theta} i d \theta}{(re^{i \theta})^n} = i r^{1-n} \int_0^{2\pi} (e^{i\theta})^{1-n} d \theta$.
 	
@@ -132,7 +132,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{eg}
 	计算积分$\int_\gamma \frac{\di{z}}{z - a}$.
 \end{eg}
-\begin{jie}
+\begin{jie}{}
 	\begin{enumerate}[(1)]
 		\item a在$\gamma$围成区域内部，结果同上，$\int_\gamma \frac{\di{z}}{z-a} = 2\pi i$.
 		\item a在$\gamma$围成区域外部，故$\int_\gamma \frac{\di{z}}{z-a} = \int_{\gamma_2} \frac{\di{z}}{z -a} - \int_{\gamma_1} \frac{\di{z}}{z-a} = 0$.
@@ -371,7 +371,7 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \begin{eg}
 	$\displaystyle{\int_{|z|=a}\frac{e^z}{z^2+a^2}.(a\in\mathbb{(R)^+})}$.
 \end{eg}
-\begin{jie}
+\begin{jie}{}
 	\begin{align*}
 	&\int_{|z|=a}\frac{e^z}{z^2+a^2}\\
 	=&\int_{|z|=a}\frac{e^z}{(z+ai)(z-ai)}\di{z}=\frac{1}{2ai}\int_{|z|=a}\left(\frac{e^z}{z-ai}-\frac{e^z}{z+ai}\right)\di{z}\\
