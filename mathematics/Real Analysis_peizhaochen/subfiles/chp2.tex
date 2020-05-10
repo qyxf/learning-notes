@@ -1,1 +1,112 @@
-\chapter{}
+\chapter{\emph{Lebesgue}测度}
+\section{第一组}
+\exercise{1}设$E\subset \R{R}{\ },$且存在$q:0<q<1,$使得对任一区间$(a,b),$都有开区间列$\{I_n\}:$ $$E\cap (a,b)\ \subset   \bigcup\limits_{n=1}^{\infty}I_n\ ,\quad \sum_{n=1}^{\infty}m(I_k)<(b-a)q\quad,$$试证明$m(E)=0$
+\begin{proof}
+	由于$m^*(E)=m^*\left( E\cap \bigcup\limits_{n=1}^{\infty}I_n\right)\leq \sum\limits_{n=1}^{\infty}m^*\left( E\cap I_n\right) ,$所以只需要证明$m^*\left( (a,b)\cap E\right)=0，$\par 
+	由条件知存在$I_n(a_n,b_n),(n\in \R{N}{\ }),   \bigcup\limits_{n=1}^{\infty}I_n\supset\ E\cap (a,b)\ , \ s.t.\ \sum\limits_{n=1}^{\infty}\left(b_n-a_n \right)\leq q(b-a)\ .$下面我们对于每个$(a_n,b_n)$再做如上操作，所以存在$I_n^{(1)}=(a_n^{(1)},b_n^{(1)}),n\in\R{N}{\ }\ ,\ \bigcup\limits_{n=1}^{\infty}I_n^{(1)}\supset\ E\cap (a_k,b_k)\ ,$且$\sum\limits_{n=1}^{\infty}m(I_n^{(1)})<(b_k-a_k)q$.我们再对k求和，故我们得到了可数多个开集$\{J_n\}_{n=1}^{\infty},\quad s.t.\ \bigcup\limits_{n=1}^{\infty}J_n\subset\ \left( E\cap\bigcup\limits_{k=1}^{\infty}(a_k,b_k)\right) ,$且$\sum\limits_{n=1}^{\infty}m(J_n)\leq q\sum\limits_{n=1}^{\infty}(b_n-a_n)<q^2(b-a)$,故$m^*\left( (a,b)\cap E\right)<q^2(b-a).$\par 以此类推我们重复上面的过程，可得$m^*\left( (a,b)\cap E\right)=0$
+\end{proof}
+
+
+\exercise{2}设$A_1,A_2\subset\R{R}{n},A_1\subset A_2,A_1$是可测集，且$m(A_1)=m^*(A_2)<+\infty,$试证明$A_2$是可测集
+\begin{proof}
+	由于$A_1$可测，故$m^*(A_2)=m^*(A_1)+m^*(A_2\setminus A_1)$,故$A_2\setminus A_1$是零测集，故$A_2\setminus A_1$是可测集，故$A_2=A_1\cup A_2\setminus A_1$是可测集
+\end{proof}
+
+
+\exercise{3}设$A,B\subset\R{R}{n}$都是可测集，试证明$$m^*(A\cup B)+m^*(A\cap B)=m^*(A)+m^*(B)$$
+\begin{proof}
+	设$A,B$都是可测集,故$$m^*(A\cup B)=m^*(A)+m^*(B\setminus A)=m^*(B)+m^*(A\setminus B),$$$$ m^*(A)=m^*(A\cap B)+m^*(A\setminus B),$$$$m^*(B)=m^*(A\cap B)+m^*(B\setminus A).$$联立上述三个式子即得到所证明的式子
+\end{proof}
+
+
+\exercise{4}试问：是否存在闭集$F,F\subset [a,b]$且$F\neq[a,b]$,而$m(F)=b-a$
+\begin{proof}
+	不存在，假设存在，记为$F$,记$F_0=F\setminus\{a,b\}$,故$F_0\subsetneqq (a,b)$且$m(F_0)=b-a$.则$(a,b)\setminus F_0$为非空开集，故$(a,b)\setminus F_0$可写为$\R{R}{\ }$中的至少一个开区间的并，故存在开区间$(s,t)$,满足$(s,t)\subset (a,b)\setminus F_0$.故$m^*\left((a,b)\setminus F_0 \right)\geq \ s-t\ >0, $显然这个与$m(F_0)=b-a$矛盾！故满足条件的闭集不存在！
+\end{proof}
+
+\exercise{7}设$\{E_k\}$是$\R{R}{n}$上的可测集合列，若$m\left(\bigcup\limits_{k=1}^{\infty}E_k \right)<+\infty $,试证明$$m\left(\varlimsup_{k \to +\infty}E_k \right)\geq \varlimsup\limits_{k \to +\infty}m(E_k) $$
+\begin{proof}
+	与推论2.9的证明类似，此处省略
+\end{proof}
+
+
+
+\exercise{8}设$\{E_k\}$是$[0,1]$中的可测集合列，$m(E_k)=1(k=1,2,...)$，试证明$m\left( \bigcap\limits_{k=1}^{\infty}E_k\right)=1 $
+\begin{proof}
+	记$F_k=[0,1]\setminus E_k$,由于$E_k$可测，故$F_k$为零测集.故$\bigcup\limits_{k=1}^{\infty}F_k$也是零测集\par 
+	又由题目条件得$\bigcap\limits_{k=1}^{\infty}E_k$是可测集，故用$[0,1]$做实验集即得到题目结果
+\end{proof}
+
+
+\exercise{9}设$E_1,E_2,...E_k$是$[0,1]$中的可测集，且有$\sum\limits_{i=1}^{\infty}m(E_i)>k-1,$试证明$m\left(\bigcap\limits_{i=1}^{\infty}E_i \right)>0 $
+\begin{proof}
+	与8类似，此处省略
+\end{proof}
+
+
+\exercise{12}设$\{B_k\}$是$\R{R}{n}$中递减可测集列，$m^*(A)<\infty$,令$E_k=A\cap B_k\ (k=1,2,...),E=\bigcap\limits_{k=1}^{\infty}E_k,$试证明$\li{k\to\infty}m^*(E_k)=m^*(E)$
+\begin{proof}
+	由于$\bigcup\limits_{k=1}^{\infty}E_k$可测，故$m^*(A)=m^*(\bigcup\limits_{k=1}^{\infty}E_k)+m^*\left(A\cap (\bigcup\limits_{k=1}^{\infty}E_k)^c \right) $\par
+	又由于$E_k$可测，故$m^*(A)=m^*(E_k)+m^*(A\cap B_k^c),$由于$\{A\cap B_k^c\}$是递增集合列，在此式两端令$k\to\infty$，由推论2.17得$\li{k\to\infty}m^*(A\cap B_k^c)=m^*\left( A\cap(  \li{k\to\infty}B_k) ^c\right)=m^*\left( A\cap(  \bigcap\limits_{k=1}^{\infty}B_k) ^c\right) $ ,直接带入即得证
+\end{proof}
+
+
+\exercise{14}试证明点集$E$可测的充分必要条件是，对任给的$\epsilon>0$,存在开集$G_1,G_2:G_1\subset E,G_2\subset E^c$,使得$m(G_1\cap G_2)<\epsilon$
+\begin{proof}
+\\	$"\Rightarrow"$\par
+	由定理2.13得,$\forall \epsilon>0$,存在开集$F$以及闭集$G$使得$F\supset E\supset G$,并且$m(F\setminus E)<\displaystyle{\frac{\epsilon}{2}},m(E\setminus G)<\displaystyle{\frac{\epsilon}{2}},$取$G_1=F,G_2=G^c$,故$m(G_1\cap G_2)<\epsilon$\\
+	$"\Leftarrow"$\par 
+	假设存在这样的集合$G_1,G_2$，记$F=G_2^c$，故显然$F\subset E$且$m(G_1\setminus F)<\epsilon,$故$m(G_1\setminus E)<\epsilon$,故E为可测集
+\end{proof}
+
+
+
+\exercise{15}设$E\subset [0,1]$是可测集，且有$m(E)\geq \epsilon>0,\quad x_i\in[0,1],\ i=1,2,...,n$,其中$\displaystyle{n>\frac{2}{\epsilon}}$，试证明$E$中存在着两个点其距离等于$\{x_1,x_2,...,x_n\}$中某两个点间的距离.
+\begin{proof}
+	设$E_k=E+\{x_k\},(k=1,2...,n),$故由定理2.18得$m(E_k)=m(E)\geq\epsilon.$故$\sum\limits_{k=1}^{\infty}m^*(E_k)\geq n\epsilon>2,$而$E_k\subset[0,2]$，故一定存在$i,j\in\{1,2,...,n\}$且$i\neq j,\ s.t.\ E_i\cap E_j\neq \emptyset.$任取$x\in E_i\cap E_j.$故$x-x_i,x-x_j\in E,$g故$|(x-x_i)-(x-x_j)|=|x_i-x_j|$
+\end{proof}
+
+
+
+\exercise{16}设$W$是$[0,1]$中的不可测集，试证明存在$\epsilon:0<\epsilon<1,$使得对于$[0,1]$中任一满足$m(E)\geq\epsilon$的可测集$E$,$W\cap E$是不可测集
+\begin{proof}
+	故$\forall 1>\epsilon>0,$存在$E\subset[0,1],m(E)\leq \epsilon,$有$W\cap E$可测，故我们可以取$\{\epsilon_n\},\ s.t.\ \epsilon_n\to 1$.\par 设对于$\epsilon_n$，满足上述条件的集合记为$E_n$，记$E=\bigcup\limits_{n=1}^{\infty}E_n,$故$E$可测，且$m(E)=1$，故$m^*\left( W\cap ([0,1]\setminus E)\right) =0 ,$故$W\cap \left( [0,1]\setminus E\right) $可测.而另一方面$W=\left(\bigcup\limits_{n=1 }^{\infty}(W\cap E_n)\right)\cup \left( W\cap ([0,1]\setminus E)\right) , $故W可测，矛盾！
+\end{proof}
+
+
+
+\section{第二组}
+\exercise{1}设$\{r_n\}$是$\R{R}{1}$中的全体有理数，令$$G=\bigcup_{n=1}^{\infty}\left( r_n-\frac{1}{n^2},r_n+\frac{1}{n^2}\right), $$试证明对$\R{R}{1}$中的任一闭集$F$,有$m(G\triangle F)>0$
+\begin{proof}
+	故$G$为开集，显然$G\setminus F$为开集.\par 若$G\setminus F\neq\emptyset$,则$G\setminus F$为$\R{R}{\ }$上的非空开集，则$m(G\setminus F)>0$,故$m(G\triangle F)>0$\par 
+	若$G\setminus F=\emptyset$,则$G\subset F$.若$F\neq \R{R}{\ }$,则取$x\in F^c,$显然x为无理数，并且为$F^c$的内点，故存在$\delta>0$，使得$B(x,\delta)\subset F^c.$然而$\R{Q}{\ }$在$\R{R}{\ }$中稠密，故$B(x,\delta)$中必包含有理数，矛盾！故$F=\R{R}{\ }$，$m(F\setminus G)=m(G^c)$.而$m(G)\leq \sum\limits_{n=1}^{\infty}\displaystyle{\frac{1}{n^2}}<+\infty$.故$m(G^c)>0$\par 综上$m(G\triangle F)>0$
+\end{proof}
+
+
+\exercise{2}设$E\subset[a,b]$是可测集，$I_k\subset[a,b](k=1,2,...)$是开区间列，满足$m(I_k\cap E)\geq \displaystyle{\frac{2}{3}|I_k|}(k=1,2,...),$试证明$$m\left(\left(\bigcup_{k=1}^{\infty}I_k  \right)\cap E  \right)\ \geq \ \frac{1}{3}m\left(\bigcup_{k=1}^{\infty}I_k \right)  $$
+\begin{proof}
+	略
+\end{proof}
+
+
+
+\exercise{3}设$\{E_n\}$是$[0,1]$中的互不相同的可测集合列，且存在$\epsilon>0,m(E_n)\geq \epsilon(n=1,2,...),$试问是否存在子列$\{E_{n_i}\}$,使得$m\left(\bigcap\limits_{i=1}^{\infty}E_{n_i} \right)>0 $
+\begin{proof}
+	设$E_{2n}=\left[ 0,\displaystyle{\frac{1}{2}+\frac{1}{2n}}\right],E_{2n-1}=\left[ \displaystyle{\frac{1}{2}-\frac{1}{2n+1}},1\right],n\in \R{N}{*} .$故$m(E_k)>\displaystyle{\frac{1}{2}}.$而对于任一子列$\{E_{n_i}\}$，$\bigcap\limits_{i=1}^{\infty}E_{n_i}=\left\lbrace \displaystyle{\frac{1}{2}}\right\rbrace $
+\end{proof}
+
+
+\exercise{4}设$\{E_n\}$是$[0,1]$中的可测集合列，且满足$\varlimsup\limits_{n \to +\infty}m(E_n)=1,$试证明对$0<a<1$,必存在$\{E_{n_k}\}$，使得$m\left(\bigcap\limits_{k=1}^{\infty}E_{n_k} \right)>a $
+\begin{proof}
+	故$\forall \epsilon>0$,存在子列$\{E_{n_k}\}$,使得$m(E_{n_k})>\displaystyle{1-\frac{\epsilon}{2^k}}.$记$F_n=[0,1]\setminus E_n,$故$m(F_k)<\displaystyle{\frac{\epsilon}{2^k}}.$故$m\left(\bigcap\limits_{k=1}^{\infty}E_{n_k} \right)=1-m\left(\bigcup\limits_{k=1}^{\infty}F_{n_k} \right)>1-\sum\limits_{k=1}^{\infty}m(F_{n_k})>1-\epsilon $ 
+\end{proof}
+
+\exercise{5}设$m^*(E)<\infty$，试证明存在$G_\delta$集$H:H\subset E$，使得对于任一可测集$A$,都有$m^*(E\cap A)=m(H\cap A)$
+\begin{proof}
+	对于任一可测集$A$,有$m^*(E\cap A)=m^*(E)-m^*(E\setminus A).$由定理2.15得存在 $G_\delta$集$H_0=\bigcap\limits_{k=1}^{\infty} I_k\supset E,$其中$I_k$是开集，使得$m(H_0)=m^*(E),$故\\ $m^*(E\cap A)\geq m(H_0)-m^*\left(\bigcap\limits_{k=1}^{\infty}(I_k\setminus A) \right)=M(h_0\cap A) .$\par 而$(H_0\cap A)\setminus(E\cap A)\subset H_0\setminus E$，故$(H_0\cap A)\setminus(E\cap A)$是零测集，是可测集.故$m^*(E\cap A)=m(H_0\cap A)$
+\end{proof}
+
+\exercise{6}设$A,B\subset\R{R}{\ },A\cup B$是可测集，且$m(A\cup B)<\infty,$若$m(A\cup B)=m^*(A)+m^*(B)$，试证明$A,B$均为可测集
+\begin{proof}
+	做$A,B$的等测包$A_1,B_1$，故$A_1,B_1$是$G_\delta$集，$A_1\supset A,B_1\supset B,m(A_1)=m^*(A),m(B_1)=m^*(B_1)$.故$$m(A_1)+m(B_1)\geq m(A_1\cup B_1)\geq m^*(A\cup B)=m^*(A)+m^*(B)=m(A_1)+m(B_1).$$\par 故上述不等号均取为等号，故$m^*\left( (A_1\cup B_1)\setminus(A\cup B)\right) =0,$故$A_1\setminus A,B_1\setminus B$均为零测集，故$A,B$均为可测集
+\end{proof}

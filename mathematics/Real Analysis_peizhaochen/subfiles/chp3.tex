@@ -1,1 +1,121 @@
-\chapter{}
+\chapter{可测函数}
+\section{第一组}
+
+
+\exercise{1} 设有指标集$I\ $,$\  f_{\alpha}(x):\alpha $是$\mathbb{R}^n$上的可测函数，试问：函数$S(x)=sup\left\{f_{\alpha}(x)\ |\ \alpha\in I\right\}$在$\mathbb{R}^n$上是可测的吗？
+\begin{proof}
+不一定\par 设$ I $是$ \mathbb{R}^n $上的不可测集，且记$W=\left\{x_{\alpha}|\alpha\in I\right\}$,设$f_{\alpha}(x)=\frac{1}{|x-x_{\alpha}|},\alpha\in I\ ,$故$f_{\alpha}(x)$是$\mathbb{R}^n$上的可测函数，故$\left\lbrace x\in \mathbb{R}^n |\ S(x)=+\infty\right\rbrace =\left\lbrace x\in \mathbb{R}^n |\ f_{\alpha}(x)=+\infty\right\rbrace =W$是不可测集，故$S(x)$是不可测含函数
+\end{proof}
+
+
+\exercise{2} 设$z=f(x,y)$是$\mathbb{R}^2$上的连续函数，$g_1(x),g_2(x)$是$[a,b]$上的实值可测函数，试证明$F(x)=f(g_1(x),g_2(x))$是$ [a,b]$上的可测函数
+\begin{proof}
+由简单函数逼近定理得，存在函数列$\{\phi_k(x)\},\{\psi_k(x)\}\ ,\ s.t.$ $$\li{k\to\infty}\phi_k(x)=g_1(x)\ ,\ \li{k\to\infty}\psi_k(x)=g_2(x)$$
+故$f(\phi_k(x),\psi_k(x))$也是在$[a,b]$上的简单可测函数列，由于$z=f(x,y)$是$\mathbb{R}^2$上的连续函数
+，故$\li{k\to\infty}f(\phi_k(x),\psi_k(x))=f(g_1(x),g_2(x)),$故得证
+\end{proof}
+
+
+\exercise{3} 设$f(x)$在$[a,b)$上存在右导数$f'_{+}(x)\ $,试证明$f'_{+}(x)\ $是$[a,b)$上的可测函数
+\begin{proof}
+故$f(x)$是右连续的，即$\forall\epsilon>0,\forall x\in\mathbb{R},\exists \delta>0\ ,\ s.t.\ |f(x+\delta)-f(x)|<\epsilon \ ,$故$\forall\epsilon>0,\forall x\in\mathbb{R},\exists \delta>0\ ,\ s.t.\ \forall x_1,x_2\in (x,x+\delta),$有$|f(x_1)-f(x_2)|<2\epsilon $,故$f(x)$在$(x,x+\delta)$上连续，故$f$的不可测点集是零测集，故$f(x)$可测,故$f(x+\frac{1}{n})$可测，又由于$\li{n\to\infty}n\left(f(x+\frac{1}{n})-f(x) \right)= f'_{+}(x)\ \ ,$故$f'_{+}(x)\ $可测
+\end{proof}
+
+
+\exercise{4}设$f(x)$是$E\subset \R{R}{n}$上几乎处处有限的可测函数，$m(E)<+\infty$,试证明对任意的$\epsilon>0$,存在E上的有界可测函数$g(x)$，使得$$m\left(\{x\in E:|f(x)-g(x)|>0\} \right)<\epsilon $$
+\begin{proof}
+设$E_k=\left\lbrace x\in E:|f(x)|>k\right\rbrace $，故$\{E_k\}$是递减集合列，且$$\li{k \to \infty}m(E_k)=m(\left\lbrace x\in E:|f(x)|=\infty \right\rbrace )=0，$$故$\forall\epsilon>0,$存在$k_0\in \R{N}{*},\ s.t.\ m(E_{k_0})<\epsilon$，
+记\[g(x)=\begin{cases}
+f(x)&x\in E\setminus E_{k_0}\\
+0&x\in E_k\\
+\end{cases}\]
+显然$g(x)$可测且有界，且$m\left(\{x\in E:|f(x)-g(x)|>0\} \right)<\epsilon $
+\end{proof}
+
+
+\exercise{5}设$f(x)$以及$f_n(x)(n=1,2,...)$都是$A \subset \R{R}{\ }$上几乎处处有限的可测函数，对任给的$\epsilon>0$,存在$A$的可测子集$B:m(A\setminus B)<\epsilon$,使得$f_n(x)$在$B$上一致收敛于$f(x)$，试证明$f_n(x)$在$A$上几乎处处收敛于$f(x)$
+\begin{proof}
+	$\forall n\in\R{N}{\ }$存在$A$的可测子集$B_n,\ s.t.\ m(A\setminus B_n)<\frac{1}{2^n}$,使得$f_k(x)$在$B_n$上一致收敛于$f(x)$,设$B=\varlimsup\limits_{n \to +\infty}A\setminus B_n,$故$m(B)=0,$且$A\setminus B=\varliminf\limits_{k \to +\infty}B_k\ \subset\  B_n,\forall n \in \R{N}{\ }$,故$\{f_k(x)\}$的不收敛点集一定在$B$中，故$f_n(x)$在$A$上几乎处处收敛于$f(x)$
+\end{proof}
+
+
+\exercise{6}设$\{f_n(x)\}$是$E\subset \R{R}{n}$上的实值可测函数列，$m(E)<+\infty$,试证明$\li{j\to \infty}f_k(x)=0\ ,\ a.e.\ x\in E$的充分必要条件是：对任意的$\epsilon>0$有$$\li{j\to\infty}m\left( \left\lbrace x\in E: \sup_{k\geq j} \{\ |f_k(x)|\ \}\geq \epsilon \right\rbrace \right)=0 $$
+\begin{proof}
+	设$E_j(\epsilon)=\left\lbrace x\in E: \sup\limits_{k\geq j} \{\ |f_k(x)|\ \}\geq \epsilon \right\rbrace$,显然对于给定的$\epsilon$,$\{E_j(\epsilon)\}$是递增集合列\\
+	$"\Rightarrow"$\par 
+	假设结论不成立，则存在$\epsilon_0\ $,$\ $s.t.$$\li{j\to\infty}m\left( \left\lbrace x\in E: \sup\limits_{k\geq j} \{\ |f_k(x)|\ \}\geq \epsilon_0>0 \right\rbrace \right)=a>0 ,$$则当j充分大时有$m\left( \left\lbrace x\in E: \sup\limits_{k\geq j} \{\ |f_k(x)|\ \}\geq \epsilon \right\rbrace \right)>\displaystyle{\frac{a}{2}}>0$,故$\{f_n(x)\}$存在一个子列$\{f_{n_k}(x)\}$，使得$\forall k\in \R{N}{\ }$,有$m\left( \left\lbrace x\in E:  \{\ |f_{n_k}(x)|\ \}\geq \epsilon \right\rbrace \right)>0$，这与$\li{j\to \infty}f_k(x)=0\ ,\ a.e.\ x\in E$矛盾，故假设不成立\\
+	$"\Leftarrow"$\par 类似于必要性的证明使用反证法可以得到，此处略去
+\end{proof}
+我们再给出一种不用反证法的做法，同样的我们只给出一个方向的证明，另一个方向大致同理
+\begin{proof}
+	由书中P11例8我们可知函数列$\{f_n(x)\}$的不收敛于0的点集为$$D=\bigcup_{k=1}^{\infty}\bigcap_{N=1}^{\infty}\bigcup_{n=N}^{\infty}\left\lbrace x:|f_n(x)|\geq\frac{1}{k} \right\rbrace ，$$\\
+	$"\Rightarrow"$\\
+	$\qquad$故由条件得$m(D)=0$,推出$\forall k\in \R{N}{\ },$有$m\left(\bigcap\limits_{N=1}^{\infty}\bigcup\limits_{n=N}^{\infty}\left\lbrace x:|f_n(x)|\geq\frac{1}{k} \right\rbrace \right)=0 $,\\即$m\left(\varlimsup\limits_{n \to +\infty}\left\lbrace x:|f_n(x)|\geq\frac{1}{k} \right\rbrace \right)=0,$故得证.
+\end{proof}
+
+
+\exercise{7}设$f(x),f_1(x),f_2(x),...,f_k(x),...$是$[a,b]$上几乎处处有限的可测函数，且有$\li{k\to\infty}f_k(x)=f(x)\ \ a.e.\ \ x\in [a,b]$，试证明存在$E_n\supset [a,b](n=1,2,...)$，使得$$m\left([a,b]\setminus \bigcup\limits_{n=1}^{\infty}E_n \right)=0,$$而$\{f_k(x)\}$在每个$E_n$上一致收敛于$f(x)$
+\begin{proof}
+	不难看出题目满足Egrov定理的条件，所以对于$\delta_n=\frac{1}{n}$，存在$E_n\subset[a,b]$，使得$m([a,b]\setminus E_n)<\frac{1}{n}$,$\{f_n(x)\}$在$E_n$上一致收敛于$f(x)$，因为$m([a,b]\setminus \bigcup\limits_{n=1}^{\infty}E_n)\leq m([a,b]\setminus E_n)<\frac{1}{n},\forall n \in \R{N}{\ }$,所以$m\left([a,b]\setminus \bigcup\limits_{n=1}^{\infty}E_n \right)=0$
+\end{proof}
+
+
+\exercise{8}设$\{f_k(x)\}$在$E$上依测度收敛于$f(x)$，$\{g_k(x)\}$在$E$上依测度收敛于$g(x)$，试证明$\{f_k(x)+g_k(x)\}$在$E$上依测度收敛于$f(x)+g(x)$
+\begin{proof}
+	具体证明过程此处忽略，具体可以仿照书中定理3.13的过程进行操作
+	
+\end{proof}
+
+\exercise{9}设$m(E)<+\infty,f(x),f_1(x),f_2(x),...f_k(x),...$是$E$上几乎处处有限的可测函数，试证明$\{f_k(x)\}$在$E$上依测度收敛于$f(x)$的充分必要条件是$$\li{k\to+\infty}\inf\limits_{\alpha>0}\left\lbrace \alpha+m\left(\{x\in E:|f_k(x)-f(x)|>\alpha\} \right) \right\rbrace=0 $$
+\begin{proof}
+	\\$"\Rightarrow"$
+	\[\begin{split}
+	&\li{k\to+\infty}\inf\limits_{\alpha>0}\left\lbrace \alpha+m\left(\{x\in E:|f_k(x)-f(x)|>\alpha\} \right) \right\rbrace\\
+	\leq&\ \inf\limits_{\alpha>0}\li{k\to+\infty}\left\lbrace \alpha+m\left(\{x\in E:|f_k(x)-f(x)|>\alpha\} \right) \right\rbrace\\
+	=&	\inf\limits_{\alpha>0}\{\alpha+0\}\ =\ 0
+	\end{split}\]
+	$"\Leftarrow"$\par 
+	记$b_k=\inf\limits_{\alpha>0}\left\lbrace \alpha+m\left(\{x\in E:|f_k(x)-f(x)|>\alpha\} \right) \right\rbrace,$则由条件知$b_k\to 0.$显然对于任意的$k\in\R{N}{\ }$，存在$\{a_k\},\ s.t.\ b_k\leq a_k+m\left(\{x\in E:|f_k(x)-f(x)|>a_k\} \right)< b_k+\displaystyle{\frac{1}{k}}$,令$k\to +\infty$,则$a_k\to 0$，则$\li{k\to\infty}m\left(\{x\in E:|f_k(x)-f(x)|>a_k\} \right)=0$,故对于任意的$\epsilon>0$,有$\li{k\to\infty}m\left(\{x\in E:|f_k(x)-f(x)|>\epsilon\} \right)=0$,得证
+	%故存在趋向于0的正数列$\{a_n\}$使得$\li{n\to\infty}m\left(\{x\in E:|f_k(x)-f(x)|>a_n\} \right)\to 0$
+\end{proof}
+
+
+
+\exercise{10}设$f_n(x)(n=1,2,...)$是$[0,1]$上的递增函数，且$\{f_n(x)\}$在$[0,1]$上依测度收敛于$f(x)$，试证明在$f(x)$的连续点$x_0$上，有$f_n(x_0)\to f(x_0)\quad(n\to\infty)$\par
+ 此题利用反证法是不难得到的，但这种方法便失去了分析的意义，下面我们给出利用所学定理直接进行证明的方法:
+\begin{proof}
+	由于$x_0$是$f(x)$的连续点，故$\forall \epsilon>0,\exists\delta>0,\ s.t.\ \forall x\in(x-\delta,x+\delta),$有$\displaystyle{|f(x)-f(x_0)|<\frac{\epsilon}{18}}.\ $\par 由Riesz定理，$f_n(x)$有子列$f_{n_k}(x)$在$[0,1]$上几乎处处收敛于$f(x)$.\par 由Egrov定理，存在$[0,1]$的子集$E_\delta$，满足$\displaystyle{m(E_\delta)<\frac{\delta}{2}},\ s.t.\ \{f_{n_k}(x)\}$在$[0,1]\setminus E_\delta$上一致收敛于$f(x).$\par 则当k充分大时有$\displaystyle {m\left(x\in [0,1]:|f_{n_k}(x)-f(x)|>\frac{\epsilon}{9}  \right)<\frac{\delta}{2}} ,$故存在$x_1\in(x_0-\delta,x_0),x_2\in(x_0,x_0+\delta),\ s.t.\ \displaystyle{ |f_{n_k}(x_1)-f(x_1)|<\frac{\epsilon}{9}},\displaystyle{ |f_{n_k}(x_2)-f(x_2)|<\frac{\epsilon}{9}}.$ 
+	所以我们得到$\displaystyle{|f_{n_k}(x_1)-f_{n_k}(x_2)|\leq |f_{n_k}(x_1)-f(x_1)|+|f(x_1)-f(x_2)|+|f_{n_k}(x_2)-f(x_2)|< \frac{\epsilon}{3}}.$\par 又由于$f_{n_k}(x)$是递增函数，则$\displaystyle{|f_{n_k}(x_1)-f_{n_k}(x_0)|\leq|f_{n_k}(x_1)-f_{n_k}(x_2)|< \frac{\epsilon}{3}},$故$|f_{n_k}(x_0)-f(x_0)|\leq |f_{n_k}(x_1)-f_{n_k}(x_0)|+|f_{n_k}(x_1)-f(x_1)|+|f(x_1)-f(x_0)|<\epsilon,$所以$\{f_{n_k}(x)\}$在$x_0$处收敛于$f(x_0),$.\par 
+	另一方面,由于$\displaystyle{\left\lbrace x\in[0,1]:|f_n(x)-f_{n_k}(x)|>\epsilon\right\rbrace \subset \left\lbrace x\in [0,1]:|f(x)-f_{n_k}(x)|>\frac{\epsilon}{2}  \right\rbrace  }$\\ $\cup
+	\displaystyle{ \left\lbrace x\in [0,1]:|f(x)-f_n(x)|>\frac{\epsilon}{2}  \right\rbrace}.$
+	而当k充分大时，$\displaystyle{x_0\notin\left\lbrace x\in [0,1]:|f(x)-f_{n_k}(x)|>\frac{\epsilon}{2}  \right\rbrace,}$故当n与k均充分大时，有$|f_n(x_0)-f_{n_k}(x_0)|\leq\epsilon,$故当n充分大时$|f_n(x_0)-f(x_0)|<2\epsilon$,得证
+\end{proof}
+
+
+\exercise{11}设$f:\R{R}{n}\to \R{R}{\ }$，且对任意的$\epsilon>0$，存在$\R{R}{n}$中的开集$G$,$m(G)<\epsilon,$使得$f\in C(\R{R}{n}\setminus G)$,试证明$f(x)$是$\R{R}{n}$上的可测函数
+\begin{proof}
+	略
+\end{proof}
+
+
+\exercise{12}设$\{f_k(x)\}$与$\{g_k(x)\}$在$E$上依测度收敛于0，试证明$\{f_k(x)g_k(x)\}$在$E$上依测度收敛于0
+\begin{proof}
+	具体证明过程此处忽略，具体可以仿照上面第八题的过程进行操作。（提示：类似于第8题加法的情况将$\epsilon$拆为两个$\epsilon$/2的和，那么对于此题乘法的情况呢？）
+\end{proof}
+
+%\exercise{13}设$\{f_k(x)\}$在$[a,b]$上依测度收敛于$f(x)$，$\{g(x)\}$是$\R{R}{\ }$上的连续函数，试证明$\{g(f_k(x))\}$在$[a,b]$上依测度收敛于$g(f(x))$.若讲$[a,b]$换为$[0,+\infty)$，结论还成立吗？
+
+
+%\exercise{14}设$f(x)$是定义在可测集$E\subset\R{R}{n}$上的函数，且对任意的$\delta>0$，存在$E$中的闭集$F$，$m(E\setminus F)<\delta$，使得$f(x)$在$F$上连续，试证明$f(x)$是$E$上的可测函数
+
+
+\exercise{15}设$\{f_n(x)\}$是$[a,b]$上的可测函数列，$f(x)$是$[a,b]$上的实值函数，若对任意的$\epsilon>0$都有$$\li{n\to\infty}m^{*}\left(\{ x\in[a,b]:|f_n(x)-f(x)|>\epsilon\} \right)=0 ,$$试问$f(x)$是E上的可测函数吗？
+\begin{proof}
+	$\forall k\in\R{N}{\ },$存在数列$\displaystyle{\{n_k\},\ s.t.\ m^{*}(E_k)<\frac{1}{2^{n_k}}}$,其中$E_k=\displaystyle{\{ x\in[a,b]:|f_{n_k}(x)-f(x)|>\frac{1}{2^n}\}}$,根据题目条件，$m^{*}\left( \varlimsup\limits_{k\to\infty}E_k\right)=0 $.\par 
+	故$\ a.e.\ x\in [a,b], $有$x \in \varliminf\limits_{k\to \infty}{E_k}^{c},$即$\ a.e.\ x\in [a,b]$，存在正整数$K_x,\ s.t.\ $当$k>K_x$时，有$x\in {E_n}^{c}$.故当$k>K_x$时，有$|f_{n_k}(x)-f(x)|\leq \frac{1}{2^k},$故$f_{n_k}(x)$在$[a,b]$上几乎处处收敛于$f(x)$，故$f(x)$可测
+\end{proof}
+
+\exercise{16}设$f(x),f_k(x),(k=1,2,3...)$是$E\subset\R{R}{\ }$上的实值可测函数，若对任给的$\epsilon>0$,必有$$\li{j\to\infty}m\left( \bigcup_{k=j}^{\infty}\left\lbrace x:|f_k(x)-f(x)|>\epsilon\right\rbrace \right)=0,$$试证明对任给的$\delta>0$,存在$e\subset E$且$m(e)<\delta$，使得$\{f_k(x)\}$在$E\setminus e$上一致收敛于$f(x)$
+\begin{proof}
+	完全类似于定理3.12的证明，此处略去
+\end{proof}

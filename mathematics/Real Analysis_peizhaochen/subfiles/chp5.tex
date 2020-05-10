@@ -1,0 +1,61 @@
+\chapter{微分与不定积分}
+\section{第一组}
+\exercise{1}设$E$是$\R{R}{\ }$中的一族区间的并集，试证$E$是可测集.
+\begin{proof}
+	设$E=\bigcup\limits_{\alpha\in \mathscr{A}}I_{\alpha}$，其中$ I_{\alpha} $为开区间或闭区间或半开闭区间，不妨设$m(E)<+\infty$,令$\mathscr{B}=\{I\subset\R{R}{\ }:I$是某个$I_{\alpha}$中的区间$\}$,故$\mathscr{B}$是$E$的一个Vitali覆盖，由Vitali定理得存在不交的区间列$\{I_k\},\ s.t.\ m\left( E\setminus \bigcup\limits_{k=1}^{\infty}I_k\right) =0$.设$I_k\subset I_{\alpha_k}$，故$$E=\left( E\setminus \bigcup_{k=1}^{\infty}I_k\right) \cup \left( \bigcup_{k=1}^{\infty}I_{\alpha_k}\right),\quad\alpha_k\in \mathscr{A} $$故E可测
+\end{proof}
+
+
+\exercise{2}设$\{x_n\}\subset [a,b]$，试做$[a,b]$上的递增函数，使得其不连续点 恰为$\{x_n\}$
+\begin{proof}
+	记\[f_n(x)=
+	\begin{cases}
+	\frac{1}{2^n}&x\geq x_n\\
+	0&x< x_n\\
+	\end{cases}\]
+	$\qquad$由于$f_n(x)$是单调递增的，且函数项级数$\sum\limits\limits_{k=1}^{n}f_k(x)$关于n一致有上界2，故由定义式显然得到,函数项级数$\sum\limits\limits_{n=1}^{\infty}f_n(x)$是一致收敛的,且和函数存在,记为$f(x)$，故$f(x)\leq2$.\par 由一致连续性显然得到$f(x)$在除去$\{x_n\}$之外的点是连续的。令$g(x)=f(x),x\in [a,b]\setminus\bigcup\limits_{k=1}^{\infty}\{x_k\},$而$g(x)$在$x_n$处的取值我们可以根据$g(x)$在$[a,b]\setminus\bigcup\limits_{k=1}^{\infty}\{x_k\}$上的函数值进行定义，使得$g(x)$在$x_n$处是右连续的,故$g(x)$为递增函数。请读者自行证明$g(x)$在$x_n$处不是左连续的。故我们构造的$g(x)$即为满足要求的函数。
+\end{proof}
+
+
+
+\exercise{3}设$f(x)$是$(a,b)$上的递增函数,$E \subset(a,b)$,若对任给$\epsilon>0$,存在$(a_i,b_i)\subset (a,b)\ (i=1,2,....)$，使得$$\bigcup_i (a_i,b_i)\supset E ,\quad \sum\limits_i [f(b_i)-f(a_i)]<\epsilon,$$试证明$f'(x)=0\quad a.e.\ x \in E$
+\begin{proof}
+	记$E_{\alpha}^{(i)}$为$(a_i,b_i)$中所有开区间构成的开区间族，记$E_{\alpha}^{(i)}=\{I_{\alpha}^{(i)}:\alpha\in \mathscr{A}_i\}$,其中$I_{\alpha}^{(i)}$为开区间，故$\bigcup\limits_{i=1}^{+\infty}\bigcup\limits_{\alpha\in \mathscr{A}_i}I_{\alpha}^{(i)}$是E的Vitali覆盖。由Vitali定理，存在两两不交的子开区间列$\{I_k\}, \ s.t.\ \{I_k\}$满足$m(E\setminus \bigcup\limits_{k=1}^{\infty}I_k)=0$。由$I_k$的选取方式知存在唯一的i使得,$I_k\in E_{\alpha}^{(i)}$，记$I_k=(c_k,d_k)$，故由单调性得$$\sum\limits_{k=1}^{+\infty}\left(f(d_k)-f(c_k) \right)\leq\sum\limits_i\left(f(b_i)-f(a_i) \right)<\epsilon  $$
+	故由Lebesgue定理得$$\int_E f'(x)\di{x}=\int_{\bigcup\limits_{k=1}^{+\infty}I_k}f'(x)\di{x}\ \leq\ \sum\limits_{k=1}^{\infty}\int_{I_k}f'(x)\di{x}\ \leq\ \sum\limits_{k=1}^{\infty}\left(f(d_k)-f(c_k) \right) \ <\ \epsilon$$
+\end{proof}
+
+\exercise{4}设$f(x)$在$[0,a]$上是有界变差函数，试证明函数$$F(x)=\frac{1}{x}\int_{0}^{x}f(t)\di{t}\quad,F(0)=0$$是$[0,a]$上的有界变差函数。
+\begin{proof}
+	由于f是有界变差函数，故由Jordan分解定理，$f(x)=g(x)-h(x)$，其中$g(x)$和$h(x)$为递增函数。故$F(x)=\displaystyle{\frac{1}{x}\int_{0}^{x}f(t)\di{t}}=\frac{1}{x}\displaystyle{\int_{0}^{x}g(t)\di{t}}-\displaystyle{\frac{1}{x}\int_{0}^{x}h(t)\di{t}}.$设$G(x)=\displaystyle{\frac{1}{x}\int_{0}^{x}g(t)\di{t}}$,$H(x)=\displaystyle{\frac{1}{x}\int_{0}^{x}h(t)\di{t}}.$设$h>0$,则：
+	\[\begin{split}
+	G(x+h)-G(x)&=\frac{1}{x+h}\int_{0}^{x+h}g(t)\di{t}-\frac{1}{x}\int_{0}^{x}g(t)\di{t}\\&=\frac{-h}{x(x+h)}\int_{0}^{x}g(t)\di{t}+\frac{1}{x+h}\int_{x}^{x+h}g(t)\di{t}\\&\geq\frac{h}{x+h}g(x)-\frac{h}{x(x+h)}\int_{0}^{x}g(t)\di{t}\\&=\frac{h}{x(x+h)}\int_{0}^{x}\left( g(x)-g(t)\right) \di{t}\geq 0
+	\end{split}\]
+	$\qquad$故$G(x)$是递增的，同理$H(x)$是递增的，故由Jordan分解定理得$F(x)$是有界变差函数。
+\end{proof}
+
+
+
+\exercise{5}设$\{f_k(x)\}$是$[a,b]$上的有界变差函数列，且有$$\bigvee\limits_a^b(f_k)\leq M \quad (k=1,2,...)\ \ ;\ \ \li{k\to\infty}f_k(x)=f(x),\quad x\in[a,b]$$试证明$f\in BV([a,b]),$且满足$\bigvee\limits_a^b(f)\leq M$
+\begin{proof}
+	任取$[a,b]$的分割$\Delta$：$a=x_0<x_1<x_2<...<x_k=b$，故$$\sum\limits_{i=1}^{k}\left|f_n(x_{i+1})-f_n(x_n) \right|\leq \bigvee\limits_a^b(f_n)\ \leq\  M ,$$
+	令$n\to\infty,$即可得到$\sum\limits_{i=1}^{k}\left|f(x_{i+1})-f(x_n) \right|\leq M$,得证
+\end{proof}
+
+
+
+\exercise{9}设$f(x)$是$[a,b]$上的非负绝对连续函数，试证明$f^p(x)(p>1)$是$[a,b]$上的绝对连续函数
+\begin{proof}
+	利用介质性立即得到，此处省略.
+\end{proof}
+
+
+\exercise{10}设$f(x)$在$[a,b]$上递增，且有$\displaystyle{\int_{a}^{b}f'(x)\di{x}}=f(b)-f(a)$，试证明$f(x)$在$[a,b]$上绝对连续
+\begin{proof}
+	设$F(x)=f(x)-f(a)-\displaystyle{\int_{a}^{x}f'(t)\di{t}}.$ \par  设$y>x$,故$F(y)-F(x)=f(y)-f(x)-\displaystyle{\int_{x}^{y}f'(t)\di{t}}$.由Lebesgue定理得$F(y)-F(x)\geq0$,故$F$单增，而$F(a)=F(b)=0$,故$F(x)\equiv0,x\in[a,b]$.故$f(x)\in AC([a,b])\\$
+\end{proof}
+
+
+\exercise{11}设$f\in BV([a,b])$，若有$\displaystyle{\int_{a}^{b}|f'(x)|\di{x}=\bigvee\limits_a^b(f)}$,试证明$f\in AC([a,b])$
+\begin{proof}
+	$F(x)=\displaystyle{\int_{a}^{x}|f'(x)|\di{x}-\bigvee\limits_a^x(f)}$,故$F(a)=F(b)=0$.由前面的例题得到$\dy{\ }{x}\bigvee\limits_a^x(f)=|f'(x)|,\quad a.e.x\in[a,b]$.同样地由Lebesgue定理得$F(x)$是单调的，故$F(x)\equiv0,x\in[a,b]$.\par 故$\displaystyle{\bigvee\limits_a^x(f)\in AC([a,b])}$,而对于$[a,b]$中的任意开区间$(x_i,y_i)$有$\displaystyle{|f(y_i)-f(x_i)|\leq \bigvee\limits_{x_i}^{y_i}(f)}$,故$f\in AC([a,b])$
+\end{proof}

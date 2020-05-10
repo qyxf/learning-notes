@@ -4,34 +4,39 @@
 
 \exercise{2}设$f(x)$在$[0,\infty)$上非负可积，$f(0)=0$,且$f'(0)$存在，试证明存在积分$$\int_{[0,\infty)} \frac{f(x)}{x} \di{x}$$
 \begin{proof}
-设$f'(0)=a,$故$\forall \epsilon>0,\exists\delta>0,\ s.t. \ \forall x\in\ [o,\delta_{x_0}),$有$\left|\frac{f(x)}{x}\right|<\epsilon$\par 
+设$f'(0)=a,$故$\forall \epsilon>0,\exists\delta>0,\ s.t. \ \forall x\in\ [0,\delta_{x_0}),$有$\left|\frac{f(x)}{x}\right|<\epsilon$\par 
 故
-$$\int_{[0,\infty)}\frac{f(x)}{x}\ \di{x}=\int_{[0,\delta)}\frac{f(x)}{x}\ \di{x}+\int_{[\delta,\infty)}\frac{f(x)}{x}\ \di{x}
-\leq \int_{[0,\delta)}(a+\epsilon) \ \di{x}+\int_{[\delta,\infty)}\frac{f(x)}{\delta}\ \di{x}$$$$
-\leq (a+\epsilon)\delta +\frac{1}{\delta}\int_{[\delta,\infty)}f(x)\ \di{x}<+\infty$$
+$$\int_{[0,\infty)}\frac{f(x)}{x}\ \di{x}=
+\int_{[0,\delta)}\frac{f(x)}{x}\ \di{x}+
+\int_{[\delta,\infty)}\frac{f(x)}{x}\ \di{x}
+\leq \int_{[0,\delta)}(a+\epsilon) \ \di{x}+
+\int_{[\delta,\infty)}\frac{f(x)}{\delta}\ \di{x}$$
+$$\leq (a+\epsilon)\delta +\frac{1}{\delta}\int_{[\delta,\infty)}f(x)\ \di{x}
+<+\infty$$
 \end{proof}
 
 
 
 \exercise{3}设$f(x)$是$E \subseteq \mathbb{R}^{n}$上的非负可测函数，若存在$E_k \subset E$,$m(E \setminus {E_K})<1/k(k=1,2,...)$，使得极限$$\lim\limits_{k \to +\infty} \int_{E_k} f(x) \di{x} $$存在，试证明$f(x)$在E上可积
 \begin{proof}
-显然$m\left(E\setminus (\cup_{k=1}^{\infty}E_k) \right)=0,$
-设$F_k=E_k\setminus (\cup_{j=1}^{k-1}E_j),(k=1,2,...),$故$F_i\cap F_j=\emptyset(i\neq j)$且$\cup_{k=1}^{\infty}E_k=\cup_{k=1}^{\infty}F_k,$由书中推论4.7得$$\int_{E}f(x)\ \di{x}=\sum_{k=1}^{\infty}\int_{F_k}f(x)\ \di{x}\ ,$$另一方面$F_k\subset E\setminus\left(\cup_{j=1}^{k-1}E_j\right)\ ,$故$m(F_k)<\frac{1}{k-1},$故$\lim\limits_{k \to +\infty}m(F_k)=0$\par 
-另一方面$$\sum_{k=1}^{n}\int_{F_k}f(x)\ \di{x}=\int_{E_n}f(x)\ \di{x}\ ,$$故$$\lim\limits_{n \to +\infty}\sum_{k=1}^{n}\int_{F_k}f(x)\ \di{x}=\lim\limits_{n \to +\infty}\int_{E_n}f(x)\ \di{x}\ ,$$故$$\int_{E}f(x)\ \di{x}=\lim\limits_{n \to +\infty}\int_{E_n}f(x)\ \di{x}<+\infty$$
+显然$m\left(E\setminus (\bigcup\limits_{k=1}^{\infty}E_k) \right)=0,$
+设$F_k=E_k\setminus (\bigcup\limits_{j=1}^{k-1}E_j),(k=1,2,...),$故$F_i\cap F_j=\emptyset(i\neq j)$且$\bigcup\limits_{k=1}^{\infty}E_k=\bigcup\limits_{k=1}^{\infty}F_k,$由书中推论4.7得$$\int_{E}f(x)\ \di{x}=\sum_{k=1}^{\infty}\int_{F_k}f(x)\ \di{x}\ ,$$另一方面$F_k\subset E\setminus\left(\bigcup\limits_{j=1}^{k-1}E_j\right)\ ,$故$m(F_k)<\frac{1}{k-1},$故$\lim\limits_{k \to +\infty}m(F_k)=0$\par 
+又有$$\sum_{k=1}^{n}\int_{F_k}f(x)\ \di{x}=\int_{E_n}f(x)\ \di{x}\ ,$$故$$\lim\limits_{n \to +\infty}\sum_{k=1}^{n}\int_{F_k}f(x)\ \di{x}=\lim\limits_{n \to +\infty}\int_{E_n}f(x)\ \di{x}\ ,$$故$$\int_{E}f(x)\ \di{x}=\lim\limits_{n \to +\infty}\int_{E_n}f(x)\ \di{x}<+\infty$$
 \end{proof}
 
 
 \exercise{4}设$f(x)$是$\mathbb{R}$上非负可积函数，令$$F(x)=\int_{(-\infty,x]}f(t) \di{t},  x\in \mathbb{R}$$
-若$F \in L(\mathbb{R}) $,试证明$\int_{\mathbb{R}}f(x) \di{x}=0$
+若$F \in L(\mathbb{R}) $,试证明$\displaystyle{\int_{\mathbb{R}}f(x) \di{x}=0}$
 \begin{proof}
-由于$f(x)\in L(\mathbb{R})$,则$\forall \epsilon>0$,存在$N\ ,\ s.t.\ $$$\int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$又由于$F(x)$是单调递增的，故对于$y>N$,有$$F(y)\leq \int_{y}^{y+1}f(x)\ \di{x} \ \leq\ \int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$故$\lim\limits_{y \to \infty}F(y)=0.$又由于$F(x)$单调递增且非负，故$F(x)\equiv 0\ ,\quad a.e. \ x \in \mathbb{R}.$\par 故$\int_{\mathbb{R}}f(x) \di{x}=0$
+由于$f(x)\in L(\mathbb{R})$,则$\forall \epsilon>0$,存在$N\ ,\ s.t.\ $$$\int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$又由于$F(x)$是单调递增的，故对于$y>N$,有$$F(y)\leq \int_{y}^{y+1}f(x)\ \di{x} \ \leq\ \int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$故$\lim\limits_{y \to \infty}F(y)=0.$\par
+又由于$F(x)$单调递增且非负，故$F(x)\equiv 0\ ,\quad a.e. \ x \in \mathbb{R}.$ 故$\int_{\mathbb{R}}f(x) \di{x}=0$
 \end{proof}
 
 
 
 \exercise{5}设$f_k(x)(k=1,2,...)$是$\mathbb{R}^{n}$上非负可积函数列，若对任意可测集$E \subset \mathbb{R}^{n}$都有$$\int_E f_k(x) \di{x} \leq \int_E f_{k+1}(x) \di{x}$$试证明$$\lim\limits_{k \to \infty}\int_E f_k(x) \di{x} = \int_E \lim\limits_{k \to \infty}f_k(x) \di{x}$$
 \begin{proof}
-令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\cup_{k=1}^{\infty}E_k$,故$m(F)=0$,由Levi定理得
+令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\bigcup\limits_{k=1}^{\infty}E_k$,故$m(F)=0$,由Levi定理得
 $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\int_{E\setminus F}f_k(x)\di{x}=\int_{E\setminus F}\lim\limits_{k \to +\infty}f_k(x)\di{x}=\int_{E}\lim\limits_{k \to +\infty}f_k(x)\di{x}$$
 \end{proof}
 
@@ -39,15 +44,15 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 \exercise{6}略(由H{\"o}lden不等式直接得到)
 
 
-\exercise{7}假设有定义在$\mathbb{R}^n$上的函数$f(x)$，如果对于任意的$\epsilon>0$,存在$g,h\in L(\mathbb{R}^n)$,满足$g(x) \leq f(x) \leq h(x),(x\in \mathbb{R}^n) $,并且使得$$\int_{\mathbb{R}^n}(h(x)-g(x)) \di{x}<\epsilon$$,试证明$f\in L(\mathbb{R}^n)$
+\exercise{7}假设有定义在$\R{R}{n}$上的函数$f(x)$，如果对于任意的$\epsilon>0$,存在$g,h\in L(\mathbb{R}^n)$,满足$g(x) \leq f(x) \leq h(x),(x\in \mathbb{R}^n) $,并且使得$$\int_{\mathbb{R}^n}(h(x)-g(x)) \di{x}<\epsilon$$,试证明$f\in L(\mathbb{R}^n)$
 \begin{proof}
 故$\forall k\in \mathbb{N}^*$,存在可积函数$g_k(x)$和$h_k(x),\ s.t.\ g_k(x)\leq f_k(x)\leq h_k(x),\ x\in \mathbb{R}^n,\ $且$$\int_{\mathbb{R}^n}\left(h_k(x)-g_k(x)\right)\di{x}<\frac{1}{k}$$
-故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g_k(x)|\di{x}=0$$设$g(x)=\varlimsup_{k \to +\infty}g_k(x).$故$h_k(x)\geq g(x),\ a.e.\ x \in E$,故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g(x)|\di{x}=0$$故$\{h_k(x)\}$依测度收敛于$g(x)$，故由不等式关系立即得到$\{h_k(x)\}$依测度收敛于$f(x)$,故存在子列$\{h_{k_i}(x)\},\ s.t.\ \lim\limits_{i \to +\infty}h_{k_i}(x)=f(x),\quad a.e.\  x\in \mathbb{R}^n$.故$f(x)$是$\mathbb{R}^n$上的可测函数，由积分的单调性得到$f\in L(\mathbb{R}^n)$
+故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g_k(x)|\di{x}=0$$设$g(x)=\varlimsup\limits_{k \to +\infty}g_k(x).$故$h_k(x)\geq g(x),\ a.e.\ x \in E$,故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g(x)|\di{x}=0$$故$\{h_k(x)\}$依测度收敛于$g(x)$，故由不等式关系立即得到$\{h_k(x)\}$依测度收敛于$f(x)$,故存在子列$\{h_{k_i}(x)\},\ s.t.\ \lim\limits_{i \to +\infty}h_{k_i}(x)=f(x),\quad a.e.\  x\in \mathbb{R}^n$.故$f(x)$是$\mathbb{R}^n$上的可测函数，由积分的单调性得到$f\in L(\mathbb{R}^n)$
 \end{proof}
 
 \exercise{8}设$\{E_k\}$是$\mathbb{R}^n$中测度有限的可测集列，且有$$\lim\limits_{k \to \infty}\int_{\mathbb{R}^n} \mid \chi_{E_k}(x)-f(x) \mid \di{x}=0,$$试证明存在可测集E，使得$f(x)=\chi_E(x),\quad$a.e. $x \in \mathbb{R}^n$.
 \begin{proof}
-故函数列$\{\chi_{E_k}(x)\}$依测度收敛到$f(x)$，由Riesz定理，存在子列$\{\chi_{E_{k_i}}(x)\},\ s.t.$ $$\lim\limits_{i\to\infty}\chi_{E_{k_i}}(x)=f(x)\ ,\quad a.e.\ x\in\mathbb{R}^n$$设$E=\cap_{i=1}^{\infty}E_{k_i}$,故$\chi_{E}(x)=f(x)\ ,\quad a.e. \ x\in \mathbb{R}^n$
+故函数列$\{\chi_{E_k}(x)\}$依测度收敛到$f(x)$，由Riesz定理，存在子列$\{\chi_{E_{k_i}}(x)\},\ s.t.$ $$\lim\limits_{i\to\infty}\chi_{E_{k_i}}(x)=f(x)\ ,\quad a.e.\ x\in\mathbb{R}^n$$设$E=\bigcap\limits_{i=1}^{\infty}E_{k_i}$,故$\chi_{E}(x)=f(x)\ ,\quad a.e. \ x\in \mathbb{R}^n$
 \end{proof}
 
 
@@ -62,12 +67,12 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 
 \exercise{10}设$f\in L(\mathbb{R}^n)$，$E\in \mathbb{R}^n$是紧集，试证明$$\lim\limits_{\mid y \mid \to \infty} \int_{E+\{y\}} \mid f(x) \mid \di{x}=0$$
 \begin{proof}
-由于$f\in L(\mathbb{R}^n) \ $,故$\forall \epsilon>0\ ,$存在$R>0,\ s.t.\ \int_{|x|>R}\ |f(x)|\ \di{x}<\epsilon$.由于$E$为紧集，故存在$R_0>0,\ s.t. \ E\subset B(0,R_0),$\par 故当$|y|>R+R_0$时，$\forall x\in E+\{y\}\ $,有$|x|>R$,故$$\int_{E+\{y\}}|f(x)|
+由于$f\in L(\mathbb{R}^n) \ $,故$\forall \epsilon>0\ ,$存在$R>0,\ s.t.\ \displaystyle{\int_{|x|>R}\ |f(x)|\ \di{x}<\epsilon}$.由于$E$为紧集，故存在$R_0>0,\ s.t. \ E\subset B(0,R_0),$\par 故当$|y|>R+R_0$时，$\forall x\in E+\{y\}\ $,有$|x|>R$,故$$\int_{E+\{y\}}|f(x)|
 \ \di{x\leq\int_{|x|>R}}|f(x)|\ \di{x<\epsilon}$$
 \end{proof}
 
 
-\exercise{17}设$E_1 \supset E_2 \supset...\supset E_k \supset... $ , $ E=\bigcap_{k=1}^{\infty}{E_k} $ ,$ f\in L(E_k)(k=1,2,...) $ ,试证明$$\lim\limits_{k \to \infty}\int_{E_k} f(x) \di{x}=\int_E f(x) \di{x}$$
+\exercise{17}设$E_1 \supset E_2 \supset...\supset E_k \supset... $ , $ E=\bigcap\limits_{k=1}^{\infty}{E_k} $ ,$ f\in L(E_k)(k=1,2,...) $ ,试证明$$\lim\limits_{k \to \infty}\int_{E_k} f(x) \di{x}=\int_E f(x) \di{x}$$
 \begin{proof}
 设$f_k(x)=f(x)\chi_{E_k}(x)$,由集合的递减性得$\lim\limits_{k \to +\infty}f_k(x)=f(x)\chi_E(x) $ ,并且$\mid f_k(x)\mid \leq  \mid f_1(x)\mid ,\forall k \in \mathbb{N}$ 由于$f_1(x)\in L(E_1) $ ,由控制收敛原理得$$\lim\limits_{k \to \infty} \int_{E_k} f(x) \di{x}=\lim\limits_{k \to \infty} \int_{E_1} f_k(x) \di{x}= \int_{E_1} \lim\limits_{k \to \infty}f_k(x) \di{x}=\int_{E_1} f(x)\chi_E(x) \di{x}=\int_{E} f(x) \di{x} $$
 \end{proof}
@@ -110,7 +115,7 @@ $$=\int_{E\setminus F}F(x)-f_1(x)\di{x}=\int_{E}F(x)-f_1(x)\di{x}$$
 
 \exercise{26}设$f(x)$是$\mathbb{R}$上的有界函数，若对于每一点$x\in \mathbb{R}$,右极限都存在试证明$f(x)$在任一区间$[a,b]$上是Riemann可积的.
 \begin{proof}
-	$\forall\epsilon>0,\forall x_0\in \mathbb{R}$,存在$\delta_{x_0}>0\ $,$\ s.t. \forall x\in(x_0,x_0+\delta_{x_0})\ ,$有$\mid f(x)-f(x_0)\mid<\epsilon $ \par 记$I_{x_0}=(x_0,x_0+\delta_{x_0})\ $，显然$f(x)$在$I_{x_0}$中连续，记$E=\cup_{x_0\in [a,b]}I_{x_0}\ ,F=[a,b]\setminus E$ ，故$D(f)\subset F$,由定义得F没有聚点，故$F$是可列集,得$D(f)$是零测集
+	$\forall\epsilon>0,\forall x_0\in \mathbb{R}$,存在$\delta_{x_0}>0\ $,$\ s.t. \forall x\in(x_0,x_0+\delta_{x_0})\ ,$有$\mid f(x)-f(x_0)\mid<\epsilon $ \par 记$I_{x_0}=(x_0,x_0+\delta_{x_0})\ $，显然$f(x)$在$I_{x_0}$中连续，记$E=\bigcup\limits_{x_0\in [a,b]}I_{x_0}\ ,F=[a,b]\setminus E$ ，故$D(f)\subset F$,由定义得F没有聚点，故$F$是可列集,得$D(f)$是零测集
 \end{proof}
 
 给出另一个解法:由课本第20页例12可直接得到。
@@ -127,19 +132,19 @@ $$=\int_{E\setminus F}F(x)-f_1(x)\di{x}=\int_{E}F(x)-f_1(x)\di{x}$$
 
 \exercise{1} 设$f(x)$是$[a,b]$上的正值可积函数，令$0<q\leq b-a $ ,记$\Gamma=\{E\subset [a,b]:m(E) \geq q\} $,试证明$$\inf_{E \in \Gamma} \left\{ \int_E f(x) \di{x} \right\} \textgreater 0$$
 \begin{proof}
-假设不成立，则存在$\Gamma$中的集合列$\{E_n\}\ s.t.\ \int_{E_n}f(x)\di{x}<\frac{1}{2^n}$
-令$S=\varlimsup_{n \to +\infty}E_n\ $,故$m(S)\geq q$,则
-$$\int_S f(x)\di{x}\ =\int_{E}f(x)\chi_{S}(x)\di{x}\leq \int_{E}f(x)*\chi_{\left(\cup_{k=n}^{\infty}E_k\right)}(x)\di{x}\leq \sum_{k=n}^{\infty}\int_{E_k} f(x)\di{x}\leq \frac{1}{2^{n-1}}\ ,\forall n\in \mathbb{N}$$
-令$n\to \infty\ ,$故$\int_S f(x)\di{x}=0\ ,$故$f(x)=0,\ \ a.e.\ x \in S\ ,$与假设矛盾！
+假设不成立，则存在$\Gamma$中的集合列$\{E_n\}\ s.t.\ \displaystyle{\int_{E_n}f(x)\di{x}<\frac{1}{2^n}}$
+令$S=\varlimsup\limits_{n \to +\infty}E_n\ $,故$m(S)\geq q$,则
+$$\int_S f(x)\di{x}\ =\int_{E}f(x)\chi_{S}(x)\di{x}\leq \int_{E}f(x)\chi_{\left(\bigcup\limits_{k=n}^{\infty}E_k\right)}(x)\di{x}\leq \sum_{k=n}^{\infty}\int_{E_k} f(x)\di{x}\leq \frac{1}{2^{n-1}}\ ,\forall n\in \mathbb{N}$$
+令$n\to \infty\ ,$故$\displaystyle{\int_S f(x)\di{x}=0}\ ,$故$f(x)=0,\ \ a.e.\ x \in S\ ,$与假设矛盾！
 \end{proof}
 
 \exercise{2}设$f(x)$是$[a,b]$上的正值可积函数,$\{E_n\}$是$[a,b]$中的可测子集列，若有
 $$\lim\limits_{n \to \infty}\int_{E_n} f(x) \di{x}=0，$$试证明$m(E_n)\to 0(n \to \infty)$
 \begin{proof}
-设$E=\varlimsup_{k \to +\infty}E_k$,故存在$\{E_{n_k}\}\ s.t.\ E_{n_k}\to E_k$且$\{E_{n_k}\}$是单增集合列，故由Levi定理得$$0=\lim\limits_{k \to +\infty} \int_{E_{n_k}}f(x)\di{x}=
-\lim\limits_{k \to +\infty}\int_{\cup_{j=1}^{\infty}E_j}f(x)*\chi_{E_{n_k}}(x)\di{x}=
-\int_{\cup_{j=1}^{\infty}E_j}\lim\limits_{k \to +\infty}f(x)*\chi_{E_{n_k}}(x)\di{x}$$$$
-=\int_{\cup_{j=1}^{\infty}E_j}f(x)*\chi_{E}(x)\di{x}=\int_Ef(x) \di{x}$$
+设$E=\varlimsup\limits_{k \to +\infty}E_k$,故存在$\{E_{n_k}\}\ s.t.\ E_{n_k}\to E_k$且$\{E_{n_k}\}$是单增集合列，故由Levi定理得$$0=\lim\limits_{k \to +\infty} \int_{E_{n_k}}f(x)\di{x}=
+\lim\limits_{k \to +\infty}\int_{\bigcup\limits_{j=1}^{\infty}E_j}f(x)\chi_{E_{n_k}}(x)\di{x}$$$$=
+\int_{\bigcup\limits_{j=1}^{\infty}E_j}\lim\limits_{k \to +\infty}f(x)\chi_{E_{n_k}}(x)\di{x}
+=\int_{\bigcup\limits_{j=1}^{\infty}E_j}f(x)\chi_{E}(x)\di{x}=\int_Ef(x) \di{x}$$
 由于$f(x)$为正值，故$m(E)=0$,故$\lim\limits_{k\to\infty}m(E_k)=0\ $,故$m(F)=0$,由Levi定理得$$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{}$$
 \end{proof}
 
@@ -148,7 +153,7 @@ $$\lim\limits_{n \to \infty}\int_{E_n} f(x) \di{x}=0，$$试证明$m(E_n)\to 0(n
 
 \exercise{6}设$f(x),f_k(x)(k=1,2,...)$是$E \subset \mathbb{R}^{n}$ 上的非负可积函数，且有$$\lim\limits_{k\to\infty}f_k(x)=f(x),\ \ a.e.\ \ ;\quad \lim\limits_{k \to \infty}\int_{E} f_k(x) \di{x}=\int_{E} f(x) \di{x}, $$试证明对于E中的任意一个可测子集e，有$$\lim\limits_{k \to \infty}\int_{e} f_k(x) \di{x}=\int_{e} f(x) \di{x}$$
 \begin{proof}
-设$g_k(x)=\varliminf_{n\geq k}f_n(x)\ $,故$\{f_n(x)\}$是递增函数列，由于$$\lim\limits_{k \to +\infty}g_k(x)\ =\ \varlimsup_{k \to +\infty}f_k(x)\ =f(x)\ ,\quad a.e.\ x \in E\ ,$$由Levi定理得，对于E中的任意可测集e，有$$\lim\limits_{k \to +\infty}\int_e g_k(x)\di{x}\ =\ \int_e \lim\limits_{k \to +\infty}g_k(x)\di{x}\ =\ \int_e f(x)\di{x}\ ，$$
+设$g_k(x)=\inf\limits_{n\geq k}f_n(x)\ $,故$\{f_n(x)\}$是递增函数列，由于$$\lim\limits_{k \to +\infty}g_k(x)\ =\ \varliminf_{k \to +\infty}f_k(x)\ =f(x)\ ,\quad a.e.\ x \in E\ ,$$由Levi定理得，对于E中的任意可测集e，有$$\lim\limits_{k \to +\infty}\int_e g_k(x)\di{x}\ =\ \int_e \lim\limits_{k \to +\infty}g_k(x)\di{x}\ =\ \int_e f(x)\di{x}\ ，$$
 故$$\lim\limits_{k \to +\infty}\int_E g_k(x)\di{x}\ =\ \int_E f(x)\di{x}\ =\lim\limits_{k \to +\infty}\int_E f_k(x)\di{x}\ $$	
 故$$\lim\limits_{k \to +\infty}\int_E \left(f_k(x)-g_k(x)\right)\di{x}\ =0\ ,$$
 故$$\lim\limits_{k \to +\infty}\int_e \left(f_k(x)-g_k(x)\right)\di{x}\ =0\ ,$$
@@ -160,37 +165,37 @@ $$\lim\limits_{n \to \infty}\int_{E_n} f(x) \di{x}=0，$$试证明$m(E_n)\to 0(n
 利用Abel变换(交换求和号次序),我们可以进行如下转换：
 $$\sum_{k=0}^{\infty}a^km(\{x\in E:f(x)\geq k\})$$
 $$=\sum_{k=0}^{\infty}\left(a^k\sum_{n=k}^{\infty}m\left(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ \right)\right)$$
-$$=\sum_{n=0}^{\infty}\left(\sum_{k=1}^{n}a^k\right)m\left(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ \right)$$$$=\sum_{n=0}^{\infty}\frac{a^{n+1}-1}{a-1}m\left(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ \right)$$
+$$=\sum_{n=0}^{\infty}\left(\sum_{k=0}^{n}a^k\right)m\left(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ \right)$$$$=\sum_{n=0}^{\infty}\frac{a^{n+1}-1}{a-1}m\left(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ \right)$$
 另一方面，在$f(x)\in[n,n+1]$时，有$a^n\leq a^{f(x)}\leq a*a^{n}\ $,$a^n\leq \frac{a^{n+1}-1}{a-1}\leq \frac{a}{a-1}a^n$	\par 
 故$$\sum_{k=0}^{\infty}a^km(\{x\in E:f(x)\geq k\})\iff\sum_{n=0}^{\infty}a^n m(\ \{\ x\in E:f(x)\in[n,n+1]\ \}\ )\iff a^{f(x)}\in L(E)$$
 \end{proof}
 
 
-\exercise{11}设$f\in L(\mathbb{R}^1)$且记$F(x)=\int_{0}^{x}f(t)\di{t}\ ,\ x \in \mathbb{R}^1\ .$若F(x)是$\mathbb{R}^1$上的递增函数，试证明$f(x)>0\ ,\ a.e.\ x \in \mathbb{R}^1$
+\exercise{11}设$f\in L(\mathbb{R}^1)$且记$F(x)=\displaystyle{\int_{0}^{x}f(t)\di{t}}\ ,\ x \in \mathbb{R}^1\ .$若F(x)是$\mathbb{R}^1$上的递增函数，试证明$f(x)>0\ ,\ a.e.\ x \in \mathbb{R}^1$
 \begin{proof}
-设G是$\mathbb{R}^1$上的开集，故G可以写为可列个不交开集的并，故$G=\cup_{n=1}^{\infty}(a_n,b_n)$.由于$f\in L(\mathbb{R}^1)$，故$\int_Gf(t)\di{t}<+\infty\ $,故$$\int_Gf(t)\di{t}=\sum_{n=1}^{\infty}\int_{a_n}^{b_n}f(t)\di{t}=\sum_{n=1}^{\infty}\left(F(b_n)-F(a_n)\right)\geq \ 0 \ .$$
+设G是$\mathbb{R}^1$上的开集，故G可以写为可列个不交开集的并，故$G=\bigcup\limits\limits_{n=1}^{\infty}(a_n,b_n)$.由于$f\in L(\mathbb{R}^1)$，故$\displaystyle{\int_Gf(t)\di{t}}<+\infty\ $,故$$\int_Gf(t)\di{t}=\sum_{n=1}^{\infty}\int_{a_n}^{b_n}f(t)\di{t}=\sum_{n=1}^{\infty}\left(F(b_n)-F(a_n)\right)\geq \ 0 \ .$$
 故对于开集G，有$\int_Gf(t)\di{t}\geq\ 0$\par 
-设F为$G_{\delta}$集，故$F=\cap_{k=1}^{\infty}F_k\ ,$其中$F_k$为开集，若$\int_Ff(t)\di{t}<0\ $,记$H_n=\cap_{k=1}^{\infty}F_k\ ,$则$\lim\limits_{n\to\infty}H_n=F\ ,$ 由之前的结论得$\forall n\in \mathbb{N}\ , \int_{\mathbb{R}}f(x)\chi_{H_n}(x)\di{x}\geq0$ \par
-设$a_n=\int_{\mathbb{R}}f(x)\chi_{H_n}(x)\di{x}\ $故$a_n>0\ ,$并且单调递减，由$f(x)\in  L(\mathbb{R})$和控制收敛原理得$$\lim\limits_{n\to\infty}a_n=\int_{\mathbb{R}}\lim\limits_{n\to\infty}\left(f(x)\chi_{H_n}(x)\right)\di{x}=\int_{\mathbb{R}}f(x)\chi_{F}(x)\di{x}<0\ ,$$矛盾！故对于$F_{\delta}$集F，有$\int_Ff(t)\di{t}\geq0\ $\par 
+设F为$G_{\delta}$集，故$F=\bigcap\limits_{k=1}^{\infty}F_k\ ,$其中$F_k$为开集，若$\displaystyle{\int_Ff(t)\di{t}<0}\ $,记$H_n=\bigcap\limits_{k=1}^{n}F_k\ ,$则$\lim\limits_{n\to\infty}H_n=F\ ,$ 由之前的结论得$\forall n\in \mathbb{N}\ , \displaystyle{\int_{\mathbb{R}}f(x)\chi_{H_n}(x)\di{x}}\geq0$ \par
+设$a_n=\displaystyle{\int_{\mathbb{R}}f(x)\chi_{H_n}(x)\di{x}}\ $故$a_n>0\ ,$并且单调递减，由$f(x)\in  L(\mathbb{R})$和控制收敛原理得$$\lim\limits_{n\to\infty}a_n=\int_{\mathbb{R}}\lim\limits_{n\to\infty}\left(f(x)\chi_{H_n}(x)\right)\di{x}=\int_{\mathbb{R}}f(x)\chi_{F}(x)\di{x}<0\ ,$$矛盾！故对于$F_{\delta}$集F，有$\displaystyle{\int_Ff(t)\di{t}}\geq0\ $\par 
 对于任意可测集E,做E的等测包，设$E=G\setminus Z,\ $其中G为$G_{\delta}$集，$m(Z)=0\ ,且G \supset Z$,故$$\int_E f(x)\di{x}=\int_G f(x)\di{x}-\int_Z f(x)\di{x}=\int_G f(x)\di{x}\geq0\ ,$$故对于$\mathbb{R}$上的任意可测集E,有$\int_E f(x)\di{x}\geq0\ $，故$f(x)\geq0,\ \ a.e.\ x \in \mathbb{R}$
 \end{proof}
 
 
-\exercise{15}设$E_k \subset[a,b]$且$m(E_k)\leq \delta >0\ (k=1,2,...)\ $,$\ \{a_k\}$是一实数列且满足$$\sum_{k=1}^{\infty}\mid a_k\mid \chi_{E_k}(x)<+\infty,\quad a.e.\ x\in [a,b]$$试证明$\sum_{k=1}^{\infty}\mid a_k\mid <+\infty$
+\exercise{15}设$E_k \subset[a,b]$且$m(E_k)\leq \delta >0\ (k=1,2,...)\ $,$\ \{a_k\}$是一实数列且满足$$\sum_{k=1}^{\infty}\mid a_k\mid \chi_{E_k}(x)<+\infty,\quad a.e.\ x\in [a,b]$$试证明$\sum\limits_{k=1}^{\infty}\mid a_k\mid <+\infty$
 \begin{proof}
-	令$$f(x):=\sum_{k=1}^{\infty}\mid a_k\mid \chi_{E_k}(x)\ , $$故f(x)在[a,b]上几乎处处有限，记$A_k=\{x\in[a,b]:f(x)>k\},k \in \mathbb{N}\ ,$则$\lim\limits_{k\to\infty}m(A_k)=0\ ，$故存在$k_0\ ,\ s.t.\ m(A_{k_0}\cap E_k)<\frac{\delta}{2}\ ,\ $故$x\in [a,b]\setminus A_{k_0}$时，有$f(x)<k_0,\ $故$$\frac{\delta}{2}\sum_{k=1}^{\infty}\mid a_k\mid \leq \sum_{k=1}^{\infty}\mid a_k\mid *m(E_k\setminus A_{k_0})=\int_{[a,b]\setminus A_{k_0}}\mid a_k\mid\chi_{E_k}(x)\ \di{x}\leq k_0(b-a)$$
+	令$$f(x):=\sum_{k=1}^{\infty}\mid a_k\mid \chi_{E_k}(x)\ , $$故f(x)在[a,b]上几乎处处有限，记$A_k=\{x\in[a,b]:f(x)>k\},k \in \mathbb{N}\ ,$则$\lim\limits_{k\to\infty}m(A_k)=0\ ，$故存在$k_0\ ,\ s.t.\ m(A_{k_0}\cap E_k)<\frac{\delta}{2}\ ,\ $故$x\in [a,b]\setminus A_{k_0}$时，有$f(x)<k_0,\ $故$$\frac{\delta}{2}\sum_{k=1}^{\infty}\mid a_k\mid \leq \sum_{k=1}^{\infty}\mid a_k\mid *m(E_k\setminus A_{k_0})=\int_{[a,b]\setminus A_{k_0}} \sum_{k=1}^{\infty}\mid a_k\mid\chi_{E_k}(x)\ \di{x}\leq k_0(b-a)$$
 	故$\sum_{k=1}^{\infty}\mid a_k\mid$收敛
 \end{proof}
 
 
 \exercise{18}设$E\subset[0,1]\times[0,1]$是可测集，记$$E_x=\{y\in [0,1]:(x,y)\in [0,1]^2\}$$$$E_y=\{x\in [0,1]:(x,y)\in [0,1]^2\}$$若有$m(E_x)=0,\quad a.e.\ x\in [0,1]\ $试证明$$m(\ \{y:m(E_y=1) \}\ )\leq \frac{1}{2}$$
 \begin{proof}
-	反设$m(\ \{y:m(E_y=1) \}\ )>\frac{1}{2}\ $,则$$m(E)=\int_{0}^{1}\di{x}\int_{0}^{1}m(E_y)dy = \int_{0}^{1}\left(\int_{\{y:m(E_y)=1\}}1\ \di{y}+\int_{\{y:m(E_y)<1\}}m(E_y)\ \di{y}\right)\di{x}>\frac{1}{2}$$
-	而另一方面，我们有$$m(E)=\int_{0}^{1}\di{y}\int_{0}^{1}m(E_x)dx = \int_{0}^{1}\left(\int_{\{y:m(E_x)>0\}}m(E_x)\ \di{x}\right)\di{y}<\frac{1}{2},\ $$矛盾！
+	反设$m(\ \{y:m(E_y=1) \}\ )>\frac{1}{2}\ $,则$$m(E)=\int_{0}^{1}\di{x}\int_{0}^{1}\chi_{E_y}(y)dy = \int_{0}^{1}\left(\int_{\{y:m(E_y)=1\}}1\ \di{y}+\int_{\{y:m(E_y)<1\}}\chi_{E_y}(y)\ \di{y}\right)\di{x}>\frac{1}{2}$$
+	而另一方面，我们有$$m(E)=\int_{0}^{1}\di{y}\int_{0}^{1}\chi_{E_x}(x)dx = \int_{0}^{1}\left(\int_{\{y:m(E_x)>0\}}\chi_{E_x}(x)\ \di{x}\right)\di{y}<\frac{1}{2},\ $$矛盾！
 \end{proof}
 
 
-\exercise{21}设$f(x),g(x)$是E上的非负可测函数，且有$fg\in L(E)\ $,令$E_y=\{x\in E:g(x)\geq y\}\ $试证明$$F(y)\ =\ \int_{E_y}f(x) \di{x} $$对一切$y>0$均存在，且有$$\int_{0}^{\infty}F(y)\di{y}=\int_E f(x)g(x)\di{x}$$
+\exercise{21}设$f(x),g(x)$是E上的非负可测函数，且有$f·g\in L(E)\ $,令$E_y=\{x\in E:g(x)\geq y\}\ $试证明$$F(y)\ =\ \int_{E_y}f(x) \di{x} $$对一切$y>0$均存在，且有$$\int_{0}^{\infty}F(y)\di{y}=\int_E f(x)g(x)\di{x}$$
 \begin{proof}
 	当$y>0$时，有$$\int_{E_y}f(x)\di{x}=\frac{1}{y}\int_{E_y}f(x)y\di{x}\leq\frac{1}{y}\int_{E_y}f(x)g(x)\di{x}\leq\frac{1}{y}\int_{E}f(x)g(x)\di{x}<+\infty\ ,$$故F(y)对y>0存在.
 	$$\int_{0}^{\infty}F(y)\di{y}=\int_{0}^{\infty}\int_{G_y}f(x)\di{x}\di{y}=\int_{0}^{\infty}\int_{E}f(x)\chi_{E_y}(x)\ \di{x}\di{y}=\int_{E}f(x)\int_{0}^{\infty}\chi_{E_y}(x)\ \di{y}\di{x}$$$$=\int_{E}f(x)\int_{0}^{g(x)}\ 1\ \di{y}\di{x}=\int_Ef(x)g(x)\di{x}$$
@@ -201,9 +206,9 @@ $$=\sum_{n=0}^{\infty}\left(\sum_{k=1}^{n}a^k\right)m\left(\ \{\ x\in E:f(x)\in[
 \exercise{22}设$f\in L(E) \ $,$f_k\in L(E)(k=1,2,...)\ $且有$\lim\limits_{n \to \infty}f_n(x)=f(x)\ ,\ ,x\in E\ ,$以及$$\lim\limits_{n \to \infty}\int_E \mid f_n(x)\mid \di{x}=\int_E f(x)\di{x}\ $$,试证明$$\lim\limits_{n \to \infty}\int_E \mid f_n(x)-f(x)\mid \di{x}=0$$
 \begin{proof}
 	\textbf{我们先证明一个很好用的定理(控制收敛原理的推广)}\par
-	$\{f_k(x)\},\{g_k(x)\}$是$E \subset \mathbb{R}^n$上的非负可测函数列,且$\mid f_k(x) \mid \leq g_k(x)\ ,\ \lim\limits_{k \to \infty}f_k(x)=f(x),\ \lim\limits_{k \to \infty}g_k(x)=g(x)\ $,又有$\lim\limits_{k \to \infty}\int_E g_k(x)\di{x}=\int_E g(x)\di{x}\ $，则$\ \lim\limits_{k \to \infty}\int_E f_k(x)\di{x}=\int_E f(x)\di{x}\ $\par
+	$\{f_k(x)\},\{g_k(x)\}$是$E \subset \mathbb{R}^n$上的非负可测函数列,且$\mid f_k(x) \mid \leq g_k(x)\ ,\ \lim\limits_{k \to \infty}f_k(x)=f(x),\ \lim\limits_{k \to \infty}g_k(x)=g(x)\ $,又有$\lim\limits_{k \to \infty}\displaystyle{\int_E g_k(x)\di{x}}=\displaystyle{\int_E g(x)\di{x}}\ $，则$\ \lim\limits_{k \to \infty}\displaystyle{\int_E f_k(x)\di{x}}=\displaystyle{\int_E f(x)\di{x}}\ $\par
 	定理的证明： 	有条件得$g_k(x)+f_k(x),(g_k(x)-f_k(x)$均为非负可测函数列\par
-	由Fatou引理得：
+	由Fatou引理得：	
 	$$\int_E \varliminf_{k \to +\infty}(g_k(x)+f_k(x))\di{x}\leq \varliminf_{k \to +\infty}\int_E (g_k(x)+f_k(x))\di{x}=\ \int_E g(x)\di{x}+\varliminf_{k \to +\infty}\int_E f_k(x)\di{x}\ ,$$  
 	$$\int_E \varliminf_{k \to +\infty}(g_k(x)-f_k(x))\di{x}\leq \varliminf_{k \to +\infty}\int_E (g_k(x)-f_k(x))\di{x}\ =\ \int_E g(x)\di{x}-\varlimsup_{k \to +\infty}\int_E f_k(x)\di{x}\ ,$$
 	故$$\varliminf_{k \to +\infty}\int_E f_k(x)\di{x}\ \geq\  \int_E f(x)\di{x}\ \geq\ \varlimsup_{k \to +\infty}\int_E f_k(x)\di{x}\ $$

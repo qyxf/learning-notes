@@ -1,7 +1,7 @@
 \documentclass[
     b5paper,  % 默认为 a4paper
     %sourcefont, % 电脑上未装齐对应字体时，请勿打开该选项
-    %opensource, % 输出开源信息
+    %opensource, % 输出开源信息 
     decoration,  % 打开装饰
 ]{qyxf-book}  
 
@@ -20,6 +20,7 @@
 
 %定理环境配置
 \usepackage{amsthm}%调用定理环境宏包
+\usepackage{mathrsfs}
 \renewenvironment{proof}{\\ \noindent\tcbox[colback=yellow!25!white,on line,top=0mm,bottom=0mm,right=0mm,left=0mm]{\heiti 证明}\ }{\hfill $\blacksquare$\par\vspace{1pt}}%定理环境
 
 %微积分符号
@@ -28,17 +29,18 @@
 \newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
 \newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
 \newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
-
+\newcommand{\li}[1]{\lim\limits_{#1}}
+\newcommand{\R}[2]{\mathbb{#1}^{#2}}
 \begin{document}
 
 \maketitle
-%\input{./subfiles/preface.tex}
+
+\input{./subfiles/preface.tex}
 \tableofcontents
 \input{./subfiles/chp1.tex}
 \input{./subfiles/chp2.tex}
 \input{./subfiles/chp3.tex}
 \input{./subfiles/chp4.tex}
-
-
+\input{./subfiles/chp5.tex}
 
 \end{document}

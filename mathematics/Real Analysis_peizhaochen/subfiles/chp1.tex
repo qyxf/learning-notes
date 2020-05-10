@@ -1,1 +1,45 @@
-\chapter{}
+\chapter{集合与点集}
+\section{第一组}
+由于第一章内容较为基础，其中的不少内容在分析中也已有所介绍，故我们只选取少量较典型的题目给出具体的解析。\\
+
+
+%\exercise{2}设$\{f_j(x)\}$是定义在$[a,b]$上的函数列，$E\subset[a,b]$,且有$\li{n\to\infty}f_n(x)=\chi_{[a,b]\setminus E}(x), x\in [a,b]$.若令$E_n=\left\lbrace x\in[a,b]:f_n(x)\leq \displaystyle{\frac{1}{2}} \right\rbrace $,试求$\li{n\to\infty}E_n$
+
+
+\exercise{3}设有集合列$\{A_n\},\{B_n\}$试证明：$$(i)\quad \varlimsup\limits_{n \to +\infty}\left(A_n\cup B_n \right)=\left(\varlimsup\limits_{n \to +\infty}A_n \right)\cup \left(\varlimsup\limits_{n \to +\infty} B_n \right) $$
+$$(ii)\quad \varliminf\limits_{n \to +\infty}\left(A_n\cap B_n \right)=\left(\varliminf\limits_{n \to +\infty}A_n \right)\cap \left(\varliminf\limits_{n \to +\infty} B_n \right) $$
+\begin{proof}
+利用定理1.3直接进行叙述即可，此处省略
+\end{proof}
+
+\exercise{14}设$F\subset \R{R}{n}$是有界闭集，$E$是$F$的一个无限子集，试证明$E'\cap F\neq \emptyset$.反之，若$F\subset \R{R}{n}$,且对于F中的任一无限子集E，有$E'\cap F\neq \emptyset$，则$F$是有界闭集.
+\begin{proof}
+	由于F是闭集故$\overline{E}\subset F,$故$E'\subset F.$由列紧性原理知$E'\neq\emptyset$，故得证\par 
+	另一方面，我们反设$E$无界，则对于任意的正整数$n$，有$E\cap \big(B(0,n)\setminus B(0,n-1) \big)\neq \emptyset $.在$B(0,n)\setminus B(0,n-1)$中任取一点$x_k$，故点列$\{x_k\}$无聚点.令$E=\{x_k|k\in \R{N}{*}\}$,故$E'=\emptyset$，矛盾！故E有界.\par 
+	若$F$不为闭集，则F中存在一个收敛的不重复点列$\{y_n\}$,有$y_n\to y_0$，故$y_0\in F,$矛盾！故F为有界闭集
+\end{proof}
+
+
+\exercise{16}设$A,B$是$\R{R}{\ }$中的点集，试证明$(A\times B)'=(\overline{A}\times B')\cup (A'\times\overline{B})$
+\begin{proof}
+	任取$A\times B$中的互异收敛点列$\{(x_n,y_n)\}$,设收敛点为$(x_0,y_0)$,故$x_n\to x_0,y_n\to y_0$.我们可以用反证法得到$(\overline{A}\setminus A')\times (\overline{B}\setminus B')\ \cup\  (A\times B)'=\emptyset$(此处请读者自行补充).另一方面，显然$A\times B',A'\times B,A'\times B'\subset (A\times B)'.$综上得证
+\end{proof}
+
+
+\exercise{18}设$f\in C(\R{R}{\ }),\{F_k\}$是$\R{R}{\ }$中的递减紧集列，试证明$$f\left( \bigcap\limits_{k=1}^{\infty}F_k \right)=\bigcap\limits_{k=1}^{\infty}f(F_k) $$
+\begin{proof}
+	由闭集套定理得$ \bigcap\limits_{k=1}^{\infty}F_k\neq \emptyset$，任取$ x\in \bigcap\limits_{k=1}^{\infty}F_k$,故对于任意的正整数$k$,有$f(x)\in f(F_k)$,故$f(x)\in \bigcap\limits_{k=1}^{\infty}f(F_k),$故$f\left( \bigcap\limits_{k=1}^{\infty}F_k \right)\subset \bigcap\limits_{k=1}^{\infty}f(F_k) $.\par 
+	任取$y\in \bigcap\limits_{k=1}^{\infty}f(F_k),$故对于任意的正整数$k$,$y\in f(F_k)$.记$E_k=f^{-1}(y)\cap F_k,$故$E_k$为闭集，故$E_k$为递减闭集列.由闭集套定理知存在$x\in \R{R}{\ }$,使得$x\in \bigcap\limits_{k=1}^{\infty}\left(E_k \right)=f^{-1}(y)\cap  \bigcap\limits_{k=1}^{\infty}F_k$,故$y\in f\left( \bigcap\limits_{k=1}^{\infty}F_k \right)$.综上$f\left( \bigcap\limits_{k=1}^{\infty}F_k \right)=\bigcap\limits_{k=1}^{\infty}f(F_k) $
+\end{proof}
+
+
+\exercise{38}设$f:[0,1]\mapsto[0,1]$.若点集$G_f=\left\lbrace (x,f(x)):x\in[0,1]\right\rbrace $是$[0,1]\times[0,1]$中的闭集，试证明$f\in C([0,1])$
+\begin{proof}
+	记$\omega(x)$表示函数$f(x)$在$x$处的振幅，记$M(x)=\varlimsup\limits_{t \to x}f(t),m(x)=\varliminf\limits_{t \to x}f(t),$即$\omega(x)=M(x)-m(x)$.由分析知识我们可以得到$f(x)$在$x_0$处连续的充分必要条件是$\omega(x_0)=0.$\par 
+	若存在$x_0\in [0,1]$,满足$\omega(x_0)\neq 0$,那么必有$f(x_0)\neq M(x_0)$或$f(x_0)\neq m(x_0).$不妨设$f(x_0)\neq M(x_0)$，故$(x_0,M(x_0))\notin G_f$.由定义知存在$[0,1]$中的趋于$x_0$的数列$\{a_n\}$满足$\li{n\to \infty}f(a_n)=M(x_0).$故对于任意的$\epsilon>0,$存在正整数$n$,使得$\sqrt{(x_0-a_n)^2+(M(x_0)-f(a_n))^2}<\epsilon,$而$(a_n,f(a_n))\in G_f$,故$(x_0,M(x_0))$不为$G_f$的内点，这与$G_f $是$[0,1]\times[0,1]$中的闭集矛盾！故假设不成立，原命题成立.
+\end{proof}
+
+\exercise{40}设$A,B\subset \R{R}{n}$，且$\overline{A}\cap B=\overline{B}\cap A=\emptyset$,试证明存在开集$G_A,G_B$使得$G_A\cap G_B=\emptyset,G_A\supset A,G_B\supset B$.
+\begin{proof}
+	取$G_A=\left\lbrace x\in \R{R}{n}|d(x,A)<d(x,B)\right\rbrace,G_B=\left\lbrace x\in \R{R}{n}|d(x,A)>d(x,B)\right\rbrace $,由于d是连续函数，故$G_A,G_B$是开集，显然$G_A\cap G_B=\emptyset,G_A\supset A,G_B\supset B$
+\end{proof}
