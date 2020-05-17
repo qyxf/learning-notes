@@ -1,4 +1,5 @@
 \chapter{解析函数的{\rm Taylor}展开及其应用}
+%p1-4
 \section{Weierstrass定理}
     对于复数上的数列，其收敛性可以类似于$\mathbb{R}^2$中点集的收敛性即可得到.同样的我们有柯西收敛原理,此处略去\par
     对于复数上的数项级数$\displaystyle{\sum\limits_{n=0}^\infty z_n}$, 
@@ -216,9 +217,411 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 设和函数为$f$,由一致收敛性得$f$在$\displaystyle{S_\alpha(1)\cap B(1,\delta)}$上连续，
 故$\displaystyle{\lim\limits_{\substack{z\in S_\alpha(1)\\z\to 1}}f(z)=f(1)=S}$\\\rightline{$\square$}
 
-%p1-4
 
 
+%以下是p5-8
+\begin{eg}
+	\color{blue}计算级数$\displaystyle{\sum_{n=1}^{\infty} \frac{z^n}{n}}$的和.
+	
+	\color{black}
+	显然收敛半径为1且和函数$\displaystyle{f(z) \in H(D)}$，故$\displaystyle{f(z)=\sum_{n=1}^{\infty} \frac{z^n}{n}}$， 得$\displaystyle{f'(z)=\sum_{n=1}^{\infty} z^{n-1} = \frac{1}{1-z}}$
+	由此得$\displaystyle{f(z)=-log(1-z), \vert z \vert < 1}$.
+	
+	前面分析得在$\displaystyle{\vert z \vert = 1}$上除$\displaystyle{z=1}$均收敛，故由定理4.2.9得当$\displaystyle{z=e^{i\theta} （0 < \theta < 2\pi}$时，有：$\displaystyle{\sum_{n=1}^{\infty} \frac{e^{in\theta}}{n} = -log(1-e^{i\theta})=-log \vert 1 - e^{i\theta} \vert - i arg(1 - e^{i\theta})}$ (*).
+	
+	由几何关系得$\displaystyle{\vert 1 - e ^{i\theta} \vert = 2 \sin \frac{\theta}{2}, arg(1 - e^{i\theta}) = - \phi}$ 
+	
+	故由(*)式以及比较实虚部得$\displaystyle{\sum_{n=1}^{\infty} \frac{cos n\theta}{n} = -log(2 \sin \frac{\theta}{2})}$, $\displaystyle{\sum_{n=1}^{\infty} \frac{\sin n\theta}{n} = \frac{\pi - \theta} {2}}$
+	
+	特别地，$\displaystyle{\theta = \pi}$时得$\displaystyle{\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} = log 2}$; $\displaystyle{\theta = \pi / 2}$时得$\displaystyle{\sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1} = \pi / 4}$.
+\end{eg}
+
+\section{解析函数的{\rm Taylor}展开}
+\begin{mypro}
+	\color{blue}
+	(\rm Taylor) \color{black} (略)
+\end{mypro}
+
+\begin{proof}
+	对于此定理有两种不同证法。详见史济怀《复变函数》及Stein 《 Complex Analysis》.
+\end{proof}
+
+\begin{mypro}
+	由4.3.1以及4.2.4得$\displaystyle{f}$在$\displaystyle{z_0}$处解析的充要条件为$\displaystyle{f}$ 在$\displaystyle{z_0}$的邻域内可展为幂级数：$\displaystyle{f(z)=\sum_{n=0}^{\infty}a_n (z-z_0)^n}$.
+\end{mypro}
+
+\begin{mypro}
+	$\displaystyle{z_0}$为$\displaystyle{f}$的$\displaystyle{m}$阶零点的充要条件是$\displaystyle{f}$在$\displaystyle{z_0}$的邻域内可写成$\displaystyle{f(z)=(z-z_0)^m g(z)}$。其中$\displaystyle{g}$在$\displaystyle{z_0}$处解析，且$\displaystyle{g(z_0) \neq 0}$.
+\end{mypro}
+\begin{proof}
+	略.
+\end{proof}
+
+\begin{mypro}\color{blue}（零点独立性定理）
+	\color{black}
+	设$\displaystyle{D}$为$\displaystyle{\mathbb{C}}$中的域，$\displaystyle{f \in H(D)}$，若$\displaystyle{f \not\equiv 0}$，且$\displaystyle{f(a)=0}$，则存在$\displaystyle{\delta > 0}$, s.t. $\displaystyle{\forall z \in B(z_0, \delta) \\ \{z_0\}}$有$\displaystyle{f(z) \neq 0}$.
+\end{mypro}
+\begin{proof}
+	略. 史济怀.方企勤.Stein给出了两种不同的证明方法.
+\end{proof}
+
+
+\begin{mypro}\color{blue}（唯一性定理)
+	\color{black}
+	设$\displaystyle{D}$为$\displaystyle{\mathbb{C}}$中的域，$\displaystyle{f_1,f_2 \in H(D)}$.若存在极限在$\displaystyle{D}$中的点列$\displaystyle{z_n}$ s.t. $\displaystyle{f_1(z_n) = f_2(z_n), n=1,2,...}$，则在$\displaystyle{D}$ 中有$\displaystyle{f_1 \equiv f_2}$.
+	
+\end{mypro}
+\begin{proof}
+	略.
+\end{proof}
+
+
+\begin{eg} 
+	\color{blue} $\displaystyle{{\sin}^2 z + \cos^2 z \equiv 1, z \in \mathbb{C}}$
+	\color{black}
+\end{eg}
+\begin{proof}
+	取点列$\displaystyle{\{a_n\}}$：$\displaystyle{a_n = \frac{1}{n}}$，得$\displaystyle{a_n \rightarrow 0}$. 故由4.3.7得证.
+\end{proof}
+
+\begin{eg}
+	\color{blue}
+	证明：$\displaystyle{e^z =\sum_{n=0}^{\infty} \frac{z^n}{n!}, z \in \mathbb{C}}$
+	\color{black}
+\end{eg}
+\begin{proof}
+	由Stirling公式得，$\displaystyle{f(z)=\sum_{n=0}^{\infty} \frac{z^n}{n!}}$的收敛半径为 $\displaystyle{R=+\infty}$，显然$\displaystyle{e^z}$与$\displaystyle{f(z)}$均为整函数，且在实轴上相等，由4.3.7得证.
+\end{proof}
+利用这样的方法，我们可以将{\rm Taylor }公式从$\displaystyle{\mathbb{R}}$上扩张到$\displaystyle{\mathbb{C}}$上.
+
+\section{{\rm Laurent } 级数}
+\begin{mypro}({\rm Laurent}级数. 主要部分.)
+	略.
+\end{mypro}
+
+\begin{mypro}
+	\color{blue}
+	({\rm Laurent})
+	\color{black}
+	若{\rm Laurent}级数的收敛域圆环$\displaystyle{D = \{z: r< \vert z - z_0 \vert < R \}}$，那么它在$\displaystyle{D}$中绝对收敛且内闭一致收敛，那么它的和函数在$\displaystyle{D}$中解析.
+\end{mypro}
+
+\begin{mypro}
+	\color{blue}
+	({\rm Laurent})
+	\color{black}
+	设$\displaystyle{D=\{z : r < \vert z \vert < R\}}$. 若$\displaystyle{f \in H(D)}$，则$\displaystyle{f}$在$\displaystyle{D }$中可以展为{\rm Laurent}级数，$\displaystyle{f(z)=\sum_{n = -\infty}^{\infty} a_n(z - z_0)^n}, z \in D$，其中$\displaystyle{a_n = \frac{1}{2\pi_i}  \int_{\gamma_\rho} \frac{f(\xi)} {(\xi - z_0)^{n+1}} \di \xi }$，其中$\displaystyle{\gamma_\rho = \{ \xi : \vert \xi - z_0 \vert  = \rho \} (r < \rho < R)}$，并且展开式唯一.
+	
+	这个定理是4.4.2的逆定理，证明略.
+\end{mypro}
+
+
+\begin{eg}
+	\color{blue}
+	$\displaystyle{f(z) = \frac{1}{\sin \frac{1}{z}}}$ 在以0为圆心的圆形去心邻域上是否可展为{\rm Laurent } 级数？
+	\color{black}
+\end{eg}
+\begin{jie}
+	
+	取$\displaystyle{\{z_n\}, z_n = \frac{1}{n\pi}, n \in \mathbb{N} ^* \Rightarrow \sin \frac{1}{z_n} = 0}$. 故有一列趋于0的$\displaystyle{f}$的奇点. 故$\displaystyle{f}$ 在0的去心邻域内不可展为{\rm Laurent } 级数.
+\end{jie}
+
+\begin{eg}
+	\color{blue}
+	设$\displaystyle{f(z)=\frac{1}{(z-1)(z-2)}}$，设求在$\displaystyle{D_1 = \{ z : 1 < \vert z \vert < 2\}, D_2 = \{ z : 2 < \vert z \vert < + \infty}$上的{\rm Laurent} 展式.
+	\color{black}
+\end{eg}
+\begin{jie}
+	
+	$\displaystyle{z \in D_1}$ 时，
+	\begin{align*}
+	\frac{1}{(z-1)(z-2)} &= \frac{1}{z-2} - \frac{1}{z-1} \\
+	&= -\frac{1}{2} \frac{1}{1 - \frac{z}{2}} - \frac{1}{z} \frac{1}{1 - \frac{1}{z}}\\
+	&= -\frac{1}{2} \sum_{n=0}^{\infty} (\frac{z}{2})^n - \frac{1}{z} \sum_{n=0}^{\infty} (\frac{1}{z})^n\\
+	&=-\sum_{n=0}^{\infty} \frac{z^n}{z^{n+1}} - \sum_{n=1}^{\infty} \frac{1}{z^n}
+	\end{align*}
+	$\displaystyle{z \in D_2}$时，
+	\begin{align*}
+	\frac{1}{(z-1)(z-2)} &= \frac{1}{z-2} - \frac{1}{z-1} \\
+	&= -\frac{1}{z} \frac{1}{1 - \frac{2}{z}} - \frac{1}{z} \frac{1}{1 - \frac{1}{z}}\\
+	&= -\frac{1}{z}( \sum_{n=0}^{\infty} (\frac{2}{z})^n -\sum_{n=0}^{\infty} (\frac{1}{z})^n)\\
+	&= \sum_{n=0}^{\infty} \frac{2^n - 1}{z^{n+1}}
+	\end{align*}		
+	
+\end{jie}
+
+\section{孤立奇点}
+三种奇点：可去奇点、极点、本性奇点.
+\begin{mypro}
+	设$\displaystyle{a \in \mathbb{C}, f(z) \in H(B(a, R) \backslash \{ a\})}$则下列三个命题等价.
+	\begin{enumerate} [(1)]
+		\item $\displaystyle{a}$是$\displaystyle{f(z)}$的可去奇点.
+		\item $\displaystyle{f(z)}$在$\displaystyle{B(a, \delta)}$上有界.
+		\item $\displaystyle{f(z)}$在$\displaystyle{a}$处的{\rm Laurent} 展式的主部为0.
+	\end{enumerate}
+\end{mypro}
+
+\begin{mypro}
+	设$\displaystyle{a \in \mathbb{C}, f(z) \in H(B(a, R) \backslash \{ a\})}$则下列三个命题等价.
+	\begin{enumerate} [(1)]
+		\item $\displaystyle{a}$是$\displaystyle{f(z)}$的极点（m阶）.
+		\item $\displaystyle{f(z) = \frac{g(z)}{(z - a) ^ m}}$，其中$\displaystyle{m \in \mathbb{N}}$， $\displaystyle{g(z)}$在$\displaystyle{B(a, \delta)}$上解析且不为0$\displaystyle{(\delta \leq R)}$.
+		\item $\displaystyle{f(z)}$的{\rm Laurent}展式中主部中只有有限多个系数不为0$\displaystyle{(\forall n > m, a_n = 0)}$.
+		
+	\end{enumerate}
+\end{mypro}
+
+\begin{mypro}
+	设$\displaystyle{a \in \mathbb{C}, f \in H(B(a, R) \backslash \{a\})}$，则$\displaystyle{a}$是$\displaystyle{f}$的本性奇点的充要条件是$\displaystyle{f(z)}$的{\rm Laurent}展式主部中有无穷多项的系数不为0.
+\end{mypro}
+上述三个定理的证明详见方企勤《复变函数》.
+
+\begin{mypro}
+	\color{blue}
+	(WeierStrass)
+	\color{black}
+	若$\displaystyle{a}$是$\displaystyle{f}$的一个本性奇点，则对于$\displaystyle{z=a}$的任一邻域$\displaystyle{B(a, \delta)}$，有$\displaystyle{f(B(a, \delta)) = \mathbb{C}}$.
+\end{mypro}
+\begin{proof}
+	略.见笔记.
+\end{proof}
+
+\section{相关的其他结论以及习题列举}
+\begin{mypro}
+	\color{blue}
+	(解析延拓定理).
+	\color{black}
+	设区域$\displaystyle{\Omega}$可被一条可求长曲线$\displaystyle{\gamma}$分为两个区域$\displaystyle{\Omega_1}$和$\displaystyle{\Omega_2}$，$\displaystyle{\Omega {\backslash} \gamma = \Omega_1 \cup \Omega_2, \Omega_1 \cap \Omega_2 = \emptyset}$.设$\displaystyle{f \in C(\Omega), f \in H(\Omega_i), i = 1,2}$，则$\displaystyle{f(z) \in H(\Omega)}$.
+\end{mypro}
+\begin{proof}
+	任取$\displaystyle{\Omega}$上的一条曲线$\displaystyle{C}$，不妨设$\displaystyle{C \not\subset \Omega_1, C \not\subset \Omega_2}$，故$\displaystyle{\int_C f(z) \di z  = \int_{C_1} f(z) dz + \int_{C_2} f(z)dz}$.
+	
+	由定理3.2.4和{\rm Mereron}定理得证.
+\end{proof}
+注意与$Painlev\acute{e}$原理的区别.
+
+\begin{mypro}
+	\color{blue}
+	(解析延拓定理).
+	\color{black}
+	设区域$\displaystyle{\Omega_j}$被一条可求长曲线$\displaystyle{\gamma}$分为两个区域$\displaystyle{\Omega_1}$和$\displaystyle{\Omega_2}$，$\displaystyle{\Omega {\backslash} \gamma = \Omega_1 \cup \Omega_2, \Omega_1 \cap \Omega_2 = \emptyset}$. 设$\displaystyle{f_i \in C(\Omega_i \cup \gamma) \cap H(\Omega_i), i=1,2, f_1(z) = f_2(z), z \in \gamma}$.
+	设
+	\begin{equation*}
+	F(z) = \left\{
+	\begin{aligned}
+	f_1(z)& , & z \in \Omega_1 \cup \gamma \\ 
+	f_2(z) & , & z \in \Omega_2
+	\end{aligned}
+	\right.
+	\end{equation*}
+	则$\displaystyle{F(z) \in H(\Omega)}$
+\end{mypro}
+\begin{proof}
+	证明过程同4.6.1.
+\end{proof}
+
+\begin{mypro}
+	\color{blue}
+	({\rm Schwarz}反射原理)
+	\color{black}
+	设$\displaystyle{\Omega}$为$\displaystyle{\mathbb{C}}$上的区域，记$\displaystyle{I = \{ z: z \in \Omega, Imz = 0\}}$，且$\displaystyle{I \neq \emptyset}$. 记$\displaystyle{\Omega^+ = \{ z \in \Omega : Im z >0\} ,  \Omega^- = \{ \bar{z} : z \in \Omega^+ \}}$. 设$\displaystyle{f \in H(\Omega^+) \cap C(\Omega ^ + \cap I)}$且$\displaystyle{f(I) \subset \mathbb{R}}$，则存在$\displaystyle{F \in H(\Omega^+ \cup \Omega^- \cup I)}$, s.t. $\displaystyle{F(z) = f(z), z \in \Omega^+}$
+\end{mypro}
+\begin{proof}
+	略. 见方企勤《复变函数》.
+\end{proof}
+
+\begin{mypro}
+	设$\displaystyle{F(z, s) \in C(\Omega \times [0,1]) }$，$\displaystyle{\Omega}$为$\displaystyle{\mathbb{C}}$中开集，若$\displaystyle{F(z,s)}$对每个$\displaystyle{s}$，对$\displaystyle{z}$都是解析的，则定义在$\displaystyle{\Omega}$上的函数$\displaystyle{f(z):\overset{\Delta}{=} \int_0^1 F(z,s) \di s}$是解析的.
+\end{mypro}
+\begin{proof}
+	略.见{\rm Stein} 即chb笔记.
+\end{proof}
+
+%以下是p.9-13
+\begin{mypro}
+	设$f \in f(\omega)$，$\omega$为开集，$k\in\omega$为紧集，则存在$\omega-k$中的有线条可求长$r_{1},r_{2}......r_{n}$，使得
+	\begin{equation*}
+	f(z)=\sum_{j=1}^{N}\frac{1}{2\pi i}\int_{r_{n}}\frac{f(\xi)}{\xi-z}\di{\xi}
+	\end{equation*}
+\end{mypro}
+\begin{proof}
+	设$d=c \cdot d(k,\omega^{c})$，其中$c$为常数且$0<c<\frac{1}{\sqrt{2}}$，考虑边平行于轴的边长为$d$的正方形组成的网格。
+	故在$\Omega-K$中必定包含一个完整的方格，并且与$k$相交的方格不与$\Omega$相交。
+	
+	设$Q$为与$K$相交的方格的全集，由于$K$是紧集，故$Q$为有限集，设$Q={Q_{1},Q_{2}......Q_{n}}$
+	我们取$r_{1},r_{2}......r_{n}$为$Q$中的方格中所有只属于唯一方格的方格边框。如图
+	%@TODO:Here should be the figure%
+	
+	任取$K$中非方格边框的一点$z$，存在$1 \le j \le m , s.t.  z \in Q_{j},z\notin Q_{k} (k \ne j)$
+	故由\emph{Cauchy}积分公式得
+	
+	\begin{equation*}
+	f(z)=\int_{\partial Q_{k}}\frac{f(\xi)}{\xi - z}\di{\xi}=\delta_{n-j}\cdot f(z)
+	\end{equation*}
+	故
+	\begin{equation*}
+	f(z)=\sum_{k=1}^{m}\int_{\partial Q_{k}}\frac{f(\xi)}{\xi -z}\di{\xi}
+	\end{equation*}
+	
+	而由于在对每个$Q_{k}$的边界进行线积分的时候，对于除去$r_{1},r_{2}......r_{n}$之外的$Q$中方格边框均正向反向各积分一次
+	，故
+	\begin{equation*}
+	f(z)=\int_{r_{k}}\dfrac{f(\xi)}{\xi - z}\di{\xi}
+	\end{equation*}
+	而可得$r_{k} \in \Omega /k,k=1,2.....m$，显然$r_{1},r_{2}......r_{n}$首尾相连得到了一条$\Omega /k$中的可求长闭曲线        
+\end{proof}
+
+\begin{eg}
+	\color{blue}设$G={z\in C,0<\arg z<\frac{\pi}{4}}$，设$f\in H(G)\cup C(\bar G)$。若$f$在实轴上区间$[a,b]$恒为$0$，则$f(x)\equiv 0,x\in G$
+	
+	\color{black}
+	\begin{proof}
+		在$[a,b]$下方做延拓（如图），
+		%@TODO:A figure here%
+		
+		有$\partial G \cap \partial D=[a,b]$。做$f_{1}:D\cup [a,b] \to {0} ,f_{1}(z)\equiv 0,z\in D\cup [a,b]$。
+		故$\forall z\in [a,b]$有$f_{1}(z)=f(z)=0$。记$G\cup D \cup [a,b]=M$，故由解析延拓定理得存在$F(z)\in H(M)$
+		且$f_{1}(z)=F(z),z\in D\cup [a,b],F(z)=f(z),z\in G$，显然存在一个M中的点列${Z_{n}}$，且有极限点$a\in M^{o}$，
+		并且$F(Z_{n})=0。\forall n\in N。$由零点孤立性定理得$f(z)\equiv 0,z\in M$，故$f(z)\equiv 0,z\in G$
+		
+		类似于上一例题的推理过程，对于区域G，设$f\in H(G)\cap C(\bar{G})$，若存在一条可求长连续曲线$r \in \partial G$,
+		有$f(z)\equiv 0,z\in r$，并且可以在r的异于G一侧做一区域E，使得$r\in \partial E$，且$E\cap G=\phi$，完全与上一例题中的过程相同可得$f(z)\equiv 0,\forall z\in G$
+	\end{proof}
+\end{eg}
+\begin{eg}
+	\color{blue}设$f_{n}(z)\in H(D)$,D为中区域，$\sum_{n=1}^{\infty}|f_{n}(z)|$在$D$内一致收敛，证明：$\sum_{n=1}^{\infty}|f_{n}(z)|$在D内内闭一致收敛。
+	
+	\color{black}
+	\begin{proof}
+		任取$D$中的紧集$K$，设$d=d(\partial D,k)$，记$\rho=\frac{d}{2}$
+		
+		故$z\in k$时
+		\begin{equation*}
+		\sum\limits_{i=1}^{n}\left|f'_{n+i}(z)\right|=\sum\limits_{i=1}^{p}\left|\int_{|\xi -z|=\rho }\dfrac{f_{i}(\xi)\di{\xi}}{(\xi -z)^{2}}\right|\cdot \dfrac{1}{2\pi}
+		\end{equation*}
+		\begin{equation*}
+		\le \int_{|\xi -z|=\rho }\frac{\sum_{i=1}^{p}|f_{i}(\xi)|}{|(\xi -z)^{2}|}|\di{\xi}|\cdot \dfrac{1}{2\pi}\le \dfrac{\epsilon}{\rho}
+		\end{equation*}
+	\end{proof}
+\end{eg}
+\begin{eg}
+	\color{blue}写出$e^{\frac{1}{1-z}}$，在$|z|<1$和$1<z<+ \infty$的部分\emph{Laurent}展式
+	
+	\color{black}设$f(z)=e^{z}$，显然$f$为常    函数，故$f(z)=\sum_{n=0}^{\infty}\frac{z^{n}}{n!}$，可以利用4.3.7将R上的展开到 D上
+	可得$f(\frac{1}{1-z})=\sum\limits_{n=0}^{\infty}\frac{1}{n!}(\frac{1}{1-z})^{n}$，当$|z|<1$时，有如下错误解法。
+	\begin{jie}{（错误）}
+		\begin{equation*}
+		\frac{1}{1-z}=\sum_{n=0}^{\infty}z^{n}=1+z+z^{2}+o|z|^{2} 
+		\end{equation*}
+		\begin{equation*}
+		\Rightarrow f(\frac{1}{1-z})=1+\frac{1}{1-z}+\frac{1}{2}(\frac{1}{1-z})^{2}+...\dots
+		\end{equation*}
+		做到这里你就发现做不下去了，为什么？因为$(\frac{1}{1-z})^{n}=1+o(|z|)$
+	\end{jie}
+	\begin{jie}{（正确）}
+		考虑展开$e^{\frac{z}{1-z}}$
+		\begin{equation*}
+		\dfrac{z}{1-z}=\sum\limits_{n=1}^{\infty}z^{n}=z+z^{2}+o|z|^{2} =o(1)
+		\end{equation*}
+		\begin{equation*}
+		\Rightarrow f(\dfrac{z}{1-z})=1+\dfrac{z}{1-z}+\dfrac{1}{2}(\dfrac{z}{1-z})^{2})+o|z|^{2}
+		\end{equation*}
+		\begin{equation*}
+		=1+(z+z^{2}+o|z|^{2})+\frac{1}{2}(z+z^{2}+o|z|^{2})^{2}+o|z|^{2}
+		\end{equation*}
+		\begin{equation*}
+		=1+z+\dfrac{3}{2}z^{2}+o|z|^{2}
+		\end{equation*}
+		\begin{equation*}
+		\Rightarrow e^{\dfrac{1}{1-z}}=e+ez+\dfrac{3e}{2}z^{2}+o|z|^{2}
+		\end{equation*}
+	\end{jie}
+	当$1<|z|<+\infty$时，同上述讨论。
+\end{eg}
+\begin{eg}
+	\color{blue}若$f(z)$在$0<|z-a|<R$上解析，$f$不为常值函数，且圆环上有一列点$z_{n}\rightarrow a$，有$f(z_{n})=0$。证明：$a$为$f(z)$的本性奇点。
+	
+	\color{black}
+	\begin{proof}
+		若$a$为可去奇点，则$\displaystyle\lim_{z\rightarrow a}f(z)$存在，故$\displaystyle\lim_{z\rightarrow a}f(z)=0$，补充定义$f(a)=0$故$f$在$|z-a|<R$上解析。由零点孤立性定理得$f(z)\equiv 0 , 0\le |z-a|<R$矛盾，
+		
+		若$a$为极点，故$\displaystyle\lim_{z\rightarrow a}f(z)=+\infty$，而$\displaystyle\lim_{n\rightarrow \infty}f(z_{n})=0$矛盾！
+	\end{proof}	
+\end{eg}
+\begin{eg}
+	\color{blue}设$f(z)$在圆环$0<r<|z-a|<R<+\infty$内解析，在闭圆环$r\le |z-a|\le R$上连续，且$f(Re^{i\Theta} )=0,(0\le \theta \le 2\pi)$。证明：$f(z)\equiv 0，(r<|z-a|<R)$
+	\color{black}
+	\begin{jie}{1}
+		
+		
+		设$F(z)=f(\frac{r^{2}}{\bar{z}}),z\in \{z|\frac{r^{2}}{R} \le |z-a|\le r\}$，显然，$F(z)$在$\{z|\frac{r^{2}}{R} < |z-a|< r\}$
+		上解析，在$\{z|\frac{r^{2}}{R} \le |z-a|< r\}$上连续。并且当$|z|=r$时，$F(z)=f(\frac{r^{2}}{\bar{z}})=f(z)$。$|z|=\frac{r^{2}}{R}$时，$F(z)=0$.
+		
+		设$D=\{z|\frac{r^{2}}{R} \le |z-a| < r\}$，故由解析延拓定理得存在$F_{1}\in H(D)\cap C(\bar{D})$。并且$F_{1}(z)=F(z)，z\in \{z|\frac{r^{2}}{R} \le |z-a|\le r\}$，且$F_{1}(z)=f(z)，z\in \{z|\frac{r^{2}}{R} \le |z-a|\le r\}$。
+		
+		又由于$\partial D =\{ z:|z|=\frac{r^{2}}{R} $或$R\}$。$\Rightarrow \forall z \in \partial D$有$F_{1}(D)=0$故最大模存理$F_{1}(z)\equiv 0 ，z\in \bar{D}$故$f(z)\equiv 0.(r<|z-a|<R)$
+	\end{jie}
+	\begin{jie}{2}
+		
+		
+		同4.6.5第一个例子
+	\end{jie}
+\end{eg}
+\begin{eg}
+	\color{blue}若$f\in H(\{ z:0<|z-a|<k\}  )$且$\displaystyle\lim_{z \rightarrow a}(z-a)f(z)=0$。证明：$a$是$f(z)$的可去奇点。
+	
+	\color{black}
+	\begin{proof}
+		显然$a$是$g(z)=(z-a)f(z)$的可去奇点。利用定理4.5.1，再直接讨论\emph{Laurent}级数的系数即可
+	\end{proof}
+	
+\end{eg}
+\begin{eg}
+	\color{blue}若$f$为整函数，并且$\infty$为$f$的可去奇点，证明$f$为常值函数。
+	
+	\color{black}
+	\begin{proof}
+		由定理4.5.1得$f$在$\infty$处的\emph{Laurent}展开式中幂次大于0的系数均为0。
+		又由于$f$为整函数，故$f(z)$为常数。
+	\end{proof}
+\end{eg}
+\begin{eg}
+	\color{blue}设$f\in H(B(a,R )|\{ a\})$，且不为常值函数。记$u(z)=Ref(z)$，若$u(z)$有界，则$a$是$f$的可去奇点。
+	\color{black}
+	\begin{jie}{1}
+		
+		
+		由\emph{Laurent}级数系数公式得$1\le n$时，$G_{n}=\frac{1}{2\pi i}\int_{|z-a|=\rho}f(z)(z-a)^{n-1}\di{z} \quad(0<\rho<R)$
+		
+		另一方面
+		\begin{align*}
+		G_{n}&=\frac{1}{2\pi i}\int_{|z-a|=\rho}f(z)(z-a)^{n-1}\di{z} \quad(0<\rho<R)\\
+		&=\frac{1}{2\pi i}\int_{|z-a|=\rho}(\sum_{k=-\infty}^{\infty }\overline{C_{k}}\cdot\overline{(z-a)^{k}})(z-a)^{n-1}\di{z} \quad(0<\rho<R)\\
+		&=\frac{1}{2\pi i}\int_{|z-a|=\rho}\sum_{k=-\infty}^{\infty }\overline{C_{k}} \cdot \rho^{n+k-1}(\frac{z-a}{|z-a|})^{n-1}\di{z} \quad(0<\rho<R)\\
+		&=\frac{1}{2\pi}\sum_{k=-\infty}^{+\infty}\overline{C_{k}}\int_{0}^{2\pi}\rho^{k+n}e^{i(n-k)\theta}\di{\theta}=\overline{C_{n}}\rho^{2n}
+		\end{align*}
+		
+		故我们可得$C_{-n}+\overline{C_{n}}\rho^{2n}=\frac{1}{\pi i}\int_{|z-a|=\rho}u(z)(z-a)^{n-1}\di{z}$
+		
+		故$|C_{-n}+\overline{C_{n}}\rho^{2n}|\le \frac{1}{\pi}|\int_{|z-a|=\rho}u(z)(z-a)^{n-1}\di{z}|<\frac{2\pi \rho}{\pi}\cdot M \cdot \rho^{n-1}=2M\rho^{n}(1\le n)$
+		
+		当$\rho\rightarrow 0$。得$C_{-n}=0(1\le n)$。故$a$为$f(z)$可去奇点。
+	\end{jie}
+	\begin{jie}{2}
+		
+		
+		设$F(z)=e^{f(z)}$，故$F(z)$在$B(a,R)\{ a\}$上有界。故$|F(z)=e^{u(z)}\le e^{M}|$。故由定理4.5.1得。$a$为$F(z)$的可去奇点，补充定义$F(a)$使得$F(z)\in H(B(a,R))$
+		
+		又有$|F(z)|=e^{u(z)}\ge e^{-M}>0$。故在$a$的邻域内对数函数可取出单值解析分支。故$a$是$f(z)=\lg F(z)$的可去奇点。
+	\end{jie}
+	\begin{jie}{3}
+		
+		记$F(z)=\frac{f(z)}{f(z)-2M}$。故在$B(a,R)\{a\}$上有$|F(z)|\le 1$
+		故$a$是$F(z)$的可去奇点。补充定义$F(a)$使得$F(z)\in H(B(a,R))$。
+		
+		由最大模原理得$|F(a)|<1$。而可解出$f(z)=\frac{2MF(z)}{1-F(z)}$。故由表达式得$\displaystyle\lim_{z\rightarrow a}f(z)$存在。故$a$为$f(z)$的可去奇点。
+	\end{jie}
+\end{eg}
 
 
 
