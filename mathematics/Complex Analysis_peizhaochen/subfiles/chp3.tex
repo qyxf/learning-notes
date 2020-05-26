@@ -9,73 +9,73 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 &= \sum_{k=1} ^{n} u(\xi_k) \Delta x_k - \sum_{k=1}^{n} v(\xi_k) \Delta y_k + i [(\sum_{k=1}^{n} u(\xi_k) \Delta y_k + \sum_{k=1}^n v(\xi_k) \Delta x_k]
 \end{align*}
 故当u于v在$\gamma$上连续时，令$d \rightarrow 0$，则f的Riemann和趋于曲线积分：$\int_{\gamma} (udx - vdy) + i \int_{\gamma}vdx-udy$, 即： 
-\begin{mypro}
+\begin{theorem}
 	$f = u+iv$在可求长曲线$\gamma$上连续，则有：
 	$$\int_\gamma f(z) \di{z} = \int_\gamma (udx-vdy) + i\int_\gamma (vdx+udy).$$
-\end{mypro}
-\begin{mypro}
+\end{theorem}
+\begin{theorem}
 	若$z=\gamma(t)$为光滑的曲线，$f$在$\gamma$上连续，则：$\int_\gamma f(z)\di{z} = \int_a^b f(\gamma(t))\gamma'(t) dt$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	由于$z=\gamma(t)$ 故$\gamma'(t)=x'(t) + i y'(t)$.
 	
 	而$dx=x'(t)dt, dy = y'(t)dt$，代入3.1.1即可得证.
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	若$f, g$在可求长曲线$\gamma$上连续，则：
 	\begin{enumerate}[i)]
 		\item $\int_\gamma f(z)\di{z} = -\int_\gamma f(z)\di{z}$
 		\item $\int_\gamma (\alpha f(z) + \beta g(z)) \di{z} = \alpha \int_\gamma f(z) \di{z} + \beta \int_\gamma g(z) \di{z}$, \quad $\alpha, \beta \in \mathbb{C}$
 		\item $\int_\gamma f(z) \di{z} = \int_{\gamma_1} f(z) \di{z} + \int_{\gamma_2} f(z) \di{z}$. 其中$\gamma_1 \cup \gamma_2 = \gamma$, $\gamma_1 \cap \gamma_2 = \emptyset $
 	\end{enumerate}
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}[长大不等式]
+\begin{theorem}[长大不等式]
 	
 	若曲线$\gamma$的长度为$L$， $M = \max_{z \in \gamma} \vert f(x) \vert$,
 	则$ \vert \int_\gamma  f(z) \di{z} \vert \leq ML$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	直接利用Riemann和验证即可.
 \end{proof}
 
 \section{\emph{Cauchy}积分定理}
-\begin{mypro}[\emph{Cauhcy}]
+\begin{theorem}[\emph{Cauhcy}]
 	设$D$为$\mathbb{C}$中的单连通域，$f \in H(D)$，且$f' \in C(D)$, 则对$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) \di{z} = 0$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	由Green公式以及C-R方程直接得到.
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	设$f$是域$D$中的连续函数，$\gamma$是$D$内可求长曲线，则$\forall \varepsilon > 0$, 存在一条$D$上的折线$P$使得：
 	\begin{enumerate}[(i)]
 		\item $P$和$\gamma$有相同的起点和终点，$P$的其他顶点在$\gamma$上.
 		\item $\vert \int_\gamma f(z) \di{z} - \int_Pf(z) \di{z} \vert < \varepsilon $.
 	\end{enumerate}
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	见chb笔记.
 \end{proof}
 
-\begin{mypro}[\emph{Cauchy-Goursat}]
+\begin{theorem}[\emph{Cauchy-Goursat}]
 	设$D$为$\mathbb C$中的单连通域，若$f \in H(D)$, 则对于$D$中的任意可求长闭曲线$\gamma$，均有$\int_\gamma f(z) \di{z} = 0$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	利用上一定理3.2.2，见chb笔记.
 \end{proof}
 
 但定理3.2.3的条件仍可以再做减弱：
-\begin{mypro}
+\begin{theorem}
 	设$D$是简单可求长闭曲线$\gamma$的内部，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) \di{z} = 0$.
-\end{mypro}
+\end{theorem}
 这一定理的证明现在无法进行，我们对其弱化进行证明：
 
-\addtocounter{mypro}{-1}
-\begin{mypro}[*]
+\addtocounter{theorem}{-1}
+\begin{theorem}[*]
 	设$\gamma$为$\mathbb{C}$上分段光滑的可求长闭曲线，记$D$为$\gamma$围成的区域内部，且存在$D$中的点$z_0$，使得任意一条从$z_0$发出的射线与$\gamma$有且只有唯一交点，若$f \in H(D) \cap C(\bar{D})$，则$\int_\gamma f(z) \di{z} = 0$.
-\end{mypro}
+\end{theorem}
 
 \begin{figure}[h]
 	\centering
@@ -105,8 +105,8 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 
 
-\begin{mypro}[多连同区域的\emph{Cauchy}积分公式]  略.
-\end{mypro}
+\begin{theorem}[多连同区域的\emph{Cauchy}积分公式]  略.
+\end{theorem}
 
 \begin{figure}[h]
 	\centering
@@ -141,23 +141,23 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 
 \section{全纯函数的原函数}
-\begin{mypro}
+\begin{theorem}
 	设f在域D中连续，且对于D中任意可求长闭曲线，均有$\int_\gamma f(z) \di{z} = 0$, 那么$F(z) = \int_{z_0}^{z} f(\xi) \di{\xi}$ 是D上的全纯函数且在D中有$F'(z) = f(z)$.
-\end{mypro}
-\begin{mypro}
+\end{theorem}
+\begin{theorem}
 	见chb笔记，略.
-\end{mypro}
+\end{theorem}
 
 
 
 
 
-\begin{mypro}
+\begin{theorem}
 	设$D$是$\mathbb{C}$中的单连通域。$f\in H(D)$。那么$F(z)=\int_{z_0}^{z}f(\xi)\di{\xi}$是$f$在$D$中的一个原函数
-\end{mypro}
-\begin{mypro}[\emph{Newton-Leibniz}]
+\end{theorem}
+\begin{theorem}[\emph{Newton-Leibniz}]
 	设$D$是$\mathbb{C}$中的单连通域。$f\in H(D)$。$\Psi$是$f$的一个原函数。则$\int_{z_0}^{z}f(\xi)\di{\xi}=\Psi(z)-\Psi(z_0)$
-\end{mypro}
+\end{theorem}
 
 若$D$为$\mathbb{C}$中的多连通区域$f\in H(D)$。一般的$F(z)=\int_{z_0}^{z}f(\xi)\di{\xi}$为一个多值函数。值受连接$z_0$与$z$的曲线控制。
 
@@ -185,10 +185,10 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 \section{\emph{Cauchy}积分公式}
 
-\begin{mypro}
+\begin{theorem}
 	设$D$是用简单可求长闭曲线$\gamma$围成的区域。若$f\in H(D)\cap C(\bar{D})$。那么对任意的$z\in D$均有
 	\[f(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}\]
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	任取$z\in D$。由于$f$在$z$处连续，故$\forall\epsilon>0$，存在$\sigma>0.s.t.|z-\xi|<\sigma$时，$|f(z)-f(\xi)|<\epsilon$。取$\rho<\sigma,s.t.B(z,\rho)\subset D$。记$\gamma_\rho={\xi:|\xi-z|<\rho}$
 	设由$\gamma$与$\gamma_\rho$新城的二连通区域为$D'$，则$\dfrac{f(\xi}{\xi-z}\in H(D')\cap C(\bar{D'})$
@@ -215,24 +215,24 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 &\leq\dfrac{1}{2\pi}\int_{\gamma\rho}\dfrac{|f(z)-f(\xi)|}{|\xi-z|}\di{\xi}\leq\dfrac{1}{2\pi}\cdot 2\pi \rho\dfrac{\epsilon}{\rho}\\
 &=\epsilon 
 \end{align*}
-\begin{mypro}
+\begin{theorem}
 	设$\gamma$是$\mathbb{C}$中可求长曲线，$g$是$\gamma$上的连续函数，那么由\emph{Cauchy}型积分确定的函数：
 	\[G(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{g(\xi)}{\xi-z}\di{\xi}\]
 	在$\mathbb{C}|\gamma$上有任意阶导数。
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	{见史济怀《复变函数》。}
 \end{proof}{}
-\begin{mypro}
+\begin{theorem}
 	设$D$是由可求长简单闭曲线$\gamma$围成的域，若$f\in\mathbb{H}(D)\cap\mathbb{C}(D)$，那么$f$在$D$上有任意阶导数且对任意的$z\in D$，有：
 	\[f^{(n)}(z)=\dfrac{n!}{2\pi i}\int_\gamma\dfrac{f(\xi)}{(\xi-z)^{n+1}}\di{\xi}, \hspace{2em}n=1,2,...\]
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	在定理3.4.2中令$g(z)=f(Z)$即可。
 \end{proof}
-\begin{mypro}
+\begin{theorem}
 	若$f$在$D$上解析，则$f$在$D$上有任意阶导数。
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	任取$z_0\in D$，存在充分小的$\delta,s.t$，$\bar{B}(z_0,\delta)\subset D$。由定理3.4.3.$f$在$B(z_0,\delta)$中有任意阶导数。又由于$z_0$是任意的，故$f$在$D$中有任意阶导数
 \end{proof}
@@ -247,10 +247,10 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 	法2：$\int_{|z|=2}\dfrac{\di{z}}{z^2(z^2+16)}=\dfrac{1}{16}(\int_{|z|=2}\dfrac{\di{z}}{z^2}-\int_{|z|=2}\dfrac{\di{z}}{z^2+16})=0$
 \end{eg}
 
-\begin{mypro}
+\begin{theorem}
 	设$r_0,r_1...r_k$是$k+1$条可求长简单闭曲线。$r_1,r_2...r_k$都存在$r_0$内部。$r_1,r_2...r_k$中每条都在其他$k-1$条外部。$D$是由这$k+1$条曲线围成的区域。$D$的边界$r$由$r_0,r_1...r_k$组成。若$f\in H(D)\cap C(\bar{D})$，则$\forall z\in D$，有,$f(z)=\dfrac{1}{2\pi i}\int_\gamma\dfrac{f(\xi)}{\xi-z}\di{\xi}$，且$f$有任意阶导数。
 	\[f^{(n)}(z)=\dfrac{n!}{2\pi!}\int_\gamma\dfrac{f(\xi)}{(\xi-z)^{n+1}}\di{\xi}, n=1,2,...\]
-\end{mypro}
+\end{theorem}
 
 \begin{eg}
 	计算积分$\int_{|z|=2}\dfrac{\di{z}}{(z^3-1)(z+4)^2}$
@@ -282,25 +282,25 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 
 \section{\emph{Cauchy}积分公式的一些重要推论}
 
-\begin{mypro}[\emph{Liouville}定理]
+\begin{theorem}[\emph{Liouville}定理]
 	有界整函数必为常数
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	设$f$为一有界整函数，其模的上界设为$M$.即$\forall z\in\mathbb{C}$,
 	有$|f(z)|\leq M$,任取$a\in\mathbb{C}$,在$\partial$$B(a,R)$上由$Cauchy$不等式得$\displaystyle{|f(a)|\le\frac{M}{R}}$,
 	$\forall R>0$.令$R\rightarrow\infty$得$|f'(a)|=0\Rightarrow f'(a)=0\forall a\in\mathbb{C}$故$f$为常数.
 \end{proof}
 
-\begin{mypro}[代数基本定理]
+\begin{theorem}[代数基本定理]
 	任意复系数多项式$P(z)=a_{0}z^{n}+a_{1}z^{n-1}+\dots+a_{n}$\quad$(a_{0}\neq0)$在$\mathbb{C}$中必有零点
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略，见$chb.$和史济怀\quad$\displaystyle{(F(x)=\frac{1}{P_{z}})}$
 \end{proof}
 
-\begin{mypro}[\emph{Morera}]
+\begin{theorem}[\emph{Morera}]
 	若$f$是域$\mathbb{D}$上的连续函数，且沿$\mathbb{D}$内任意可求长闭曲线上的积分是0，那么$f$在$\mathbb{D}$上解析
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	见$chb.$笔记
 \end{proof}
@@ -416,47 +416,47 @@ R(f) &= \sum_{k=1}^{n}f(\xi_k) - \Delta z_k \\
 \end{proof}
 
 \section{最大模原理}
-\begin{mypro}[平均值定理]
+\begin{theorem}[平均值定理]
 	设$f\in H(B(z_0,r))\cap C(\,\overline{B(z_0,r)}\,)$.则：$\displaystyle{f(z_0)=\frac{1}{2\pi}\int_0^{2\pi}f(z_0+re^{i\theta})d\theta}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	由\emph{Cauchy}积分公式得$\displaystyle{f(z_0)=\frac{1}{2\pi i}\int_{|z-z_0|=r}\frac{f(\xi)}{\xi-z_0}\di{\xi}}$\\
 	记$\displaystyle{\xi=z_0+re^{i\theta}\Rightarrow \di{\xi}=ire^{i\theta}d\theta=i(\xi-z_0)d\theta}$\\
 	$\displaystyle{\Rightarrow f(z_0)=\frac{1}{2\pi}\int_0^{2\pi}f(z_0+re^{i\theta})d\theta}$
 \end{proof}
-\begin{mypro}[最大模定理]
+\begin{theorem}[最大模定理]
 	设$\Omega$为区域$f\in H(\Omega)$.则$|f|$在$\Omega$内有最大值当且仅当$f$为常函数
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	此处给出利用区域连通性与平均值原理的证法，见\emph{chb}笔记.略\\
 	具体可见方企勤\emph{《复变函数》}
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	设$D\subset\mathbb{C}$为有界域.设$f$为非常值函数.
 	$f\in H(D)\cap C(D)$.则$f$的最大模在且只在$\partial D$上取到
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	由定理\emph{3.6.2}可直接得到.略
 \end{proof}
 
-\begin{mypro}[Schwarz引理]
+\begin{theorem}[Schwarz引理]
 	设$f\in H(B(0,1))$,且有$\forall z\in B(0,1),\ |f(z)|\leq1,\ f(0)=0$.
 	则$\forall z\in B(0,1)$有$|f(z)|\leq|z|,|f'(0)|\leq1.$并且若存在$z_0\in B(0,1)\ z_0\neq 0$,有$|f(z_0)|=|z_0|$,
 	或$|f'(0)|=1$,则$\exists\theta\in\mathbb{R},\ s.t.\ \forall z\in B(0,1)$有$f(z)=e^{i\theta}\cdot z$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略.见\emph{chb}笔记以及方企勤\emph{《复变函数》}
 \end{proof}
 
 \section{非齐次\emph{Cauchy}积分公式*}
-\begin{mypro}
+\begin{theorem}
 	设$\gamma_0,\gamma_1\dots \gamma_n$是$n+1$条可求长简单闭曲线,$\gamma_1,\gamma_2\dots \gamma_n$在$r_0$的内部.
 	$\gamma_1,\gamma_2\dots \gamma_n$中的任一条均在其余的$n-1$条的外部.
 	设$D$是这$n+1$条曲线围成的区域,若$f\in C^1(D)$.则$\forall z\in D$.
 	有：$\displaystyle{f(z)=\frac{1}{2\pi i}\int_{\partial D}\frac{f(\xi)}{\xi-z}\di{\xi}
 		+\frac{1}{2\pi i}\int_D\frac{\partial f(\xi)}{\partial\overline{\xi}}\frac{1}{\xi-z}\di{\xi}\bigwedge d\overline{\xi}}$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	见史济怀\emph{《复变函数》}
 \end{proof}

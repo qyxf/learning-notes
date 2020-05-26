@@ -7,30 +7,30 @@
     可以定义绝对收敛和条件收敛,以及级数极限的存在性和柯西收敛原理.\par
     下面讨论对于复变函数上的函数项级数$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$:
 
-\begin{mypro}
+\begin{theorem}
     设$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$是定义在$\mathbb{E}$上的级数.
     我们说$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$在$\mathbb{E}$上一致收敛到
     $f(z)$.$(\mbox{记为}\ \displaystyle{\sum\limits_{k=1}^n f_k(z)\Rightarrow f(z)})$,
     指$\forall\epsilon>0,\exists.N\in \mathbb{N}^*\quad s.t.\ \forall n>N$.有$\left|S_n(z)-f(z)\right|<\epsilon, \forall z\in E$,
     其中$\displaystyle{S_n(z)=\sum\limits_{k=1}^n f_k(z)}$.
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
     级数$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$在$\mathbb{E}$上一致收敛的充要条件是
     $\forall\epsilon>0,\exists.N\in \mathbb{N}^*\quad s.t.\ \forall n>N.\forall p\in N$
     有$\displaystyle{\left|\sum\limits_{i=1}^pf_{n+i}(z)\right|<\epsilon}$.对$\forall z\in\mathbb{E}$均成立.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     略.
 \end{proof}
 
-\begin{mypro}[函数项级数的weierstass判别法，略]
-\end{mypro}
+\begin{theorem}[函数项级数的weierstass判别法，略]
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
     设级数$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)\Rightarrow f(z)}.z\in \mathbb{E},\forall n\in\mathbb{N}^*, f_n\in C(E)$.
     则$f\in C(E)$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     $\forall\epsilon>0.\exists N\in\mathbb{N}.\quad s.t.\ n>N$时
     $\displaystyle{\left|f(z)-S_n(z)\right|<\frac{\epsilon}{3}\ \forall z\in\mathbb{E}}$.\\
@@ -42,10 +42,10 @@
     +\left|S_{n_0}(z)-S_{u_0}(a)\right|+\left|S_{u_0}(a)-f(a)\right|<\epsilon}$
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
     设级数$\sum\limits_{n=1}^\infty f_u(z)$.在可求长曲线$\gamma$上一致收敛到$f(z)$,若$\forall n\in\mathbb{N}^*,f_n\in C(\gamma),$
     则$\displaystyle{\int_{\gamma}f(z)dz=\sum\limits_{n=1}^\infty\int_{\gamma}f_n(z)dz}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     由定理\emph{4.1.4}.\ $f\in C(\gamma)$.\\
     由于$f_k\Rightarrow f$.故$\forall\epsilon>0.\exists N\in\mathbb{N}^*\quad s.t.\ n>N$时，
@@ -54,19 +54,19 @@
     =\left|\int_\gamma\left(\sum\limits_{k=1}^nf_k(z)-f(z)\right)dz\right|<\epsilon\cdot|\gamma|}$
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
     若级数$\displaystyle{\sum\limits_{n=1}^\infty f_a(z)}$在区域$\mathbb{D}$的任一紧子集$K$上一致收敛，
     则称$\displaystyle{\sum\limits_{n=1}^\infty f_a(z)}$在$\mathbb{D}$上是内闭一致收敛的.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     类似于实值函数中的例子，函数项级数$\displaystyle{1+\sum\limits_{k=1}^\infty f_k(z),\ f_k(z)=z^k-z^{k-1}}$
     部分和为$z^k$显然下单位球上内闭一致收敛，但不一致收敛
 \end{proof}
 
-\begin{mypro}[Weierstrass I]
+\begin{theorem}[Weierstrass I]
     设$D$是$\mathbb{C}$中的域.若$f_n\in C(D),n=1,2\dots\ ,$并且$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$在$D$中内闭一致收敛到$f(z)$
     则$f\in H(D)$,并且级数$\displaystyle{\sum\limits_{n=1}^\infty f_n^{(k)}(z)}$在上内闭一致收敛到$f^{(k)}(z).\quad k\in\mathbb{N}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     任取$z_0\in D$，由于$D$为开集，故存在$\delta>0,\quad s.t.\ \overline{B(z_0,\delta)}\subset D$\\
     由定理\emph{4.1.4}，$f\in C(\overline{B(z_0,\delta)})$在$B(z_0,\delta)$中任做一个可求长闭曲线$r$，
@@ -94,11 +94,11 @@
     对于$D$的任一紧集$K,K$有有限开球覆盖$SI_kS_{k=1}^n$,故$\displaystyle{\sum\limits_{j=1}^nf_j^{(k)}\Rightarrow f^{(k)}(z),z\in K}$.
 \end{proof}
 
-\begin{mypro}[Weierstrass \uppercase\expandafter{\romannumeral2}]
+\begin{theorem}[Weierstrass \uppercase\expandafter{\romannumeral2}]
     设$D$为有界区域，对于函数列$\{f_n(z)\}$.有$f_n(z)\in H(D)\bigcap C(\overline{D})$
     且级数$\displaystyle{\sum\limits_{n=1}^\infty f_n(z)}$在$\partial D$上一致收敛，
     则$\displaystyle{\sum\limits_{n=0}^\infty f_n(z)}$在$\overline{D}$上一致收敛.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     $\forall\epsilon>0,\ \exists N,\ s.t.\ n\geqslant N, p\geqslant 1$时，有$\left|f_{n+1}(z)+f_{n+2}(z)+\dots+f_{n+p}(z)\right|<\epsilon.$
     对任意$z\in\partial D$均成立，由最大模定理，上述不等式在$\overline{D}$上成立，故级数在$\overline{D}$上一致收敛
@@ -107,23 +107,23 @@
 \section{幂函数}
 幂级数：$\displaystyle{\sum\limits_{n=0}^\infty} a_n(z-z_0)^n=a_0+a_1(z-z_0)+a_2(z-z_0)^2+\dots+a_n(z-z_0)^n+\dots$\\
 其中$a_0,a_1\dots$均为复常数，做平移$\omega=z-z_0$,得$\displaystyle{\sum\limits_{n=0}^\infty z^n=a_0+a_1z+\dots+a_nz^n+\dots(*)}$.
-\begin{mypro}
+\begin{theorem}
     （收敛半径）（收敛圆）.用数分中定义，略
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
     级数$(*)$存在收敛半径$R=(\overline{\lim\limits_{n\to\infty}}\sqrt[n]{|a_n|})^{-1}$,则：\\
     (1)当$R=0$时，$\displaystyle{\sum\limits_{n\equiv0}^\infty a_nz^n}$只在$z=0$处收敛.\\
     (2)当$R=+\infty$时，$\displaystyle{\sum\limits_{n\neq0}^\infty a_nz^n}$在$\mathbb{C}$上收敛.\\
     (3)当$0<R<+\infty$时，$\displaystyle{\sum\limits_{n=0}^\infty a_nz^n}$在$\{z:|z|<R\}$中收敛.在$\{z:|z|>R\}$中发散.
-\end{mypro}
+\end{theorem}
 \begin{proof}
     同数学分析中的讨论，此处略去
 \end{proof}
 
-\begin{mypro}[\emph{Abel} I]
+\begin{theorem}[\emph{Abel} I]
     如果$\displaystyle{\sum\limits_{n=0}^\infty a_n\cdot z^n}$在$z=z_0\neq0$处收敛，则在$\{z:|z|<z_0\}$中内闭一致收敛.
-\end{mypro}
+\end{theorem}
 %\noindent\emph{证明.}\ 
 \begin{proof}
 	设$K$为$\{z:|z|<|z_0|\}$中的一个紧集，取$r<|z_0|$，使得$k\subset B(0,r)$
@@ -142,10 +142,10 @@ $\displaystyle{\left|a_k\cdot a^k\right|=\left|a_n\cdot z_o^k\cdot \frac{z^k}{z_
 
 \noindent 由定理\emph{4.2.3}以及\emph{Weierstrass}定理可以得到:
 
-\begin{mypro}
+\begin{theorem}
     幂级数在其收敛圆内确定了一个全纯函数\par
     \qquad\quad\, 那么在收敛圆圆周上的收敛性如何呢？
-\end{mypro}
+\end{theorem}
 
 \begin{eg}
     级数$\displaystyle{\sum\limits_{n=0}^\infty z^n}$的收敛半径为1,它在收敛圆周$|z|=1$上处处发散.
@@ -174,11 +174,11 @@ $\displaystyle{\left|a_k\cdot a^k\right|=\left|a_n\cdot z_o^k\cdot \frac{z^k}{z_
 故$\omega\in B(0,1)$,级数可改写为$\displaystyle{\sum\limits_{n=0}^\infty b_n\omega^n},b_n=a_n(\xi-z_0)^n$,
 故新的幂级数的收敛半径为1，故以下我们在收敛半径为1的情况下做讨论.
 
-\begin{mypro}[*]
+\begin{theorem}[*]
     设$g$是定义在单位圆中的函数，$e^{i\theta_0}$是单位圆上的一点，记$S_\alpha(e^{i\theta_0})$为以$e^{i\theta_0}$为顶点，
     以$e^{i\theta_0}$点对应的极径在单位圆内侧向两侧张出的张角为$2\alpha$
     的角形区域$(\alpha<\frac{\pi}{2})$
-\end{mypro}
+\end{theorem}
 
 %排的有问题
 \begin{wrapfigure}[2]{r}{3cm}
@@ -189,10 +189,10 @@ $\displaystyle{\left|a_k\cdot a^k\right|=\left|a_n\cdot z_o^k\cdot \frac{z^k}{z_
 $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\theta_0})}}g(z)=C}$}
 \\
 \\
-\begin{mypro}[*](\rm \emph{Abel} \uppercase\expandafter{\romannumeral2})
+\begin{theorem}[*](\rm \emph{Abel} \uppercase\expandafter{\romannumeral2})
     设$\displaystyle{f(z)=\sum\limits_{n=0}^\infty a_nz^n}$的收敛半径为$R=1$，
     且级数在$z=1$处收敛于$S$，则$f$在$z=1$处有非切向极限$S$
-\end{mypro}
+\end{theorem}
 \noindent\emph{证明.}
 记$\displaystyle{\sigma_{n,\rho}=\sum\limits_{i=1}^p a_{n+i}}$由条件得$\displaystyle{\sum\limits_{n=0}^\infty a_n}$收敛.\\
 故$\forall\epsilon>0 ,\ \exists$正整数$N,\  s.t.\ $当$n>N$时，对任意自然数$p$有$|\sigma_{n,p}|<\epsilon$\\
@@ -237,40 +237,40 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 \end{eg}
 
 \section{解析函数的{\rm Taylor}展开}
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	(\rm Taylor) \color{black} (略)
-\end{mypro}
+\end{theorem}
 
 \begin{proof}
 	对于此定理有两种不同证法。详见史济怀《复变函数》及Stein 《 Complex Analysis》.
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	由4.3.1以及4.2.4得$\displaystyle{f}$在$\displaystyle{z_0}$处解析的充要条件为$\displaystyle{f}$ 在$\displaystyle{z_0}$的邻域内可展为幂级数：$\displaystyle{f(z)=\sum_{n=0}^{\infty}a_n (z-z_0)^n}$.
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
 	$\displaystyle{z_0}$为$\displaystyle{f}$的$\displaystyle{m}$阶零点的充要条件是$\displaystyle{f}$在$\displaystyle{z_0}$的邻域内可写成$\displaystyle{f(z)=(z-z_0)^m g(z)}$。其中$\displaystyle{g}$在$\displaystyle{z_0}$处解析，且$\displaystyle{g(z_0) \neq 0}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略.
 \end{proof}
 
-\begin{mypro}\color{blue}（零点独立性定理）
+\begin{theorem}\color{blue}（零点独立性定理）
 	\color{black}
 	设$\displaystyle{D}$为$\displaystyle{\mathbb{C}}$中的域，$\displaystyle{f \in H(D)}$，若$\displaystyle{f \not\equiv 0}$，且$\displaystyle{f(a)=0}$，则存在$\displaystyle{\delta > 0}$, s.t. $\displaystyle{\forall z \in B(z_0, \delta) \\ \{z_0\}}$有$\displaystyle{f(z) \neq 0}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略. 史济怀.方企勤.Stein给出了两种不同的证明方法.
 \end{proof}
 
 
-\begin{mypro}\color{blue}（唯一性定理)
+\begin{theorem}\color{blue}（唯一性定理)
 	\color{black}
 	设$\displaystyle{D}$为$\displaystyle{\mathbb{C}}$中的域，$\displaystyle{f_1,f_2 \in H(D)}$.若存在极限在$\displaystyle{D}$中的点列$\displaystyle{z_n}$ s.t. $\displaystyle{f_1(z_n) = f_2(z_n), n=1,2,...}$，则在$\displaystyle{D}$ 中有$\displaystyle{f_1 \equiv f_2}$.
 	
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略.
 \end{proof}
@@ -295,25 +295,25 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 利用这样的方法，我们可以将{\rm Taylor }公式从$\displaystyle{\mathbb{R}}$上扩张到$\displaystyle{\mathbb{C}}$上.
 
 \section{{\rm Laurent } 级数}
-\begin{mypro}({\rm Laurent}级数. 主要部分.)
+\begin{theorem}({\rm Laurent}级数. 主要部分.)
 	略.
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	({\rm Laurent})
 	\color{black}
 	若{\rm Laurent}级数的收敛域圆环$\displaystyle{D = \{z: r< \vert z - z_0 \vert < R \}}$，那么它在$\displaystyle{D}$中绝对收敛且内闭一致收敛，那么它的和函数在$\displaystyle{D}$中解析.
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	({\rm Laurent})
 	\color{black}
 	设$\displaystyle{D=\{z : r < \vert z \vert < R\}}$. 若$\displaystyle{f \in H(D)}$，则$\displaystyle{f}$在$\displaystyle{D }$中可以展为{\rm Laurent}级数，$\displaystyle{f(z)=\sum_{n = -\infty}^{\infty} a_n(z - z_0)^n}, z \in D$，其中$\displaystyle{a_n = \frac{1}{2\pi_i}  \int_{\gamma_\rho} \frac{f(\xi)} {(\xi - z_0)^{n+1}} \di \xi }$，其中$\displaystyle{\gamma_\rho = \{ \xi : \vert \xi - z_0 \vert  = \rho \} (r < \rho < R)}$，并且展开式唯一.
 	
 	这个定理是4.4.2的逆定理，证明略.
-\end{mypro}
+\end{theorem}
 
 
 \begin{eg}
@@ -352,16 +352,16 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 
 \section{孤立奇点}
 三种奇点：可去奇点、极点、本性奇点.
-\begin{mypro}
+\begin{theorem}
 	设$\displaystyle{a \in \mathbb{C}, f(z) \in H(B(a, R) \backslash \{ a\})}$则下列三个命题等价.
 	\begin{enumerate} [(1)]
 		\item $\displaystyle{a}$是$\displaystyle{f(z)}$的可去奇点.
 		\item $\displaystyle{f(z)}$在$\displaystyle{B(a, \delta)}$上有界.
 		\item $\displaystyle{f(z)}$在$\displaystyle{a}$处的{\rm Laurent} 展式的主部为0.
 	\end{enumerate}
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
 	设$\displaystyle{a \in \mathbb{C}, f(z) \in H(B(a, R) \backslash \{ a\})}$则下列三个命题等价.
 	\begin{enumerate} [(1)]
 		\item $\displaystyle{a}$是$\displaystyle{f(z)}$的极点（m阶）.
@@ -369,30 +369,30 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 		\item $\displaystyle{f(z)}$的{\rm Laurent}展式中主部中只有有限多个系数不为0$\displaystyle{(\forall n > m, a_n = 0)}$.
 		
 	\end{enumerate}
-\end{mypro}
+\end{theorem}
 
-\begin{mypro}
+\begin{theorem}
 	设$\displaystyle{a \in \mathbb{C}, f \in H(B(a, R) \backslash \{a\})}$，则$\displaystyle{a}$是$\displaystyle{f}$的本性奇点的充要条件是$\displaystyle{f(z)}$的{\rm Laurent}展式主部中有无穷多项的系数不为0.
-\end{mypro}
+\end{theorem}
 上述三个定理的证明详见方企勤《复变函数》.
 
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	(WeierStrass)
 	\color{black}
 	若$\displaystyle{a}$是$\displaystyle{f}$的一个本性奇点，则对于$\displaystyle{z=a}$的任一邻域$\displaystyle{B(a, \delta)}$，有$\displaystyle{f(B(a, \delta)) = \mathbb{C}}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略.见笔记.
 \end{proof}
 
 \section{相关的其他结论以及习题列举}
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	(解析延拓定理).
 	\color{black}
 	设区域$\displaystyle{\Omega}$可被一条可求长曲线$\displaystyle{\gamma}$分为两个区域$\displaystyle{\Omega_1}$和$\displaystyle{\Omega_2}$，$\displaystyle{\Omega {\backslash} \gamma = \Omega_1 \cup \Omega_2, \Omega_1 \cap \Omega_2 = \emptyset}$.设$\displaystyle{f \in C(\Omega), f \in H(\Omega_i), i = 1,2}$，则$\displaystyle{f(z) \in H(\Omega)}$.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	任取$\displaystyle{\Omega}$上的一条曲线$\displaystyle{C}$，不妨设$\displaystyle{C \not\subset \Omega_1, C \not\subset \Omega_2}$，故$\displaystyle{\int_C f(z) \di z  = \int_{C_1} f(z) dz + \int_{C_2} f(z)dz}$.
 	
@@ -400,7 +400,7 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 \end{proof}
 注意与$Painlev\acute{e}$原理的区别.
 
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	(解析延拓定理).
 	\color{black}
@@ -415,35 +415,35 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 	\right.
 	\end{equation*}
 	则$\displaystyle{F(z) \in H(\Omega)}$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	证明过程同4.6.1.
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	\color{blue}
 	({\rm Schwarz}反射原理)
 	\color{black}
 	设$\displaystyle{\Omega}$为$\displaystyle{\mathbb{C}}$上的区域，记$\displaystyle{I = \{ z: z \in \Omega, Imz = 0\}}$，且$\displaystyle{I \neq \emptyset}$. 记$\displaystyle{\Omega^+ = \{ z \in \Omega : Im z >0\} ,  \Omega^- = \{ \bar{z} : z \in \Omega^+ \}}$. 设$\displaystyle{f \in H(\Omega^+) \cap C(\Omega ^ + \cap I)}$且$\displaystyle{f(I) \subset \mathbb{R}}$，则存在$\displaystyle{F \in H(\Omega^+ \cup \Omega^- \cup I)}$, s.t. $\displaystyle{F(z) = f(z), z \in \Omega^+}$
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略. 见方企勤《复变函数》.
 \end{proof}
 
-\begin{mypro}
+\begin{theorem}
 	设$\displaystyle{F(z, s) \in C(\Omega \times [0,1]) }$，$\displaystyle{\Omega}$为$\displaystyle{\mathbb{C}}$中开集，若$\displaystyle{F(z,s)}$对每个$\displaystyle{s}$，对$\displaystyle{z}$都是解析的，则定义在$\displaystyle{\Omega}$上的函数$\displaystyle{f(z):\overset{\Delta}{=} \int_0^1 F(z,s) \di s}$是解析的.
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	略.见{\rm Stein} 即chb笔记.
 \end{proof}
 
 %以下是p.9-13
-\begin{mypro}
+\begin{theorem}
 	设$f \in f(\omega)$，$\omega$为开集，$k\in\omega$为紧集，则存在$\omega-k$中的有线条可求长$r_{1},r_{2}......r_{n}$，使得
 	\begin{equation*}
 	f(z)=\sum_{j=1}^{N}\frac{1}{2\pi i}\int_{r_{n}}\frac{f(\xi)}{\xi-z}\di{\xi}
 	\end{equation*}
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	设$d=c \cdot d(k,\omega^{c})$，其中$c$为常数且$0<c<\frac{1}{\sqrt{2}}$，考虑边平行于轴的边长为$d$的正方形组成的网格。
 	故在$\Omega-K$中必定包含一个完整的方格，并且与$k$相交的方格不与$\Omega$相交。
@@ -627,12 +627,12 @@ $\displaystyle{\lim\limits_{\substack{z\to e^{i\theta_0}\\z\in S_\alpha(e^{i\the
 
 
 %以下是p.9-13
-\begin{mypro}
+\begin{theorem}
 	设$f \in f(\omega)$，$\omega$为开集，$k\in\omega$为紧集，则存在$\omega-k$中的有线条可求长$r_{1},r_{2}......r_{n}$，使得
 	\begin{equation*}
 	f(z)=\sum_{j=1}^{N}\frac{1}{2\pi i}\int_{r_{n}}\frac{f(\xi)}{\xi-z}\di{\xi}
 	\end{equation*}
-\end{mypro}
+\end{theorem}
 \begin{proof}
 	设$d=c \cdot d(k,\omega^{c})$，其中$c$为常数且$0<c<\frac{1}{\sqrt{2}}$，考虑边平行于轴的边长为$d$的正方形组成的网格。
 	故在$\Omega-K$中必定包含一个完整的方格，并且与$k$相交的方格不与$\Omega$相交。

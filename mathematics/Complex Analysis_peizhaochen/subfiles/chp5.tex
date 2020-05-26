@@ -1,0 +1,87 @@
+\chapter{留数定理与辐角定理}
+
+
+
+%p5-8
+\begin{theorem}
+        设${f_n}$是域$D$上的一列解析函数，并且在$D$上内闭一致收敛到$f$。若$f$不为常数，那么$f$在$D$中也为单叶解析函数。
+    \end{theorem}
+    \begin{proof}
+        由\emph{Weierstrass}定理得$f\in H(D)$。若$f$不是单叶的，则存在$z_1,z_2\in D, z1\neq z2$，使得$f(z_1)=f(z_2)$。令$F(z)=f(z)-f(z_1)$，故$F$在$D$中有两个互异零点$z_1$和$z_2$，又由于$F\not \equiv 0$，故$z_1$和$z_2$是孤立的。故存在$\epsilon >0$，s.t.$B(z_1,\epsilon)\cap B(z_2,\epsilon)=\emptyset$。故$F(z)$在$B(z_1,\epsilon)$和$B(z_2,\epsilon)$之外无其它零点。令$F_n(z)=f_n(z)-f(z_1)$。故${F_n(z)}$在$D$中内闭一致收敛到$F(z)$。\par
+        由\emph{Hurwitz}定理得，存在正整数$N$，$n>N$时，$F_n$在$B(z_1,\epsilon)$和$B(z_2,\epsilon)$中各有一个零点，设为$z_1^\prime$和$z_2^\prime$，显然$z_1^\prime \neq z_2^\prime $。故$f_n(z_1^\prime)=f_n(z_2^\prime)=f(z_1)$，这与$f_n$在$D$内是单叶的矛盾。
+ 	\end{proof}
+    
+    
+\subsection{亚纯函数的原式}
+\begin{eg}
+	\color{blue}证明$\cot (\pi z)=\frac{1}{\pi} (1/z+\sum\limits_{z>1}\frac{2z}{z^2-n^2}),z\in \mathbb{C}\setminus \mathbb{Z}$
+	\color{black} \\ 
+	证明： $\forall z_0\in \mathbb{C}\setminus \mathbb{Z}$，固定$z_0$，如图作闭路$\gamma_n$，
+	%@TODO:A figure here%
+	使得$z_0$在$\gamma_n$内部，函数$\frac{\cot (\pi z)}{z-z_0}$在$z=n(n=0,\pm 1,\pm 2, \cdots)$上均为一级极点。\par 设$f(z)=\frac{\cot (\pi z)}{z-z_0}$。故$Res_{z=n}f=\lim\limits_{z\to n}f(z)\cdot (z-n)=1/(n-z_0) \lim\limits_{z\to n}\frac{z-n}{tan(\pi z)}=\frac{1}{(n-z_0)\pi}$ , $Res_{z=z_0}f=\cot (\pi z_0)$。故由留数定理得$\int_{\gamma_n}{f(z)\di z}=2\pi i(\cot (\pi z_0)+\sum\limits_{k=-n}^n{\frac{1}{\pi (k-z_0)}})$，化简得$\int_{\gamma_n}{f(z)\di z}=2\pi i(\cot (\pi z_0)-\frac{1}{\pi} (\frac{1}{z_0}+\sum\limits_{k=1}^n{\frac{2z_0}{k^2-z_0^2}}))\textcircled{1}$ \par
+	下面我们对积分$\int_{\gamma_n}{f(z)\di z}$进行估计。记$\lambda = n+ \frac{1}{2}$\par
+	在$\gamma_n$平行于y轴的边AB、CD上，有：$\left| \cot  (\pi(\pm\lambda +iy))\right|^2=\left| tan(2\pi y)\right| ^2=\left| \frac{-e^{\pi y}+e^{-\pi y}}{e^{\pi y+e^{-\pi y}}} \right|^2 \le 1$\par
+	在$\gamma_n$平行于x轴的边AD、BC上，有：$\left| \cot  (\pi(\pm x +i\lambda))\right|^2=\frac{ch^2\pi\lambda - \sin^2 \pi x}{sh^2 \pi \lambda + \sin^2 \pi x}\le \frac{ch^2 \pi \lambda}{sh^2 \pi \lambda}=\frac{e^{2\pi\lambda}+e^{-2\pi\lambda}+2}{e^{2\pi\lambda}+e^{-2\pi\lambda}-2}\to 1 (n\to + \infty)$\par
+	故当$n$充分大时，在$\gamma_n$上有$\left| \cot (\pi z)\right| \le 2$\par
+	另一方面，$\int_{\gamma_n}{f(z)\di z}=\int_{\gamma_n}\frac{\cot (\pi t)}{z-z_0}\di t=\int_{\gamma_n}\frac{\cot (\pi t)}{z}\di z +z_0\int_{\gamma_n}\frac{\cot (\pi t)}{z(z-z_0)}\di z$\par
+	由留数定理：$\int_{\gamma_n}\frac{\cot (\pi t)}{z}\di z=2\pi i\sum\limits_{k=-n,k\neq 0}^n{\frac{1}{\pi k}}=0$\par
+	而$\left| \int_{\gamma_n}\frac{z_0 \cot (\pi t)}{z(z-z_0)}\di z \right| \le 8\lambda \cdot \frac{2\left| z_0 \right|}{\lambda(\lambda-\left| z_0 \right|)}\to 0 (\lambda \to + \infty)$。故$\lim\limits_{n\to +\infty}\int_{\gamma_n}{f(z)\di z}=0$
+	代入\textcircled{1}式，令$n\to +\infty$，得$\cot (\pi z_o)=\frac{1}{\pi}(\frac{1}{z_0}+\sum\limits_{k=1}^{\infty}{\frac{2z_0}{k^2-z_0^2}})$。又由于$z\in \mathbb{C}\setminus \mathbb{Z}$的任意性，得证。
+\end{eg}
+\par
+由于$z\cot z$在$\left| z \right|<\pi$上解析，故在$\left| z \right|<\pi$内可展为\emph{Taylor}级数。而另一方面，$z\cot z$为偶函数，故展开式中只含偶次幂。记偶次幂系数为$-\frac{2^{2n}B_n}{(2n)!}$，则$z\cot z=1-\sum\limits_{k=1}^{\infty}\frac{2^{2n}B_n}{(2n)!}z^(2n)(\left| z \right| < \pi)$，其中$B_n$称为\emph{Bernoulli}数。
+\begin{eg}
+	\color{blue} 证明$\sum\limits_{k=1}^{\infty}\frac{1}{n^{2k}}=2^{2k-1}\frac{\pi ^{2k}B_k}{(2k)!}$\color{black}\\
+	由前得$\pi z\cot (\pi z)=1-\sum\limits_{k=1}^{\infty}\frac{2^{2n}B_n}{(2n)!}(\pi z)^{2n}$\par
+	另一方面由例6得$\pi z\cot (\pi z)=1+\sum\limits_{n=1}^{\infty}\frac{2z^2}{z^2-n^2}=1+\sum\limits_{n=1}^{\infty}\frac{2z^2}{n^2(1-\frac{z^2}{n^2})}=1-\sum\limits_{n=1}^{\infty}\frac{2z^2}{n^2}\cdot \sum\limits_{k=0}^{\infty}(\frac{z^2}{n^2})^k =1-\sum\limits_{n=1}^{\infty}\sum\limits_{k=1}^{\infty}\frac{2z^{2k}}{n^{2k}}=1-\sum\limits_{k=1}^{\infty}\sum\limits_{n=1}^{\infty}\frac{2z^{2k}}{n^{2k}}=1-\sum\limits_{k=1}^{\infty}(\sum\limits_{n=1}^{\infty}\frac{2}{n^{2k}})\cdot 2^{2k}$\par
+	由\emph{Taylor}展式解唯一性，比较系数得$\sum\limits_{n=1}^{\infty}\frac{1}{n^{2k}}=\frac{\pi^{2k}B_k}{(2k)!}2^{2k-1}$。\par
+	故\emph{Bernoulli}数非负。
+\end{eg}
+
+\begin{eg}
+	\color{blue}求级数$\sum\limits_{n=1}^{\infty}\frac{1}{n^2},\sum\limits_{n=1}^{\infty}\frac{1}{n^4},\sum\limits_{n=1}^{\infty}\frac{1}{n^6}$的值。\\ \color{black}
+	$z\cot z=z\frac{\cos z}{\sin z}=\frac{1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+o(\left|z\right| ^6)}{1-\frac{z^2}{3!}+\frac{z^4}{5!}-\frac{z^6}{7!}+o(\left| z\right| ^6)}
+	\\=(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+o(\left|z\right| ^6))\cdot [1+(\frac{z^2}{3!}+\frac{z^4}{5!}-\frac{z^6}{7!}+o(\left| z\right| ^6))+\frac{z^2}{3!}-\frac{z^4}{5!}+o(\left| z\right| ^4)^2+(\frac{z^2}{3!}-o(\left| z\right| ^2)^3)+o(\left| z\right| ^6)]
+	\\ =1-\frac{1}{3}z^3-\frac{1}{45}z^4-\frac{32}{3\times 7!}z^6+o(\left| z\right| ^6)$\par
+	我们可以发现，每个偶次幂的系数均可写为有理数的有限和。故$B_n$为有理数。\par
+	此外，比较系数得：  
+    $\sum\limits_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{2}\pi^2\cdot\frac{1}{3}=\frac{\pi^2}{6},\sum\limits_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{2}\pi^4\cdot\frac{1}{45}=\frac{\pi^4}{90},\sum\limits_{n=1}^{\infty}\frac{1}{n^6}=\frac{1}{2}\pi^6\cdot\frac{32}{3\times 7!}=\frac{\pi^6}{945}$.
+\end{eg}
+
+
+\subsection{例题}
+\begin{eg}
+	\color{blue}设$r>0$，证明：当$n$充分大时，多项式$1+z+\frac{1}{2!}z^2+\frac{1}{3!}z^3+\cdots +\frac{1}{n!}z^n$在$B(0,r)$中没有根\\ \color{black}
+	证明：设$f_k(x)=1+\sum\limits_{i=1}^{k}{\frac{z^i}{i!}}$。故$f_k(x)\to e^z$，设$f(z)=e^z$\par
+	另一方面$\sum\limits_{n=0}^{\infty}{\frac{z^n}{n!}}$是$e^z$的\emph{Taylor}展开式且收敛半径为$+\infty$。故$f_k(x)\Rightarrow f(z)$。故${f_k(x)}$在$B(0,r)$上内闭一致收敛。\par
+	故由\emph{Hurwitz}定理(5.5.10)得存在$N$，s.t. $n>N$时，$f_n(z)$与$f(z)$有相同的零点个数。\par
+	故$n$充分大时，$f_n(z)$在$B(0,r)$上无根
+\end{eg}
+
+\begin{eg}
+	\color{blue} \emph{Dirichlet}积分($\int_0^{+\infty}\frac{\sin  x}{x}\di x$)，\quad Fresnel积分($ \int_0^{+\infty}\cos x^2\di x$)，\quad Poisson积分($\int_0^{+\infty}e^{-x^2}\cos 2bx \di x$)\color{black}\\
+	略
+\end{eg}
+\begin{eg}
+	\color{blue}Jordan引理 \color{black}\\
+	略
+\end{eg}
+
+\begin{eg}
+	\color{blue}计算$\int_0^{+\infty}\frac{x^{p-1}}{1+x}\di x,(0<p<1) $\color{black}\\
+	取$f(z)=\frac{z^{p-1}}{1+z}$。由于$0<p<1$，$z^p-1=e^{(p-1)\log z}$为多值函数。取一个单值分支$z^p-1=e^{(p-1)\log z}$。取出以实轴正半部分为边界分割切的域，其中\uppercase\expandafter{\romannumeral1}位于$[0,+\infty)$的上边沿，\uppercase\expandafter{\romannumeral2}为下边沿。\par
+	故在闭曲线内部只有-1和1为奇点且为1级极点。\par
+	由留数定理$(\int_{\uppercase\expandafter{\romannumeral1}}+\int_{\uppercase\expandafter{\romannumeral2}})f(z)\di z +\int_{\gamma_r}f(z)\di z+\int_{\gamma_R}f(z)\di z=2\pi i Res_{z=-1}f(x)=-2\pi i e^{p \pi i}$ (*)\par
+	一方面
+	\begin{gather*}
+		\left| \int_{\gamma_R}f(z)\di z \right| \le \int_{\gamma_R}\frac{\left| z\right| ^{p-1}}{\left| z\right| -1} {\left| \di z\right|}\le 2\pi R\cdot \frac{R^{p-1}}{R-1}\to 0(R\to +\infty)\\ \left| \int_{\gamma_r}f(z)\di z \right| \le \int_{\gamma_r}\frac{\left| z\right| ^{p-1}}{1 - \left| z\right| } {\left| \di z\right|}\le 2\pi R\cdot \frac{r^{p-1}}{r-1}\to 0(r\to 0^+)
+	\end{gather*}
+	在\uppercase\expandafter{\romannumeral2}上$z=xe^{2\pi i}$。故$\di z=e^{2\pi i}\di$ x\par
+	故$\int_{\uppercase\expandafter{\romannumeral2}}f(z)\di z=\int_R^r \frac{x^{p-1}\cdot e^{2p\pi i}}{1+x}\di x$。代入(*)式，令$r\to 0^+, R\to + \infty$得：
+	\begin{align*}
+		&\int_0^{+ \infty} \frac{x^{p-1}}{1+x}\di x - \int_0^{+ \infty} \frac{x^{p-1}\cdot e^{2p\pi i}}{1+x}\di x =-2\pi i e^{p \pi i}\\
+		\Rightarrow &(1-e^{2p\pi i})\int_0^{+\infty}\frac{x^{p-1}}{1+x}\di x=-2\pi i e^{p \pi i}\\
+		\Rightarrow &\frac{e^{p\pi i}-e^{-p\pi i}}{2!}\int_0^{+\infty}\frac{x^{p-1}}{1+x}\di x=\pi\\
+		\Rightarrow &\int_0^{+\infty}\frac{x^{p-1}}{1+x}\di x=\frac{\pi}{\sin  p\pi}
+	\end{align*}
+\end{eg}
