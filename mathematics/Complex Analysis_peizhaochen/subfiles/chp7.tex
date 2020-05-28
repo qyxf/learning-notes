@@ -1,0 +1,76 @@
+\chapter{}
+
+    \begin{theorem}
+        设u$\in{}$C$^{2}$(D)是实值函数，那么u是D上的次调和函数的充分必要条件，对任意的z$\in{}$D，有$\Delta{}$U(z)$\geq{}$0.
+    \end{theorem}
+
+    \begin{proof}
+        ``$\leftarrow{}$''设$\Delta{}$u(z)$\geq{}$0在D内处处成立，则对于G$\in{}$D上的调和函数h，若u$\leq{}$h在$\partial{}$G上成立，设u$_{1}$=u-h，则$\Delta{}$u$_{1}$=$\Delta{}$u-$\Delta{}$h=$\Delta{}$u$\geq{}$0。故由定理7.3.6以及u$_{1}$在$\partial{}$G上有u$_{1}$(z)$\leq{}$0。故在G上有u$_{1}$(z)$\leq{}$0，即u(z)$\leq{}$h(z)。由G的任意性及定理7.3.3得u是D上的次调和函数。
+    \end{proof}
+
+    \begin{proof}
+       ``$\rightarrow{}$''设u是D上的次调和函数，若存在a属于D使$\Delta{}$u(a)$<$0，则存在$\epsilon{}$$>$0，使得在B(a,
+$\epsilon{}$)上有$\Delta{}$u＜0，故在B(a,
+$\epsilon{}$)上有$\Delta{}$(-u)$>$0，则由充分性证明我们得到-u是B(a,$\epsilon{}$)上的次调和函数，故在B(a,$\epsilon{}$)中的任意一个圆B(b,$\epsilon{}$)
+$\subset{}$ B(a,$\epsilon{}$)有-u(b)$\leq{}$$\frac{1}{{2\pi }}\int_0^{2\pi }
+{{\rm{ - u}}(b + \partial {e^{2\theta }})d\theta } $
+，故u(b)$\geq{}$$\frac{1}{{2\pi }}\int_0^{2\pi } {{\rm{u}}(b + \partial {e^{2\theta
+}})d\theta } $，而又由于u也是B(a,$\epsilon{}$)上的次调和函数，故u(b)$ \le \frac{1}{{2\pi
+}}\int_0^{2\pi } {{\rm{u}}(b + \partial {e^{2\theta }}} )d\theta $
+，故u在B(a,$\epsilon{}$)中满足平均值性质，故u为B(a,$\epsilon{}$)上的调和函数，故在B(a,$\epsilon{}$)上有$\Delta{}$u=0，矛盾！故$\forall{}$z$\in{}$D，有$\Delta{}$u(z)$\geq{}$0。
+    \end{proof}
+
+\begin{theorem}
+        域D上的次调和函数域S线性空间，并且若V$_{1}$，V$_{2}$是域D上的次调和函数，则\\V(z)=max\{V$_{1}$(z),V$_{2}$(z)\}也是D上的次调和函数。
+    \end{theorem}
+
+\begin{theorem}
+			若u(z)是区域D内连续的次调和函数，$\overline {B({z_0},z)}  \subset D$
+。P$_{2}$(z)表示以z($\varphi $)在$\left| {z - {z_0}} \right| = r$
+上的边值得到的\emph{Poisson}积分，则函数
+$\widetilde U(z) = $ $\left\{ \begin{array}{cc}
+{P_2}({\rm{z}}) & z \in B({z_0},r)\\
+V(z) & z \in D\backslash B({z_0},r)
+\end{array} \right.$ 
+\end{theorem}
+
+   \begin{proof}
+  由于V是D上的次调和函数，故由定理7.2.2得$\widetilde U(z) \in C(D)$
+，并且对于$\forall{}$$\left| {{z_1} - {z_0}} \right|$
+=r，存在$\rho{}$$_{1}$＞0，使得$V({z_1}) \le \int_0^{2\pi } {V({z_1} + \rho
+{{\rm{e}}^{i\theta }})d\theta }$
+
+\hspace{15pt}{\large 又由于z$\in{}$B(z$_{0}$,r)，$\widetilde V({z_1} - V(z)) =
+{P_2}(z) - V(z) = \frac{1}{{2\pi }}\int_{\left| {\xi  - {z_0}} \right| = r}
+{\frac{{{r^2} - {{\left| {z - {z_0}} \right|}^2}}}{{{{\left| {\xi  - {z_0}}
+\right|}^2}}}} V(\xi )d\theta  - V(z)$ ，又由定理7.1.6得$\widetilde V({z_1}) - u(z) =
+{P_2}(z) - V(z) = \frac{1}{{2\pi }}\int_{\left| {\xi  - {z_0}} \right| = r}
+{\frac{{{r^2} - {{\left| {z - {z_0}} \right|}^2}}}{{{{\left| {\xi  - {z_0}}
+\right|}^2}}}} (V(\xi ) - u(z))d\theta
+$，又由定理7.3.3得V(z)满足最大值原理，故任意的$\xi{}\in B({z_0},r)$ 有f($\xi
+$)$\geq{}$V(z)，故$\forall{}$z$\in{}$D有$\widetilde V(z) \ge
+V(x)$，故$\forall{}$z$_{1}$满足 $\left| {{z_1} - {z_0}} \right| \ge r$ ，有$\widetilde
+V({z_1}) \le \frac{1}{{2\pi }}\int_0^{2\pi } {\widetilde V({z_1} + \rho
+{e^{i\theta }})} d\theta $，故$\widetilde V(z)$ 为D上的次调和函数。}
+    \end{proof}
+
+\begin{theorem}
+设u$\in{}$C$^{2}$(D)是一个实值函数，若对任意的z$\in{}$D，有$\Delta{}$u(z)$\geq{}$0，那么对任意的域G$
+\subset D$ ，u在G上的最大值必在$\partial G$ 上取到
+\end{theorem}
+
+\begin{proof}
+先设对每个点z$\in{}$D，有$\Delta{}$u(z)$>$0。若u在G上的最大值在G的内点z$_{0}$内取到，记z$_{0}$=x$_{0}$+$\mathop
+z\limits^. $ -y$_{0}$，g(t)=u(x$_{0}$,t)，那么g在t=y$_{0}$处有最大值，故${\left.
+{\frac{{{\partial ^2}u}}{{\partial {y^2}}}} \right|_{{z_0}}} = {g^{''}}({y_0})
+\le 0$ 同理得${\left. {\frac{{{\partial ^2}u}}{{\partial {x^2}}}} \right|_{{z_0}}}
+\le 0$，矛盾！\hspace{15pt}$\cdot{}$现设$\Delta{}$u(z)$\geq{}$0，令${u_\varepsilon }(z) =
+u(z) + \varepsilon {\left| z \right|^2},\varepsilon  > 0$ ，故$\Delta
+{u_\varepsilon }(z) = \Delta u(z) + \varepsilon  > 0$，故
+
+${u_\varepsilon }${\large 在G上的最大值在$\partial G$上取到，故${u_\varepsilon }(z) \le
+\overbrace {z \in \partial G}^{sub}{u_\varepsilon }(z),\varepsilon  \to 0$，得$u(z)
+\le \overbrace {z \in \partial G}^{sub}u(z)$}
+    \end{proof}
+
+

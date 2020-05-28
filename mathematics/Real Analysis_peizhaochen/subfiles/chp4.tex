@@ -36,7 +36,7 @@ $$\leq (a+\epsilon)\delta +\frac{1}{\delta}\int_{[\delta,\infty)}f(x)\ \di{x}
 
 \exercise{5}设$f_k(x)(k=1,2,...)$是$\mathbb{R}^{n}$上非负可积函数列，若对任意可测集$E \subset \mathbb{R}^{n}$都有$$\int_E f_k(x) \di{x} \leq \int_E f_{k+1}(x) \di{x}$$试证明$$\lim\limits_{k \to \infty}\int_E f_k(x) \di{x} = \int_E \lim\limits_{k \to \infty}f_k(x) \di{x}$$
 \begin{proof}
-令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\bigcup\limits_{k=1}^{\infty}E_k$,故$m(F)=0$，由\emph{Levi}定理得
+令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\bigcup\limits_{k=1}^{\infty}E_k$，故$m(F)=0$，由\emph{Levi}定理得
 $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\int_{E\setminus F}f_k(x)\di{x}=\int_{E\setminus F}\lim\limits_{k \to +\infty}f_k(x)\di{x}=\int_{E}\lim\limits_{k \to +\infty}f_k(x)\di{x}$$
 \end{proof}
 
@@ -80,8 +80,8 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 
 \exercise{18}设$f\in L(E)$ , 且$f(x)>0(x \in E)$,试证明$$\lim\limits_{k \to \infty}\int_{E} (f(x))^{1/k} \di{x}=m(E)$$
 \begin{proof}
-设$E_1=\{x\in E:f(x)\geq1\}\ ,E_2=\{x\in E:f(x)<1\}\ ,$故在$E_1$中$\{f(x)^{1/k}\}$是递减列，且$|f(x)^{1/k}|\leq f(x)\ ,k \in \mathbb{N}^*$,由Levi定理得$$\lim\limits_{k\to\infty}\int_{E_1}f(x)^{1/k}\di{x}= \int_{E_1}1\ \di{x}=m(E_1)$$
-又由于$f_n(x)\in L(E)\ ,$故由递减型的Levi定理也可得$$\lim\limits_{k\to\infty}\int_{E_2}f(x)^{1/k}\di{x}= \int_{E_2}1\ \di{x}=m(E_2)$$
+设$E_1=\{x\in E:f(x)\geq1\}\ ,E_2=\{x\in E:f(x)<1\}\ ,$故在$E_1$中$\{f(x)^{1/k}\}$是递减列，且$|f(x)^{1/k}|\leq f(x)\ ,k \in \mathbb{N}^*$,由\emph{Levi}定理得$$\lim\limits_{k\to\infty}\int_{E_1}f(x)^{1/k}\di{x}= \int_{E_1}1\ \di{x}=m(E_1)$$
+又由于$f_n(x)\in L(E)\ ,$故由递减型的\emph{Levi}定理也可得$$\lim\limits_{k\to\infty}\int_{E_2}f(x)^{1/k}\di{x}= \int_{E_2}1\ \di{x}=m(E_2)$$
 \end{proof}
 
 \exercise{19}设$\{f_n(x)(n=1,2,...)\}$是$[0,1]$上的非负可积函数列，且$\{f_n(x)\}$在$[0,1]$上依测度收敛于$f(x)$,若有$$\lim\limits_{n \to \infty}\int_{[0,1]} f_n(x) \di{x}=\int_{[0,1]} f(x) \di{x},$$试证明对$[0,1]$的任意可测子集E，有$$\lim\limits_{n \to \infty}\int_{E} f_n(x) \di{x}=\int_{E} f(x) \di{x}$$
@@ -104,7 +104,7 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 $$\lim\limits_{k \to \infty}\int_{E} f_k(x) \di{x}=\int_{E} f(x) \di{x},$$ 试证明$\lim\limits_{k \to \infty}f_k(x)=f(x),  a.e.x \in \mathbb{R}^n$
 \begin{proof}
 类似于之前第五题的过程我们可以得到$\{f_k(x)\}$在$E$上几乎处处单调，设不单调点集为$F$,故$m(F)=0$,设$F(x)=\lim\limits_{k\to \infty}f_k(x),\ x\in E\setminus F$.故$F(x)\in L(\mathbb{R}^n)$\par 
-由与$f_k(x)\in L(\mathbb{R}^n)$,故Levi定理得$$\lim\limits_{k\to+\infty}\int_{E}\left(f_k(x)-f_1(x)\right)\di{x}
+由与$f_k(x)\in L(\mathbb{R}^n)$,故\emph{Levi}定理得$$\lim\limits_{k\to+\infty}\int_{E}\left(f_k(x)-f_1(x)\right)\di{x}
 =\lim\limits_{k\to+\infty}\int_{E\setminus F}\left(f_k(x)-f_1(x)\right)\di{x}
 =\int_{E\setminus F}\lim\limits_{k\to+\infty}\left(f_k(x)-f_1(x)\right)\di{x}$$
 $$=\int_{E\setminus F}F(x)-f_1(x)\di{x}=\int_{E}F(x)-f_1(x)\di{x}$$
@@ -145,7 +145,7 @@ $$\lim\limits_{n \to \infty}\int_{E_n} f(x) \di{x}=0，$$试证明$m(E_n)\to 0(n
 \lim\limits_{k \to +\infty}\int_{\bigcup\limits_{j=1}^{\infty}E_j}f(x)\chi_{E_{n_k}}(x)\di{x}$$$$=
 \int_{\bigcup\limits_{j=1}^{\infty}E_j}\lim\limits_{k \to +\infty}f(x)\chi_{E_{n_k}}(x)\di{x}
 =\int_{\bigcup\limits_{j=1}^{\infty}E_j}f(x)\chi_{E}(x)\di{x}=\int_Ef(x) \di{x}$$
-由于$f(x)$为正值，故$m(E)=0$,故$\lim\limits_{k\to\infty}m(E_k)=0\ $,故$m(F)=0$,由Levi定理得$$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{}$$
+由于$f(x)$为正值，故$m(E)=0$，故$\lim\limits_{k\to\infty}m(E_k)=0\ $,故$m(F)=0$,由\emph{Levi}定理得$$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}$$
 \end{proof}
 
 \exercise{3}设$f:[0,1]\to[0,\infty)$是可测函数，试证明$$\left( \int_{[0,1]}f(x) \di{x} \right)\left(\int_{[0,1]}ln(f(x)) \di{x} \right)\leq \int_{[0,1]}f(x)ln(f(x)) \di{x} $$
@@ -153,7 +153,7 @@ $$\lim\limits_{n \to \infty}\int_{E_n} f(x) \di{x}=0，$$试证明$m(E_n)\to 0(n
 
 \exercise{6}设$f(x),f_k(x)(k=1,2,...)$是$E \subset \mathbb{R}^{n}$ 上的非负可积函数，且有$$\lim\limits_{k\to\infty}f_k(x)=f(x),\ \ a.e.\ \ ;\quad \lim\limits_{k \to \infty}\int_{E} f_k(x) \di{x}=\int_{E} f(x) \di{x}, $$试证明对于E中的任意一个可测子集e，有$$\lim\limits_{k \to \infty}\int_{e} f_k(x) \di{x}=\int_{e} f(x) \di{x}$$
 \begin{proof}
-设$g_k(x)=\inf\limits_{n\geq k}f_n(x)\ $,故$\{f_n(x)\}$是递增函数列，由于$$\lim\limits_{k \to +\infty}g_k(x)\ =\ \varliminf_{k \to +\infty}f_k(x)\ =f(x)\ ,\quad a.e.\ x \in E\ ,$$由Levi定理得，对于E中的任意可测集e，有$$\lim\limits_{k \to +\infty}\int_e g_k(x)\di{x}\ =\ \int_e \lim\limits_{k \to +\infty}g_k(x)\di{x}\ =\ \int_e f(x)\di{x}\ ，$$
+设$g_k(x)=\inf\limits_{n\geq k}f_n(x)\ $,故$\{f_n(x)\}$是递增函数列，由于$$\lim\limits_{k \to +\infty}g_k(x)\ =\ \varliminf_{k \to +\infty}f_k(x)\ =f(x)\ ,\quad a.e.\ x \in E\ ,$$由\emph{Levi}定理得，对于$E$中的任意可测集$e$，有$$\lim\limits_{k \to +\infty}\int_e g_k(x)\di{x}\ =\ \int_e \lim\limits_{k \to +\infty}g_k(x)\di{x}\ =\ \int_e f(x)\di{x}\ ，$$
 故$$\lim\limits_{k \to +\infty}\int_E g_k(x)\di{x}\ =\ \int_E f(x)\di{x}\ =\lim\limits_{k \to +\infty}\int_E f_k(x)\di{x}\ $$	
 故$$\lim\limits_{k \to +\infty}\int_E \left(f_k(x)-g_k(x)\right)\di{x}\ =0\ ,$$
 故$$\lim\limits_{k \to +\infty}\int_e \left(f_k(x)-g_k(x)\right)\di{x}\ =0\ ,$$
