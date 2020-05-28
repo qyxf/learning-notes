@@ -1,0 +1,96 @@
+\chapter{}
+
+
+%p6-7
+
+\section{自同构群\uppercase\expandafter{\romannumeral2}}   
+在第四章中我们讨论了$B(0,1)$的自同构群，那么对于更一般的$ \mathbb{C}, \mathbb{C}_{\infty} , Aut(\mathbb{C}),Aut( \mathbb{C}_{\infty} )$又是什么样子的？\par
+    利用\emph{laurent}展开式我们很容易得到如下结论：
+    \begin{theorem}\label{1D}
+        若无穷远点是整函数$f$的一个$m$级极点，那么$f$是一个$m$次多项式。
+    \end{theorem}
+    \begin{proof}
+    略
+ 	\end{proof}
+    \begin{theorem}\label{2D}
+        在无穷远处解析的整函数一定是常数。
+    \end{theorem}
+    \begin{proof}
+    略
+ 	\end{proof}
+    \begin{theorem}\label{3D}
+        若$f$在复平面$G$上除极点外无其他奇点，则称函数是一个亚纯函数。
+    \end{theorem}
+    \begin{proof}
+    略
+ 	\end{proof}
+    \begin{theorem}\label{4D}
+        $z=\infty$是亚纯函数的可去奇点或极点$\Leftrightarrow f$是有理函数。
+    \end{theorem}
+    \begin{proof}
+    证明：''$\Rightarrow$'' 故存在$R > 0$，使得$f$在$R < \left |z \right |  < \infty$上解析。\par
+    又由于$f$的奇点均为孤立的，故在$\left |z \right | <R$上至多有有限个奇点，记为$ z_1,z_2,\cdots,z_n$,记他们的阶数分别为$m_1,m_2,\cdots,m_n$。\par
+    故$f$在$z_j$附近的\emph{laurent}展开式的主部为
+    \begin{equation*}
+    h_j(z)=\frac{a^{(j)}_{-1}}{z-z^j}+\frac{a^{(j)}_{-2}}{(z-z^j)^2}+\cdot+\frac{a^{(j)}_{-m_j}}{(z-z_j)^(m_j)}
+    \end{equation*}
+    设$f$在$\infty$的邻域内展开的主部为$g \left(z \right)$,当$z = \infty $是极点时，$g \left(z \right)$是多项式，当$g \left(\infty \right)$是可去奇点时，$g = 0$。令$ F \left(z \right)=f\left(z \right)-h_1\left(z \right)-\cdots-h_m\left(z \right)-g\left(z \right)$，不难得到$ F \left(z \right)$在$\mathbb{C}_{\infty}$上解析。由定理\ref{2D}得$ F \left(z \right)$是常函数，故$ f \left(z \right)$是有理函数。\par
+''$\Leftarrow$''这个是显然的，请读者自行验证。\par
+利用上述三个定理我们可以导出$ \mathbb{C}$的全纯自同构解和$\mathbb{C}_{\infty}$的亚纯自同构解。
+ \end{proof}
+    \begin{theorem}\label{5D}
+         $Aut(\mathbb{C})$由所有的一次多项式组成。
+    \end{theorem}
+    \begin{proof}
+    设$ f \left(z \right) = az+b $，显然$f \in  Aut(\mathbb{C}) $，由于$f$是整函数，若$\infty$是$f$的可去奇点，则由定理\ref{1D}得$f$是常函数矛盾！\par
+    若$\infty$是$f$的本性奇点，则$\forall A \in \mathbb{C} ,\exists z_n \rightarrow \infty $，有$ f\left(z_n \right) \rightarrow A $,记$ f\left(z_n \right) = \omega_n$，则$f^{-1}(\omega_n) = z_n$ ，令$ n \rightarrow \infty$，故$A$是$ f^{-1}$的奇点，这与$f^{-1} \in  Aut(\mathbb{C})$矛盾。\par
+    故$ \infty $为$f$的极点，故由定理\ref{1D}得$f$是多项式，又由于$f$是单射，故$f$为一次多项式。
+ 	\end{proof}
+    \begin{theorem}\label{6D}
+    $Aut( \mathbb{C}_{\infty} )$由所有\emph{Möbius}变换组成。
+    \end{theorem}
+    \begin{proof}
+    易得\emph{Möbius}变换是$Aut( \mathbb{C}_{\infty} )$上的双射\par
+    设$f \in Aut( \mathbb{C}_{\infty})$，则$f$必为亚纯函数，且$\infty $必为$f$的可去奇点或极点，由定理$\ref{4D} f $是有理函数，又由于$f$是单射，故$f$为\emph{Möbius}变换。
+ 	\end{proof} 
+  
+\section{Schwarz-Christoffel公式与边界对应定理}
+(此部分我们对于课堂中的内容进行补充)
+    \begin{theorem}\label{1E}
+        (边界对应定理)设$G$是由一条简单闭曲线$\Gamma$围成的区域，若$\omega = f\left(z \right) $，把$G$双全纯的映为了$ B(0,1)$,那么$f$的定义域可扩充到$\Gamma$上使得$ f \in C \left( \overline G \right)$，且把$\Gamma$一一映成 $ \left | \omega \right | = 1$，$ \omega$关于$G$的正向对于于 $f \left (  \Gamma  \right )$的正向。
+    \end{theorem}
+    \begin{proof}
+    边界对应定理的证明是复杂的，此处略去，可见方企勤《复变函数》，史济怀《复变函数》。
+ 	\end{proof}
+    \begin{theorem}\label{2E}
+     设$G$和$D$分别为由可求长曲线$\gamma$ 和 $ \Gamma $围成的域，若$ f \in H\left ( G \right ) \cap C\left ( \overline G \right )$且把$\gamma$一一映射为$ \Gamma$,那么$ \omega = f\left(z \right)$把$G$一一地映射成D，并且是$\omega$关于$G$的正向对应于$\Omega $关于D的正向。 
+    \end{theorem}
+    \begin{proof}
+    任取$ \omega \in D$。由于$D$是由简单闭曲线围成的区域。故由幅角定理$f\left(z \right) - \omega_0$在$G$中的零点个数$N=\frac{1}{2\pi}\Delta_\gamma Arg\left(  f\left(z \right)-\omega_0 \right)=\frac{1}{2\pi}\Delta_\gamma Arg\left(  \omega-\omega_0 \right) =\pm 1$，故$N=1$.\par
+   另一方面由上述过程中得当$z$绕$\gamma$的正向绕一圈时，$\omega$也绕$\gamma$的正向转一圈。并且当$\omega \notin \overline D$时，$N=0$,即$ f\left(z \right)$会将$G$中的点映到$D$的外部。\par
+   当$\omega_0 \in \Gamma$时，若存在$z_0 \in G$,使得$ f\left(z_0 \right)=\omega_0$，则$\omega_0$必为$f\left(G \right)$的内点矛盾！\par
+   综上证毕
+ 	\end{proof}
+    \begin{theorem}\label{3E}
+    设$D$是由简单闭曲线$\gamma$所围成的单连通域，$f \in H \left ( D\right) \cap C \left (\overline D\right)$，则若$f$将$\gamma$一一地映射为简单闭曲线$\gamma$,则$f$将$D$双纯的映射为由$\gamma$围成的单连通域。
+    \end{theorem}
+    \begin{proof}
+    略。
+ 	\end{proof}
+    \begin{theorem}\label{4E}
+     存在把上半平面$H$一一地映射为多角形域$G$的双纯映射$\omega = f\left ( z\right ) f \in C\left ( \overline D\right )$且$ f\left ( \mathbb{R}\right )=\partial G$
+    \end{theorem}
+    \begin{proof}
+    任取$a \in D$，则分式线性变换$\zeta  =\frac{z-a}{z-\overline a}$把$D$一一地映射为$\left | \zeta  \right | < 1$，它在$\overline D$上连续，并且把实轴一一地映为$\left | \zeta \right | = 1$。\par
+    则由\emph{Riemann}映照定理和边界对应定理知存在双全纯函数$\omega = g\left(\zeta \right )$将$\left | \zeta \right | < 1$一一地映为$G$，且$g$在$\left | \zeta \right | \le 1$上连续，并且把$\left | \zeta \right | = 1$一一地映为$\partial G$于是$\omega = g (\frac{z-a}{z-\overline a})=f \left ( z\right )$即为满足条件的映射。
+ 	\end{proof}
+\begin{theorem}\label{5E}
+     设$\Omega$是具有角点$\omega_0$的域，在$\omega_0$的邻域中，$\Omega$的边界由两个直线段构成，他们的交角为$\alpha \pi$。\par
+    设双全纯映射$\omega = f \left ( z\right )$把上半平面映为$\Omega$，把实轴上的点映为$\omega_0$，那$\omega_0$在$z_0$的邻域内，$f$可表示为
+   \begin{equation*}
+   f(z)=\omega_0 +(z-z_0)^\alpha .\left \{ C_0+C_1(z-z_0)+\cdots \right\},C_0 \neq 0.
+   \end{equation*}
+   \end{theorem}
+   \begin{proof}
+    略
+ 	\end{proof}

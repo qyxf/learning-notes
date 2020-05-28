@@ -16,7 +16,7 @@
 \subtitle{Notes on Complex Analysis}
 \author{数试82\ 裴兆辰}
 \typo{钱院学辅排版组}  % 排版人员信息
-\date{2020 年 5 月 9 日}
+\date{2020 年 5 月 27 日}
 \version{v1.0}
 %\sourcepage{\url{https://github.com/qyxf/BookHub/}}
 
@@ -30,16 +30,23 @@
 \usepackage{amsthm}%调用定理环境宏包
 %\usepackage{ntheorem}
 \newtheorem{theorem}{定理}[section]%定理环境
-\newtheorem*{eg}{e.g}%例题环境
-\newenvironment{jie}[1]{%求解环境
+\newtheoremstyle{egstyle}{1.5ex plus 1ex minus .2ex}{1.5ex plus 1ex minus.2ex}
+{\kaishu\color{blue}}{0cm}{\heiti }{}{1em}{}  
+{\theoremstyle{egstyle}
+	\newtheorem*{eg}{e.g}%例题环境
+}
+\newenvironment{jie}[1]{%求解环境，参数可以是“解1”这种格式
 	
 	\noindent\heiti{解 #1}\normalfont}{}
 \newtheorem{method}{法}
 %定理环境
+
 \usepackage{wrapfig}
 \usepackage{fancyhdr}
 \newcommand{\clearemptydoublepage}{\pagestyle{empty}\mbox{}\newpage\pagestyle{empty}}
 %前言和目录间
+
+
 
 %网址断行
 \usepackage{url}
@@ -68,6 +75,7 @@
 \input{./subfiles/chp3.tex}
 \input{./subfiles/chp4.tex}
 \input{./subfiles/chp5.tex}
+\input{./subfiles/chp6.tex}
 
 \input{./subfiles/post.tex}
 

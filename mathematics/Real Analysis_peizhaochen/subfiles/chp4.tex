@@ -26,9 +26,9 @@ $$\leq (a+\epsilon)\delta +\frac{1}{\delta}\int_{[\delta,\infty)}f(x)\ \di{x}
 
 
 \exercise{4}设$f(x)$是$\mathbb{R}$上非负可积函数，令$$F(x)=\int_{(-\infty,x]}f(t) \di{t},  x\in \mathbb{R}$$
-若$F \in L(\mathbb{R}) $,试证明$\displaystyle{\int_{\mathbb{R}}f(x) \di{x}=0}$
+若$F \in L(\mathbb{R}) $，试证明$\displaystyle{\int_{\mathbb{R}}f(x) \di{x}=0}$
 \begin{proof}
-由于$f(x)\in L(\mathbb{R})$,则$\forall \epsilon>0$,存在$N\ ,\ s.t.\ $$$\int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$又由于$F(x)$是单调递增的，故对于$y>N$,有$$F(y)\leq \int_{y}^{y+1}f(x)\ \di{x} \ \leq\ \int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$故$\lim\limits_{y \to \infty}F(y)=0.$\par
+由于$f(x)\in L(\mathbb{R})$，则$\forall \epsilon>0$，存在$N\ ,\ s.t.\ $$$\int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$又由于$F(x)$是单调递增的，故对于$y>N$,有$$F(y)\leq \int_{y}^{y+1}f(x)\ \di{x} \ \leq\ \int_{\{x:|x|>N\}}f(x)\ \di{x}<\epsilon\ ,$$故$\lim\limits_{y \to \infty}F(y)=0.$\par
 又由于$F(x)$单调递增且非负，故$F(x)\equiv 0\ ,\quad a.e. \ x \in \mathbb{R}.$ 故$\int_{\mathbb{R}}f(x) \di{x}=0$
 \end{proof}
 
@@ -36,7 +36,7 @@ $$\leq (a+\epsilon)\delta +\frac{1}{\delta}\int_{[\delta,\infty)}f(x)\ \di{x}
 
 \exercise{5}设$f_k(x)(k=1,2,...)$是$\mathbb{R}^{n}$上非负可积函数列，若对任意可测集$E \subset \mathbb{R}^{n}$都有$$\int_E f_k(x) \di{x} \leq \int_E f_{k+1}(x) \di{x}$$试证明$$\lim\limits_{k \to \infty}\int_E f_k(x) \di{x} = \int_E \lim\limits_{k \to \infty}f_k(x) \di{x}$$
 \begin{proof}
-令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\bigcup\limits_{k=1}^{\infty}E_k$,故$m(F)=0$,由Levi定理得
+令$E_k=\{x\in \mathbb{R}^n|f_k(x)>f_{k+1}(x)\},$故$E_k$可测，显然我们可以得到$$\int_{E_k}\left(f_{k+1}(x)-f_k(x)\right)\di{x}=0$$故$m(E_k)=0$,设$F=\bigcup\limits_{k=1}^{\infty}E_k$,故$m(F)=0$，由\emph{Levi}定理得
 $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\int_{E\setminus F}f_k(x)\di{x}=\int_{E\setminus F}\lim\limits_{k \to +\infty}f_k(x)\di{x}=\int_{E}\lim\limits_{k \to +\infty}f_k(x)\di{x}$$
 \end{proof}
 
@@ -44,15 +44,15 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 \exercise{6}略(由H{\"o}lden不等式直接得到)
 
 
-\exercise{7}假设有定义在$\R{R}{n}$上的函数$f(x)$，如果对于任意的$\epsilon>0$,存在$g,h\in L(\mathbb{R}^n)$,满足$g(x) \leq f(x) \leq h(x),(x\in \mathbb{R}^n) $,并且使得$$\int_{\mathbb{R}^n}(h(x)-g(x)) \di{x}<\epsilon$$,试证明$f\in L(\mathbb{R}^n)$
+\exercise{7}假设有定义在$\R{R}{n}$上的函数$f(x)$，如果对于任意的$\epsilon>0$，存在$g,h\in L(\mathbb{R}^n)$，满足$g(x) \leq f(x) \leq h(x),(x\in \mathbb{R}^n) $，并且使得$$\int_{\mathbb{R}^n}(h(x)-g(x)) \di{x}<\epsilon$$，试证明$f\in L(\mathbb{R}^n)$
 \begin{proof}
 故$\forall k\in \mathbb{N}^*$,存在可积函数$g_k(x)$和$h_k(x),\ s.t.\ g_k(x)\leq f_k(x)\leq h_k(x),\ x\in \mathbb{R}^n,\ $且$$\int_{\mathbb{R}^n}\left(h_k(x)-g_k(x)\right)\di{x}<\frac{1}{k}$$
-故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g_k(x)|\di{x}=0$$设$g(x)=\varlimsup\limits_{k \to +\infty}g_k(x).$故$h_k(x)\geq g(x),\ a.e.\ x \in E$,故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g(x)|\di{x}=0$$故$\{h_k(x)\}$依测度收敛于$g(x)$，故由不等式关系立即得到$\{h_k(x)\}$依测度收敛于$f(x)$,故存在子列$\{h_{k_i}(x)\},\ s.t.\ \lim\limits_{i \to +\infty}h_{k_i}(x)=f(x),\quad a.e.\  x\in \mathbb{R}^n$.故$f(x)$是$\mathbb{R}^n$上的可测函数，由积分的单调性得到$f\in L(\mathbb{R}^n)$
+故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g_k(x)|\di{x}=0$$设$g(x)=\varlimsup\limits_{k \to +\infty}g_k(x)$。故$h_k(x)\geq g(x),\ a.e.\ x \in E$，故$$\lim\limits_{k \to +\infty}\int_{\mathbb{R}^n}|h_k(x)-g(x)|\di{x}=0$$故$\{h_k(x)\}$依测度收敛于$g(x)$，故由不等式关系立即得到$\{h_k(x)\}$依测度收敛于$f(x)$,故存在子列$\{h_{k_i}(x)\},\ s.t.\ \lim\limits_{i \to +\infty}h_{k_i}(x)=f(x),\quad a.e.\  x\in \mathbb{R}^n$.故$f(x)$是$\mathbb{R}^n$上的可测函数，由积分的单调性得到$f\in L(\mathbb{R}^n)$
 \end{proof}
 
 \exercise{8}设$\{E_k\}$是$\mathbb{R}^n$中测度有限的可测集列，且有$$\lim\limits_{k \to \infty}\int_{\mathbb{R}^n} \mid \chi_{E_k}(x)-f(x) \mid \di{x}=0,$$试证明存在可测集E，使得$f(x)=\chi_E(x),\quad$a.e. $x \in \mathbb{R}^n$.
 \begin{proof}
-故函数列$\{\chi_{E_k}(x)\}$依测度收敛到$f(x)$，由Riesz定理，存在子列$\{\chi_{E_{k_i}}(x)\},\ s.t.$ $$\lim\limits_{i\to\infty}\chi_{E_{k_i}}(x)=f(x)\ ,\quad a.e.\ x\in\mathbb{R}^n$$设$E=\bigcap\limits_{i=1}^{\infty}E_{k_i}$,故$\chi_{E}(x)=f(x)\ ,\quad a.e. \ x\in \mathbb{R}^n$
+故函数列$\{\chi_{E_k}(x)\}$依测度收敛到$f(x)$，由\emph{Riesz}定理，存在子列$\{\chi_{E_{k_i}}(x)\},\ s.t.$ $$\lim\limits_{i\to\infty}\chi_{E_{k_i}}(x)=f(x)\ ,\quad a.e.\ x\in\mathbb{R}^n$$设$E=\bigcap\limits_{i=1}^{\infty}E_{k_i}$,故$\chi_{E}(x)=f(x)\ ,\quad a.e. \ x\in \mathbb{R}^n$
 \end{proof}
 
 
@@ -67,7 +67,7 @@ $$\lim\limits_{k \to +\infty}\int_{E}f_k(x)\di{x}=\lim\limits_{k \to +\infty}\in
 
 \exercise{10}设$f\in L(\mathbb{R}^n)$，$E\in \mathbb{R}^n$是紧集，试证明$$\lim\limits_{\mid y \mid \to \infty} \int_{E+\{y\}} \mid f(x) \mid \di{x}=0$$
 \begin{proof}
-由于$f\in L(\mathbb{R}^n) \ $,故$\forall \epsilon>0\ ,$存在$R>0,\ s.t.\ \displaystyle{\int_{|x|>R}\ |f(x)|\ \di{x}<\epsilon}$.由于$E$为紧集，故存在$R_0>0,\ s.t. \ E\subset B(0,R_0),$\par 故当$|y|>R+R_0$时，$\forall x\in E+\{y\}\ $,有$|x|>R$,故$$\int_{E+\{y\}}|f(x)|
+由于$f\in L(\mathbb{R}^n) \ $，故$\forall \epsilon>0\ ,$存在$R>0,\ s.t.\ \displaystyle{\int_{|x|>R}\ |f(x)|\ \di{x}<\epsilon}$.由于$E$为紧集，故存在$R_0>0,\ s.t. \ E\subset B(0,R_0),$\par 故当$|y|>R+R_0$时，$\forall x\in E+\{y\}\ $，有$|x|>R$,故$$\int_{E+\{y\}}|f(x)|
 \ \di{x\leq\int_{|x|>R}}|f(x)|\ \di{x<\epsilon}$$
 \end{proof}
 

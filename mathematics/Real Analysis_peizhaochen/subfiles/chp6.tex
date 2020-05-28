@@ -1,0 +1,44 @@
+\chapter{\emph{$L^p$}空间}
+\section{第一组}
+\exercise{1}设$f\in L^{\infty}(E),w(x)>0,$且$\displaystyle{\int_E w(x) \di{x}=1}$，试证明$$\li{p\to \infty}\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}=||f||_{\infty} $$
+\begin{proof}
+	记$||f||_{\infty}=M$,故$|f(x)|\leq M,\ a.e. x\in E$.故$$\left( \int_E |f(x)|^pw(x)\di{x}\right)^{1/p}\leq \left( \int_E M^pw(x)\di{x}\right)^{1/p}=M,$$故$$\displaystyle{\varlimsup\limits_{p \to +\infty}\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}\leq M} $$$\qquad $对于任意$M'<M$，记$A=\{x\in E:|f(x)|>M'\}$,故$m(A)>0$,故$$\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}\geq \left( \int_A |f(x)|^p w(x)\di{x}\right)^{1/p}\geq M'\left( \int_A  w(x)\di{x}\right)^{1/p},$$故$$\varliminf\limits_{p \to +\infty}\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}\geq M'$$$\quad$由$M'$的任意性得$$\varliminf\limits_{p \to +\infty}\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}\geq M.$$故$$\li{p\to \infty}\left( \int_E |f(x)|^p w(x)\di{x}\right)^{1/p}=M=||f||_{\infty} $$
+\end{proof}
+\exercise{2}设$g(x)$是$E\subset \R{R}{n}$上的可测函数，若对任意的$f\in L^2(E),$有$||gf||_2\leq M||f||_2$,试证明$|g(x)|\leq M,\quad a.e.\ \in E $
+\begin{proof}
+	记$A=\{x\in E:|g(x)|>M\}$，假设不成立，则$m(A)>0$，记$B\subset A$,且$0<m(B)<+\infty$,故$\displaystyle{\int_E|\chi_B(x)|^2\di{x}=m(B)}$,故$\chi_B(x)\in L^2(E)$，故$||g\chi_B(x)||_2> ||M\chi_B(x)||_2$,显然矛盾，故原命题成立。
+\end{proof}
+
+\exercise{3}设$f(x)$在$(0,+\infty)$上正值可积，$1<r<+\infty, E\subset (0,+\infty)$且$m(E)>0$,试证明$$\left( \displaystyle{\frac{1}{m(E)}\int_E f(x) \di{x})}\right)^{-1}\leq  \left( \displaystyle{\frac{1}{m(E)}\int_E \frac{1}{f^r(x)} \di{x})}\right)^{1/r}$$
+\begin{proof}
+	$\Leftrightarrow (m(E))^{1+\frac{1}{r}}\leq \left( \displaystyle{\int_E \frac{1}{f^r(x)}\di{x} } \right)^{\frac{1}{r}}\left(\int_E f(x)  \di{x} \right)  $\par 
+	$\Leftrightarrow\displaystyle{ \left( \int_E f(x) ^{\frac{r}{r+1}}  f(x) ^{-\frac{r}{r+1}} \di{x} \right)\leq \left(\int_E  f(x) ^{-r}  \di{x} \right)^{\frac{1}{r+1}}\left(\int_E f(x)  \di{x} \right)^{\frac{r}{r+1}}   }$\\
+	由H{\"o}lden不等式可以直接得到
+\end{proof}
+
+
+
+\exercise{11}设$f_n \in AC([0,1])$,且$f_n(0)=0(n=1,2...)$.若$\{f_n'\}$是$L^1([0,1])$中的Cauchy列，试证明存在$f\in AC([0,1])$，使得$f_n(x)$在$[0,1]$上一致收敛于$f(x)$
+\begin{proof}
+	由于$L^1([0,1])$是完备的，故存在$g\in L^1([0,1])$,使得$\li{n\to \infty}||g-f_n||_1=0$,故$$\li{n\to \infty}\displaystyle{\int_0^xf_n'(t)\di{t}=\int_0^xg(t)\di{t}},$$记$\displaystyle{f(x)=\int_0^xf_n'(t)\di{t}=\int_0^xg(t)\di{t}}$,由定理5.10的$f(x)\in AC([0,1])$.\par 由微积分基本定理得，$\int_0^xf_n'(t)\di{t}=f_n(x)-f_n(0)=f_n(x)$,故$\li{n\to \infty}f_n(x)=f(x)$,故任意的$x\in [0,1]$有$$\left|f(x)-f_n(x)\right|=\displaystyle{\left| \int_0^x\left(f_n'(t)-g(t) \right)\di{t}\right| \leq \int_0^x|f_n'(t)-g(t) |\di{t} \leq \int_0^1|f_n'(t)-g(t) |\di{t} },$$故$f_n(x)\Rightarrow f(x)$
+\end{proof}
+
+
+
+\exercise{15}设$\{\phi_k\}\subset L^2(E)$是完全标准正交系，试证明对$f,g\in L^2(E)$有$$\langle f,g\rangle=\displaystyle{\sum\limits_{k=1}^{\infty}\langle f,\phi_k\rangle \langle g,\phi_k\rangle}$$
+\begin{proof}
+	\[\begin{split}
+	\langle f,g\rangle&=\int_Ef(x)g(x)\di{x}\\&=\int_E\left(f(x)-\sum\limits_{i=1}^k \langle f,\phi_i \rangle\phi_i \right)g(x)\di{x}+ \int_E\left(\sum\limits_{i=1}^k \langle f,\phi_i \rangle\phi_i \right)g(x)\di{x}\qquad(*)
+	\end{split}\]
+	由Schwarz不等式得$$\int_E\left(f(x)-\sum\limits_{i=1}^k \langle f,\phi_i \rangle\phi_i \right)g(x)\di{x}\leq \left| \left| f(x)-\sum\limits_{i=1}^k \langle f,\phi_i \rangle\phi_i\right| \right|_2||g(x)||_2 $$
+	由定理6.15得$\li{k\to\infty}\left| \left| f(x)-\sum\limits_{i=1}^k \langle f,\phi_i \rangle\phi_i\right| \right|_2=0$.	而$$\displaystyle{\int_E\left(\sum\limits_{i=1}^k \langle f,\phi_i \rangle\ \phi_i \right)g(x)\di{x}=\sum\limits_{i=1}^k\int_E\left( \langle f,\phi_i \rangle\ \phi_i \right)g(x)\di{x}=\sum\limits_{i=1}^k\langle f,\phi_i \rangle\int_E\ \phi_i g(x)\di{x}=}\displaystyle{\sum\limits_{i=1}^k\langle f,\phi_i\rangle \langle g,\phi_i\rangle}$$
+	故令(*)式两边k趋于$\infty$,即得证
+\end{proof}
+
+
+\exercise{16}设$\{\phi_n\}$是$L^2([0,1])$中的完全标准正交系，若$\{\psi_n\}$是$L^2([0,1])$中满足$\displaystyle{\sum\limits_{n=1}^{\infty}\int_a^b\left( \phi_n(x)-\psi_n(x)\right)^2\di{x}<1} $的正交系，试证明$\{\psi_n\}$是$L^2([0,1])$中的完全正交系
+\begin{proof}
+	设$f\in L^2([0,1])$，并且$\langle f,\psi_n \rangle=0,\forall n\in \R{N}{*}$,故$\langle f,\phi_n\rangle=\langle f,\phi_i-\psi_i\rangle$.\\故$\langle f,\phi_n\rangle^2\leq ||f||_2^2||\phi_i-\psi_i||_2^2$ \par
+	故$||f||_2^2\ =\ \displaystyle{\sum\limits_{k=1}^{\infty}\langle f,\phi_k\rangle^2}\ \leq\  ||f||_2^2||\phi_i-\psi_i||_2^2\ \leq\  ||f||_2^2$
+	故$||f||_2=0$,故f几乎处处是0
+\end{proof}
