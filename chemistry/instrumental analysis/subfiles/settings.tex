@@ -1,0 +1,26 @@
+\usepackage[version=4]{mhchem}
+
+%自定义微分号
+\newcommand{\di}[1]{\mathrm{d}#1}
+\newcommand{\p}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\dfrac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\dfrac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\dfrac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%单元格内强制换行
+
+\usepackage{graphicx}   % 导入图片
+\usepackage{subfigure}  % 并排子图
+\usepackage{wrapfig} %图文混排
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+%\usepackage{unicode-math} % 数学字体
+%\setmathfont{Cambria Math}
+\newcommand{\solve}{\noindent \textcolor{main}{解}\hspace{1em}}
+
+%模板中添加了
+%\newtcbtheorem
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
